@@ -37,18 +37,20 @@ const VisitorCounter = () => {
   const visitorCount = data?.count || 0;
 
   return (
-    <div className="flex items-center justify-center space-x-2 py-3 bg-primary/10 rounded-lg">
-      <Icon name="user-line text-primary" />
+    <div className="flex items-center justify-center bg-gradient-to-r from-blue to-orange py-4 px-5 rounded-lg text-white shadow-md">
+      <div className="mr-4 p-3 bg-white/20 rounded-full">
+        <Icon name="user-3-line text-xl text-white" />
+      </div>
       <div>
-        <div className="text-sm text-gray-600">Total Visitors</div>
+        <div className="text-sm text-white/80 uppercase tracking-wide font-medium">Total Visitors</div>
         {isLoading ? (
-          <div className="h-6 animate-pulse bg-gray-200 rounded-md w-20"></div>
+          <div className="h-7 animate-pulse bg-white/30 rounded-md w-24 mt-1"></div>
         ) : (
           <motion.div 
             key={visitorCount}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="font-poppins font-semibold text-primary"
+            className="font-poppins font-bold text-2xl tracking-wider"
           >
             {visitorCount.toLocaleString()}
           </motion.div>
