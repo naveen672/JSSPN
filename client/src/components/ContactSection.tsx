@@ -19,6 +19,7 @@ const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     subject: '',
     message: ''
   });
@@ -40,6 +41,7 @@ const ContactSection = () => {
       setFormData({
         name: '',
         email: '',
+        phone: '',
         subject: '',
         message: ''
       });
@@ -180,19 +182,36 @@ const ContactSection = () => {
                   </div>
                 </div>
 
-                <div>
-                  <label htmlFor="subject" className="block text-gray-700 mb-2 font-medium flex items-center">
-                    <Icon name="chat-1-line mr-2 text-amber-500" />
-                    Subject
-                  </label>
-                  <input
-                    type="text"
-                    id="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400/50 focus:border-amber-400 shadow-sm"
-                    placeholder="Enter subject"
-                  />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="phone" className="block text-gray-700 mb-2 font-medium flex items-center">
+                      <Icon name="phone-line mr-2 text-amber-500" />
+                      Phone Number
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400/50 focus:border-amber-400 shadow-sm"
+                      placeholder="Enter your phone number"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="subject" className="block text-gray-700 mb-2 font-medium flex items-center">
+                      <Icon name="chat-1-line mr-2 text-amber-500" />
+                      Subject
+                    </label>
+                    <input
+                      type="text"
+                      id="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400/50 focus:border-amber-400 shadow-sm"
+                      placeholder="Enter subject"
+                    />
+                  </div>
                 </div>
 
                 <div>

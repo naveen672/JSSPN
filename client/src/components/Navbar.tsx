@@ -22,7 +22,7 @@ const navigationItems: NavigationItem[] = [
   {
     id: 'home',
     name: 'Home',
-    href: '#home',
+    href: '/',
     icon: 'home-4-line',
     dropdown: null
   },
@@ -200,7 +200,7 @@ const Navbar = () => {
               >
                 <Icon name="menu-line text-2xl" />
               </button>
-              <a href="#" className="flex items-center group">
+              <a href="/" className="flex items-center group">
                 <div className="w-12 h-12 mr-3 overflow-hidden rounded-full shadow-md border-2 border-gray-100 group-hover:border-primary transition-colors duration-200">
                   <img src={logoImage} alt="JSS Polytechnic Logo" className="w-full h-full object-contain" />
                 </div>
