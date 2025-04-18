@@ -219,27 +219,35 @@ const Navbar = () => {
                   className="relative px-2"
                   ref={(el) => (dropdownRefs.current[item.id] = el)}
                 >
-                  <button
-                    onClick={(e) => {
-                      e.preventDefault();
-                      e.stopPropagation();
-                      toggleDesktopDropdown(item.id);
-                    }}
-                    className={`py-2 flex items-center rounded-md px-3 ${
-                      activeDropdown === item.id
-                        ? "text-primary bg-primary/5 font-semibold"
-                        : "hover:text-primary hover:bg-primary/5 transition-all"
-                    }`}
-                  >
-                    <Icon name={`${item.icon} mr-1.5`} />
-                    <span>{item.name}</span>
-                    {item.dropdown && (
+                  {item.dropdown ? (
+                    <button
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        toggleDesktopDropdown(item.id);
+                      }}
+                      className={`py-2 flex items-center rounded-md px-3 ${
+                        activeDropdown === item.id
+                          ? "text-primary bg-primary/5 font-semibold"
+                          : "hover:text-primary hover:bg-primary/5 transition-all"
+                      }`}
+                    >
+                      <Icon name={`${item.icon} mr-1.5`} />
+                      <span>{item.name}</span>
                       <Icon 
                         name={`arrow-down-s-line ml-1 text-xs ${activeDropdown === item.id ? 'rotate-180' : ''}`} 
                         className="transition-transform duration-200"
                       />
-                    )}
-                  </button>
+                    </button>
+                  ) : (
+                    <a
+                      href={item.href}
+                      className={`py-2 flex items-center rounded-md px-3 hover:text-primary hover:bg-primary/5 transition-all`}
+                    >
+                      <Icon name={`${item.icon} mr-1.5`} />
+                      <span>{item.name}</span>
+                    </a>
+                  )}
                   
                   {/* Dropdown Menu */}
                   {item.dropdown && (
