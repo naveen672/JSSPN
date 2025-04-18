@@ -8,6 +8,7 @@ import {
   insertImportantDateSchema
 } from "@shared/schema";
 import { ZodError } from "zod";
+import { sendContactConfirmation } from "./email";
 
 // Error handler middleware
 const handleError = (res: Response, error: any) => {
@@ -105,6 +106,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const submission = insertContactSubmissionSchema.parse(req.body);
       const createdSubmission = await storage.createContactSubmission(submission);
+      
+      // Send confirmation email to the user
+      try {
+        await sendContactConfirmation(submission.name, submission.email);
+      } catch (emailError) {
+        // Log the error but don't fail the request
+        console.error("Error sending confirmation email:", emailError);
+      }
+      
       res.status(201).json(createdSubmission);
     } catch (error) {
       handleError(res, error);
