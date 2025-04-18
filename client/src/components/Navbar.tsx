@@ -29,10 +29,10 @@ const navigationItems = [
     ]
   },
   {
-    id: 'programmes',
-    name: 'Programmes',
+    id: 'academic',
+    name: 'Academic',
     href: '#academics',
-    icon: 'book-open-line',
+    icon: 'graduation-cap-line',
     dropdown: [
       { name: 'Science & Humanities', href: '#' },
       { name: 'Civil', href: '#' },
@@ -40,15 +40,7 @@ const navigationItems = [
       { name: 'Electrical & Electronics', href: '#' },
       { name: 'Electronics & Communication', href: '#' },
       { name: 'Mechatronics', href: '#' },
-      { name: 'Mechanical', href: '#' }
-    ]
-  },
-  {
-    id: 'academic',
-    name: 'Academic',
-    href: '#academics',
-    icon: 'graduation-cap-line',
-    dropdown: [
+      { name: 'Mechanical', href: '#' },
       { name: 'Calender Of Events', href: '#' },
       { name: 'Admission', href: '#' },
       { name: 'Examination', href: '#' },
