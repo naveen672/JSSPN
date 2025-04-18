@@ -186,9 +186,9 @@ export const contactInfo = [
     title: "Our Location",
     icon: "map-pin-line",
     lines: [
-      "JSS Polytechnic Campus,",
-      "NH-766, Ooty Road,",
-      "Nanjangud, Karnataka - 571301",
+      "JSS Polytechnic,",
+      "Mysore – Ooty Road,",
+      "Nanjangud – 571 301, Karnataka, India",
     ],
   },
   {
@@ -196,9 +196,8 @@ export const contactInfo = [
     title: "Call Us",
     icon: "phone-line",
     lines: [
-      "Main Office: +91-8212344567",
-      "Admissions: +91-8212344568",
-      "Placement Cell: +91-8212344569",
+      "Phone: 08221 – 226491",
+      "Cell: 9886618231",
     ],
   },
   {
@@ -206,9 +205,8 @@ export const contactInfo = [
     title: "Email Us",
     icon: "mail-line",
     lines: [
-      "info@jsspolytechnic.edu",
-      "admissions@jsspolytechnic.edu",
-      "placements@jsspolytechnic.edu",
+      "jsspn324@gmail.com",
+      "www.jsspnco-op.in",
     ],
   },
 ];
@@ -237,11 +235,11 @@ export const footerContactInfo = [
   {
     id: 1,
     icon: "map-pin-line",
-    text: "JSS Polytechnic Campus, NH-766, Ooty Road, Nanjangud, Karnataka - 571301",
+    text: "JSS Polytechnic, Mysore – Ooty Road, Nanjangud – 571 301, Karnataka, India",
   },
-  { id: 2, icon: "phone-line", text: "+91-8212344567" },
-  { id: 3, icon: "mail-line", text: "info@jsspolytechnic.edu" },
-  { id: 4, icon: "time-line", text: "Mon - Fri: 9:00 AM - 5:00 PM" },
+  { id: 2, icon: "phone-line", text: "08221 – 226491 | Cell: 9886618231" },
+  { id: 3, icon: "mail-line", text: "jsspn324@gmail.com" },
+  { id: 4, icon: "global-line", text: "www.jsspnco-op.in" },
 ];
 
 export const socialLinks = [

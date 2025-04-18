@@ -13,6 +13,7 @@ import VisionMission from "@/pages/VisionMission";
 import Governance from "@/pages/Governance";
 import Administration from "@/pages/Administration";
 import Reports from "@/pages/Reports";
+import Downloads from "@/pages/Downloads";
 
 function Router() {
   return (
@@ -24,6 +25,7 @@ function Router() {
       <Route path="/about/governance" component={Governance} />
       <Route path="/about/administration" component={Administration} />
       <Route path="/about/reports" component={Reports} />
+      <Route path="/about/downloads" component={Downloads} />
       <Route path="/programs/:slug" component={ProgramPage} />
       <Route path="/:category/:slug" component={GenericPage} />
       <Route component={NotFound} />
