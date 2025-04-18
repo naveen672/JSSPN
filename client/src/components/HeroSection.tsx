@@ -61,12 +61,16 @@ const HeroSection = () => {
             key={index}
             initial={false}
             animate={{ 
-              opacity: currentSlide === index ? 1 : 0,
-              zIndex: currentSlide === index ? 1 : 0
+              opacity: currentSlide === index ? 1 : 0
             }}
-            transition={{ opacity: { duration: 0.8, ease: "easeInOut" } }}
+            transition={{ 
+              opacity: { duration: 1, ease: "easeInOut" } 
+            }}
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${slide.image})` }}
+            style={{ 
+              backgroundImage: `url(${slide.image})`,
+              zIndex: 0 
+            }}
           />
         ))}
       </div>
@@ -132,7 +136,7 @@ const HeroSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
-                className="font-poppins font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6 text-shadow-lg"
+                className="font-poppins font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6 drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]"
               >
                 {slide.heading.split('\n').map((line, i) => (
                   <span key={i} className="block">{line}</span>
@@ -143,7 +147,7 @@ const HeroSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
                 transition={{ duration: 0.5, delay: 0.6 }}
-                className="text-white text-lg md:text-xl mb-8 max-w-xl text-shadow-md flex items-start"
+                className="text-white text-lg md:text-xl mb-8 max-w-xl drop-shadow-[0_2px_3px_rgba(0,0,0,0.7)] flex items-start"
               >
                 <Icon name="focus-3-line mr-2 mt-1 flex-shrink-0" />
                 <span>{slide.subheading}</span>

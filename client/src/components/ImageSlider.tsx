@@ -59,21 +59,24 @@ const ImageSlider = () => {
 
   return (
     <div className="relative h-[80vh] overflow-hidden">
-      <AnimatePresence initial={false} mode="wait">
+      {/* Background Images - Using crossfade instead of sequential animation */}
+      {images.map((image, index) => (
         <motion.div
-          key={currentIndex}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.7 }}
-          className="absolute inset-0"
-        >
-          <div 
-            className="absolute inset-0 bg-cover bg-center z-0" 
-            style={{ backgroundImage: `url('${images[currentIndex].src}')` }}
-          ></div>
-        </motion.div>
-      </AnimatePresence>
+          key={index}
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ 
+            backgroundImage: `url('${image.src}')`,
+            zIndex: 0
+          }}
+          initial={false}
+          animate={{ 
+            opacity: currentIndex === index ? 1 : 0
+          }}
+          transition={{ 
+            opacity: { duration: 1, ease: "easeInOut" } 
+          }}
+        />
+      ))}
 
       <div className="relative container mx-auto h-full px-4 flex items-center z-20">
         <div className="max-w-3xl">
