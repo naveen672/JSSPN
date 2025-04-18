@@ -15,9 +15,8 @@ const HeroSection = () => {
 
   return (
     <section id="home" className="relative h-[80vh] overflow-hidden">
-      {/* Raw image with semi-transparent overlay for better text readability */}
+      {/* Completely raw image without any overlays */}
       <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1986&q=80')] bg-cover bg-center"></div>
-      <div className="absolute inset-0 bg-black bg-opacity-40"></div>
       
       <div className="relative container mx-auto h-full px-4 flex items-center">
         <div className="max-w-3xl">

@@ -82,7 +82,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-[#108068] text-white relative">
+    <section id="contact" className="py-20 bg-[#183b6c] text-white relative">
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
           ref={headerRef}
@@ -222,7 +222,7 @@ const ContactSection = () => {
               </form>
             </div>
 
-            <div className="bg-gradient-to-br from-[#108068] to-[#06634e] h-full flex items-center justify-center p-8">
+            <div className="bg-gradient-to-br from-[#183b6c] to-[#0c2444] h-full flex items-center justify-center p-8">
               <div className="text-center text-white">
                 <div className="w-20 h-20 bg-white/20 rounded-full mx-auto flex items-center justify-center mb-6">
                   <Icon name="customer-service-2-line text-3xl text-white" />
