@@ -15,9 +15,9 @@ const HeroSection = () => {
 
   return (
     <section id="home" className="relative h-[80vh] overflow-hidden">
-      {/* Professional dark background with subtle gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#1a365d] to-[#2d3748]"></div>
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1986&q=80')] bg-cover bg-center opacity-30 mix-blend-overlay"></div>
+      {/* Raw image with semi-transparent overlay for better text readability */}
+      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1986&q=80')] bg-cover bg-center"></div>
+      <div className="absolute inset-0 bg-black bg-opacity-40"></div>
       
       <div className="relative container mx-auto h-full px-4 flex items-center">
         <div className="max-w-3xl">
@@ -34,7 +34,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="font-poppins font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6"
+            className="font-poppins font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6 text-shadow-lg"
           >
             Building Tomorrow's<br />Technical Leaders
           </motion.h1>
@@ -43,7 +43,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="text-gray-200 text-lg md:text-xl mb-8 max-w-xl"
+            className="text-white text-lg md:text-xl mb-8 max-w-xl text-shadow-md"
           >
             JSS Polytechnic Nanjangud offers industry-focused technical education with state-of-the-art facilities and experienced faculty.
           </motion.p>
