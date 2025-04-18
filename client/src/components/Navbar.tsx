@@ -32,7 +32,7 @@ const navigationItems: NavigationItem[] = [
     href: '#about',
     icon: 'information-line',
     dropdown: [
-      { name: 'About JSSMVP', href: '#' },
+      { name: 'About JSSMVP', href: '/about/jssmvp' },
       { name: 'About JSSPN', href: '#' },
       { name: 'Vision & Mission', href: '#' },
       { name: 'Governance', href: '#' },

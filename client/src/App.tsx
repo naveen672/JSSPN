@@ -7,11 +7,13 @@ import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import ProgramPage from "@/pages/ProgramPage";
 import GenericPage from "@/pages/GenericPage";
+import AboutJSSMVP from "@/pages/AboutJSSMVP";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/about/jssmvp" component={AboutJSSMVP} />
       <Route path="/programs/:slug" component={ProgramPage} />
       <Route path="/:category/:slug" component={GenericPage} />
       <Route component={NotFound} />
