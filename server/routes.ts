@@ -107,13 +107,19 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const submission = insertContactSubmissionSchema.parse(req.body);
       const createdSubmission = await storage.createContactSubmission(submission);
       
-      // Send confirmation email to the user
-      try {
-        await sendContactConfirmation(submission.name, submission.email);
-      } catch (emailError) {
-        // Log the error but don't fail the request
-        console.error("Error sending confirmation email:", emailError);
-      }
+      // Send confirmation email to the user (don't await to prevent blocking)
+      sendContactConfirmation(submission.name, submission.email)
+        .then(success => {
+          if (success) {
+            console.log(`Confirmation email sent to ${submission.email}`);
+          } else {
+            console.log(`Failed to send confirmation email to ${submission.email}, but form submission was successful`);
+          }
+        })
+        .catch(emailError => {
+          // Log the error but don't fail the request
+          console.error("Error sending confirmation email:", emailError);
+        });
       
       res.status(201).json(createdSubmission);
     } catch (error) {

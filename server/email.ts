@@ -55,6 +55,12 @@ export async function sendEmail(options: EmailOptions): Promise<boolean> {
       return false;
     }
 
+    const emailTransporter = getTransporter();
+    if (!emailTransporter) {
+      log('Cannot send email: Failed to initialize email transporter', 'email');
+      return false;
+    }
+
     const mailOptions = {
       from: `JSS Polytechnic <${process.env.EMAIL_ADDRESS}>`,
       to: options.to,
@@ -63,7 +69,7 @@ export async function sendEmail(options: EmailOptions): Promise<boolean> {
       html: options.html,
     };
 
-    const info = await transporter.sendMail(mailOptions);
+    const info = await emailTransporter.sendMail(mailOptions);
     log(`Email sent: ${info.messageId}`, 'email');
     return true;
   } catch (error) {
@@ -150,10 +156,17 @@ JSS Polytechnic, Mysore – Ooty Road, Nanjangud – 571 301, Karnataka, India
 (async function verifyEmailConfig() {
   if (process.env.EMAIL_ADDRESS && process.env.EMAIL_APP_PASSWORD) {
     try {
-      await transporter.verify();
-      log('Email service ready to send messages', 'email');
+      const emailTransporter = getTransporter();
+      if (emailTransporter) {
+        await emailTransporter.verify();
+        log('Email service ready to send messages', 'email');
+      } else {
+        log('Email transporter not initialized', 'email');
+      }
     } catch (error) {
       log(`Email configuration error: ${error}`, 'email');
     }
+  } else {
+    log('Email configuration missing: EMAIL_ADDRESS or EMAIL_APP_PASSWORD not set', 'email');
   }
 })();
