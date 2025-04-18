@@ -39,13 +39,13 @@ const Navbar = () => {
             <div className="flex items-center">
               <button
                 onClick={toggleMenu}
-                className="mr-4 md:hidden text-[#003b7a]"
+                className="mr-4 md:hidden text-primary"
                 aria-label="Toggle menu"
               >
                 <Icon name="menu-line text-2xl" />
               </button>
               <a href="#" className="flex items-center">
-                <div className="w-12 h-12 mr-3 overflow-hidden rounded-lg">
+                <div className="w-12 h-12 mr-3 overflow-hidden">
                   <img src={logoImage} alt="JSS Polytechnic Logo" className="w-full h-full object-contain" />
                 </div>
                 <div>
@@ -56,42 +56,48 @@ const Navbar = () => {
                 </div>
               </a>
             </div>
-            <div className="hidden md:flex space-x-5 font-poppins font-medium items-center">
+            <div className="hidden md:flex space-x-6 font-poppins font-medium">
               <a
                 href="#home"
-                className="py-2 text-[#003b7a] border-b-2 border-[#003b7a] flex items-center"
+                className="py-2 text-primary border-b-2 border-primary flex items-center"
               >
-                <span>HOME</span>
+                <Icon name="home-4-line mr-1" />
+                <span>Home</span>
               </a>
               <a
                 href="#about"
-                className="py-2 hover:text-[#003b7a] hover:border-b-2 hover:border-[#003b7a] transition-all flex items-center"
+                className="py-2 hover:text-primary hover:border-b-2 hover:border-primary transition-all flex items-center"
               >
-                <span>ABOUT</span>
+                <Icon name="information-line mr-1" />
+                <span>About</span>
               </a>
               <a
                 href="#academics"
-                className="py-2 hover:text-[#003b7a] hover:border-b-2 hover:border-[#003b7a] transition-all flex items-center"
+                className="py-2 hover:text-primary hover:border-b-2 hover:border-primary transition-all flex items-center"
               >
-                <span>ACADEMICS</span>
+                <Icon name="book-open-line mr-1" />
+                <span>Academics</span>
               </a>
               <a
                 href="#campus"
-                className="py-2 hover:text-[#003b7a] hover:border-b-2 hover:border-[#003b7a] transition-all flex items-center"
+                className="py-2 hover:text-primary hover:border-b-2 hover:border-primary transition-all flex items-center"
               >
-                <span>CAMPUS</span>
+                <Icon name="building-4-line mr-1" />
+                <span>Campus</span>
               </a>
               <a
                 href="#admissions"
-                className="py-2 hover:text-[#003b7a] hover:border-b-2 hover:border-[#003b7a] transition-all flex items-center"
+                className="py-2 hover:text-primary hover:border-b-2 hover:border-primary transition-all flex items-center"
               >
-                <span>ADMISSIONS</span>
+                <Icon name="user-add-line mr-1" />
+                <span>Admissions</span>
               </a>
               <a
                 href="#contact"
-                className="bg-orange hover:bg-orange/90 text-white font-medium py-2 px-4 rounded-md transition-colors"
+                className="py-2 hover:text-primary hover:border-b-2 hover:border-primary transition-all flex items-center"
               >
-                <span>CONTACT US</span>
+                <Icon name="contacts-line mr-1" />
+                <span>Contact</span>
               </a>
             </div>
           </div>

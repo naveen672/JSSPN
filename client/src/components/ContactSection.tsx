@@ -82,7 +82,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-[#003b7a] text-white relative">
+    <section id="contact" className="py-20 bg-primary text-white relative">
       <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')] bg-cover bg-center opacity-10"></div>
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -205,7 +205,7 @@ const ContactSection = () => {
                   type="submit"
                   disabled={contactMutation.isPending}
                   className={`${
-                    contactMutation.isPending ? 'bg-gray-500' : 'bg-orange hover:bg-orange/90'
+                    contactMutation.isPending ? 'bg-gray-500' : 'bg-primary hover:bg-primary/90'
                   } text-white px-6 py-3 rounded-md font-medium transition-all w-full flex items-center justify-center`}
                 >
                   {contactMutation.isPending ? (
@@ -223,7 +223,7 @@ const ContactSection = () => {
               </form>
             </div>
 
-            <div className="bg-gradient-to-br from-blue to-orange h-full flex items-center justify-center p-8">
+            <div className="bg-gradient-to-br from-primary to-secondary h-full flex items-center justify-center p-8">
               <div className="text-center text-white">
                 <div className="w-20 h-20 bg-white/20 rounded-full mx-auto flex items-center justify-center mb-6">
                   <Icon name="customer-service-2-line text-3xl text-white" />

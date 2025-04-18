@@ -39,12 +39,12 @@ const FlashNews = () => {
   if (!displayItems.length) return null;
 
   return (
-    <div className="bg-orange py-2 sticky top-[72px] z-30 border-y border-orange/80">
+    <div className="bg-primary/10 py-2 sticky top-[72px] z-30 border-y border-primary/20">
       <div className="container mx-auto px-4">
         <div className="flex items-center">
-          <div className="flex-shrink-0 flex items-center text-white mr-3">
+          <div className="flex-shrink-0 flex items-center text-primary mr-3">
             <Icon name="notification-4-line text-xl animate-pulse" />
-            <span className="ml-2 font-medium hidden sm:inline">ANNOUNCEMENTS</span>
+            <span className="ml-2 font-medium hidden sm:inline">Flash News:</span>
           </div>
           <div className="overflow-hidden flex-grow">
             <AnimatePresence mode="wait">
@@ -54,10 +54,10 @@ const FlashNews = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.5 }}
-                className="truncate text-white font-medium"
+                className="truncate text-gray-800"
               >
                 {isLoading ? (
-                  <div className="h-5 bg-white/30 animate-pulse rounded w-3/4"></div>
+                  <div className="h-5 bg-gray-200 animate-pulse rounded w-3/4"></div>
                 ) : (
                   displayItems[currentNewsIndex]
                 )}
@@ -69,7 +69,7 @@ const FlashNews = () => {
               onClick={() => setCurrentNewsIndex(
                 (prevIndex) => (prevIndex - 1 + displayItems.length) % displayItems.length
               )}
-              className="text-white/70 hover:text-white mr-1 p-1"
+              className="text-gray-500 hover:text-primary mr-1 p-1"
               aria-label="Previous news"
             >
               <Icon name="arrow-left-s-line" />
@@ -78,7 +78,7 @@ const FlashNews = () => {
               onClick={() => setCurrentNewsIndex(
                 (prevIndex) => (prevIndex + 1) % displayItems.length
               )}
-              className="text-white/70 hover:text-white p-1"
+              className="text-gray-500 hover:text-primary p-1"
               aria-label="Next news"
             >
               <Icon name="arrow-right-s-line" />
