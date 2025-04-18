@@ -1,20 +1,141 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Icon } from "@/lib/icons";
 import logoImage from "@/assets/logo.jpg";
 
+// Navigation menu data
+const navigationItems = [
+  {
+    id: 'home',
+    name: 'Home',
+    href: '#home',
+    icon: 'home-4-line',
+    dropdown: null
+  },
+  {
+    id: 'about',
+    name: 'About',
+    href: '#about',
+    icon: 'information-line',
+    dropdown: [
+      { name: 'About JSSMVP', href: '#' },
+      { name: 'About JSSPN', href: '#' },
+      { name: 'Vision & Mission', href: '#' },
+      { name: 'Governance', href: '#' },
+      { name: 'Administration', href: '#' },
+      { name: 'Reports', href: '#' },
+      { name: 'Downloads', href: '#' },
+      { name: 'Contact Us', href: '#contact' }
+    ]
+  },
+  {
+    id: 'programmes',
+    name: 'Programmes',
+    href: '#academics',
+    icon: 'book-open-line',
+    dropdown: [
+      { name: 'Science & Humanities', href: '#' },
+      { name: 'Civil', href: '#' },
+      { name: 'Computer Science', href: '#' },
+      { name: 'Electrical & Electronics', href: '#' },
+      { name: 'Electronics & Communication', href: '#' },
+      { name: 'Mechatronics', href: '#' },
+      { name: 'Mechanical', href: '#' }
+    ]
+  },
+  {
+    id: 'academic',
+    name: 'Academic',
+    href: '#academics',
+    icon: 'graduation-cap-line',
+    dropdown: [
+      { name: 'Calender Of Events', href: '#' },
+      { name: 'Admission', href: '#' },
+      { name: 'Examination', href: '#' },
+      { name: 'Circulars', href: '#' }
+    ]
+  },
+  {
+    id: 'facilities',
+    name: 'Facilities',
+    href: '#campus',
+    icon: 'building-4-line',
+    dropdown: [
+      { name: 'Library', href: '#' },
+      { name: 'Sports', href: '#' }
+    ]
+  },
+  {
+    id: 'supports',
+    name: 'Supports',
+    href: '#campus',
+    icon: 'hand-heart-line',
+    dropdown: [
+      { name: 'Scholarship', href: '#' },
+      { name: 'Mentoring Scheme', href: '#' },
+      { name: 'Social Out Reach Program', href: '#' },
+      { name: 'Student Grievance', href: '#' },
+      { name: 'Gallery', href: '#' }
+    ]
+  },
+  {
+    id: 'placement',
+    name: 'Placement',
+    href: '#',
+    icon: 'briefcase-line',
+    dropdown: [
+      { name: 'Training', href: '#' },
+      { name: 'Placement', href: '#' }
+    ]
+  },
+  {
+    id: 'more',
+    name: 'More',
+    href: '#',
+    icon: 'more-line',
+    dropdown: [
+      { name: 'Mandatory Disclosure', href: '#' },
+      { name: 'IQAC', href: '#' },
+      { name: 'Media Coverage', href: '#' },
+      { name: 'Anti Ragging', href: '#' },
+      { name: 'Women Grievances', href: '#' },
+      { name: 'SC/CT Committee', href: '#' }
+    ]
+  },
+  {
+    id: 'contact',
+    name: 'Contact',
+    href: '#contact',
+    icon: 'contacts-line',
+    dropdown: null
+  }
+];
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const dropdownRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
 
+    const handleClickOutside = (event: MouseEvent) => {
+      if (activeDropdown && !dropdownRefs.current[activeDropdown]?.contains(event.target as Node)) {
+        setActiveDropdown(null);
+      }
+    };
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    document.addEventListener("mousedown", handleClickOutside);
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [activeDropdown]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -22,6 +143,10 @@ const Navbar = () => {
 
   const closeMenu = () => {
     setIsMenuOpen(false);
+  };
+  
+  const toggleDropdown = (id: string) => {
+    setActiveDropdown(activeDropdown === id ? null : id);
   };
 
   return (
@@ -57,48 +182,55 @@ const Navbar = () => {
               </a>
             </div>
             <div className="hidden md:flex space-x-6 font-poppins font-medium">
-              <a
-                href="#home"
-                className="py-2 text-primary border-b-2 border-primary flex items-center"
-              >
-                <Icon name="home-4-line mr-1" />
-                <span>Home</span>
-              </a>
-              <a
-                href="#about"
-                className="py-2 hover:text-primary hover:border-b-2 hover:border-primary transition-all flex items-center"
-              >
-                <Icon name="information-line mr-1" />
-                <span>About</span>
-              </a>
-              <a
-                href="#academics"
-                className="py-2 hover:text-primary hover:border-b-2 hover:border-primary transition-all flex items-center"
-              >
-                <Icon name="book-open-line mr-1" />
-                <span>Academics</span>
-              </a>
-              <a
-                href="#campus"
-                className="py-2 hover:text-primary hover:border-b-2 hover:border-primary transition-all flex items-center"
-              >
-                <Icon name="building-4-line mr-1" />
-                <span>Campus</span>
-              </a>
-              <a
-                href="#admissions"
-                className="py-2 hover:text-primary hover:border-b-2 hover:border-primary transition-all flex items-center"
-              >
-                <Icon name="user-add-line mr-1" />
-                <span>Admissions</span>
-              </a>
-              <a
-                href="#contact"
-                className="py-2 hover:text-primary hover:border-b-2 hover:border-primary transition-all flex items-center"
-              >
-                <Icon name="contacts-line mr-1" />
-                <span>Contact</span>
-              </a>
+              {navigationItems.map((item) => (
+                <div
+                  key={item.id}
+                  className="relative"
+                  ref={(el) => (dropdownRefs.current[item.id] = el)}
+                >
+                  <button
+                    onClick={() => toggleDropdown(item.id)}
+                    className={`py-2 flex items-center ${
+                      activeDropdown === item.id
+                        ? "text-primary border-b-2 border-primary"
+                        : "hover:text-primary hover:border-b-2 hover:border-primary transition-all"
+                    }`}
+                  >
+                    <Icon name={`${item.icon} mr-1`} />
+                    <span>{item.name}</span>
+                    {item.dropdown && (
+                      <Icon 
+                        name={`arrow-down-s-line ml-1 text-xs ${activeDropdown === item.id ? 'rotate-180' : ''}`} 
+                        className="transition-transform duration-200"
+                      />
+                    )}
+                  </button>
+                  
+                  {/* Dropdown Menu */}
+                  {item.dropdown && (
+                    <div
+                      className={`absolute left-0 mt-1 bg-white shadow-lg border-t-2 border-primary min-w-[220px] max-w-[300px] z-50 transform transition-all duration-200 origin-top ${
+                        activeDropdown === item.id
+                          ? "opacity-100 scale-100"
+                          : "opacity-0 scale-95 pointer-events-none"
+                      }`}
+                    >
+                      <div className="py-1">
+                        {item.dropdown.map((subItem, index) => (
+                          <a
+                            key={index}
+                            href={subItem.href}
+                            className="block px-4 py-3 text-gray-800 hover:bg-primary/10 hover:text-primary border-b border-gray-100 last:border-b-0"
+                            onClick={() => setActiveDropdown(null)}
+                          >
+                            {subItem.name}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -124,55 +256,63 @@ const Navbar = () => {
               <Icon name="close-line text-2xl" />
             </button>
           </div>
-          <div className="space-y-4 font-poppins">
-            <a
-              href="#home"
-              onClick={closeMenu}
-              className="flex items-center py-2 px-4 bg-primary/10 text-primary rounded-md"
-            >
-              <Icon name="home-4-line mr-2" />
-              <span>Home</span>
-            </a>
-            <a
-              href="#about"
-              onClick={closeMenu}
-              className="flex items-center py-2 px-4 hover:bg-primary/10 hover:text-primary rounded-md transition-all"
-            >
-              <Icon name="information-line mr-2" />
-              <span>About</span>
-            </a>
-            <a
-              href="#academics"
-              onClick={closeMenu}
-              className="flex items-center py-2 px-4 hover:bg-primary/10 hover:text-primary rounded-md transition-all"
-            >
-              <Icon name="book-open-line mr-2" />
-              <span>Academics</span>
-            </a>
-            <a
-              href="#campus"
-              onClick={closeMenu}
-              className="flex items-center py-2 px-4 hover:bg-primary/10 hover:text-primary rounded-md transition-all"
-            >
-              <Icon name="building-4-line mr-2" />
-              <span>Campus</span>
-            </a>
-            <a
-              href="#admissions"
-              onClick={closeMenu}
-              className="flex items-center py-2 px-4 hover:bg-primary/10 hover:text-primary rounded-md transition-all"
-            >
-              <Icon name="user-add-line mr-2" />
-              <span>Admissions</span>
-            </a>
-            <a
-              href="#contact"
-              onClick={closeMenu}
-              className="flex items-center py-2 px-4 hover:bg-primary/10 hover:text-primary rounded-md transition-all"
-            >
-              <Icon name="contacts-line mr-2" />
-              <span>Contact</span>
-            </a>
+          <div className="space-y-2 font-poppins overflow-y-auto max-h-[calc(100vh-100px)]">
+            {navigationItems.map((item) => (
+              <div key={item.id} className="mb-1">
+                {item.dropdown ? (
+                  <>
+                    <button
+                      onClick={() => toggleDropdown(item.id)}
+                      className={`flex items-center justify-between w-full py-2 px-4 rounded-md ${
+                        activeDropdown === item.id 
+                          ? "bg-primary/10 text-primary" 
+                          : "hover:bg-primary/10 hover:text-primary"
+                      }`}
+                    >
+                      <div className="flex items-center">
+                        <Icon name={`${item.icon} mr-2`} />
+                        <span>{item.name}</span>
+                      </div>
+                      <Icon 
+                        name={`arrow-down-s-line ${activeDropdown === item.id ? 'rotate-180' : ''}`}
+                        className="transition-transform duration-200" 
+                      />
+                    </button>
+                    
+                    {/* Mobile Dropdown */}
+                    <div 
+                      className={`pl-6 mt-1 overflow-hidden transition-all duration-200 ${
+                        activeDropdown === item.id 
+                          ? "max-h-[1000px] opacity-100" 
+                          : "max-h-0 opacity-0"
+                      }`}
+                    >
+                      <div className="border-l-2 border-primary/30 pl-2 py-1">
+                        {item.dropdown.map((subItem, index) => (
+                          <a
+                            key={index}
+                            href={subItem.href}
+                            onClick={closeMenu}
+                            className="block py-2 px-3 text-gray-700 hover:text-primary rounded-md text-sm"
+                          >
+                            {subItem.name}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <a
+                    href={item.href}
+                    onClick={closeMenu}
+                    className="flex items-center py-2 px-4 hover:bg-primary/10 hover:text-primary rounded-md transition-all"
+                  >
+                    <Icon name={`${item.icon} mr-2`} />
+                    <span>{item.name}</span>
+                  </a>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </motion.div>
