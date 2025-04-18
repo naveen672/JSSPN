@@ -11,6 +11,7 @@ import AboutJSSMVP from "@/pages/AboutJSSMVP";
 import AboutJSSPN from "@/pages/AboutJSSPN";
 import VisionMission from "@/pages/VisionMission";
 import Governance from "@/pages/Governance";
+import Administration from "@/pages/Administration";
 
 function Router() {
   return (
@@ -20,6 +21,7 @@ function Router() {
       <Route path="/about/jss-polytechnic-nanjangud" component={AboutJSSPN} />
       <Route path="/about/vision-mission" component={VisionMission} />
       <Route path="/about/governance" component={Governance} />
+      <Route path="/about/administration" component={Administration} />
       <Route path="/programs/:slug" component={ProgramPage} />
       <Route path="/:category/:slug" component={GenericPage} />
       <Route component={NotFound} />

@@ -36,7 +36,7 @@ const navigationItems: NavigationItem[] = [
       { name: 'About JSSPN', href: '/about/jss-polytechnic-nanjangud' },
       { name: 'Vision & Mission', href: '/about/vision-mission' },
       { name: 'Governance', href: '/about/governance' },
-      { name: 'Administration', href: '#' },
+      { name: 'Administration', href: '/about/administration' },
       { name: 'Reports', href: '#' },
       { name: 'Downloads', href: '#' },
       { name: 'Contact Us', href: '#contact' }
