@@ -2,11 +2,13 @@ import { motion } from "framer-motion";
 import { Icon } from "@/lib/icons";
 import { contactInfo, socialLinks } from "@/lib/constants";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import GoogleMap from "@/components/GoogleMap";
 
 const ContactSection = () => {
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation<HTMLDivElement>();
   const { ref: infoRef, isVisible: infoVisible } = useScrollAnimation<HTMLDivElement>();
   const { ref: formRef, isVisible: formVisible } = useScrollAnimation<HTMLDivElement>();
+  const { ref: mapRef, isVisible: mapVisible } = useScrollAnimation<HTMLDivElement>();
 
   return (
     <section id="contact" className="py-20 bg-primary text-white relative">
@@ -20,6 +22,7 @@ const ContactSection = () => {
           className="text-center max-w-2xl mx-auto mb-16"
         >
           <span className="inline-block bg-white/20 text-white font-medium px-4 py-1 rounded-full text-sm mb-4">
+            <Icon name="contacts-line mr-2" />
             Contact Us
           </span>
           <h2 className="font-poppins font-bold text-3xl md:text-4xl text-white mb-4">
@@ -59,12 +62,14 @@ const ContactSection = () => {
         >
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="p-8">
-              <h3 className="font-poppins font-semibold text-2xl text-primary mb-6">
+              <h3 className="font-poppins font-semibold text-2xl text-primary mb-6 flex items-center">
+                <Icon name="mail-send-line mr-2 text-primary" />
                 Send Us a Message
               </h3>
               <form>
                 <div className="mb-4">
-                  <label htmlFor="name" className="block text-gray-700 mb-2">
+                  <label htmlFor="name" className="block text-gray-700 mb-2 flex items-center">
+                    <Icon name="user-line mr-2 text-gray-500" />
                     Your Name
                   </label>
                   <input
@@ -76,7 +81,8 @@ const ContactSection = () => {
                 </div>
 
                 <div className="mb-4">
-                  <label htmlFor="email" className="block text-gray-700 mb-2">
+                  <label htmlFor="email" className="block text-gray-700 mb-2 flex items-center">
+                    <Icon name="mail-line mr-2 text-gray-500" />
                     Email Address
                   </label>
                   <input
@@ -88,7 +94,8 @@ const ContactSection = () => {
                 </div>
 
                 <div className="mb-4">
-                  <label htmlFor="subject" className="block text-gray-700 mb-2">
+                  <label htmlFor="subject" className="block text-gray-700 mb-2 flex items-center">
+                    <Icon name="chat-1-line mr-2 text-gray-500" />
                     Subject
                   </label>
                   <input
@@ -100,7 +107,8 @@ const ContactSection = () => {
                 </div>
 
                 <div className="mb-6">
-                  <label htmlFor="message" className="block text-gray-700 mb-2">
+                  <label htmlFor="message" className="block text-gray-700 mb-2 flex items-center">
+                    <Icon name="chat-3-line mr-2 text-gray-500" />
                     Message
                   </label>
                   <textarea
@@ -113,9 +121,10 @@ const ContactSection = () => {
 
                 <button
                   type="submit"
-                  className="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-md font-medium transition-all w-full"
+                  className="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-md font-medium transition-all w-full flex items-center justify-center"
                 >
-                  Send Message
+                  <Icon name="send-plane-line mr-2" />
+                  <span>Send Message</span>
                 </button>
               </form>
             </div>
@@ -141,6 +150,39 @@ const ContactSection = () => {
                   ))}
                 </div>
               </div>
+            </div>
+          </div>
+        </motion.div>
+        
+        <motion.div
+          ref={mapRef}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: mapVisible ? 1 : 0, y: mapVisible ? 0 : 20 }}
+          transition={{ duration: 0.5 }}
+          className="mt-16"
+        >
+          <div className="bg-white p-6 rounded-xl shadow-lg">
+            <h3 className="font-poppins font-semibold text-2xl text-primary mb-4 flex items-center">
+              <Icon name="map-pin-line mr-2 text-primary" />
+              <span>Visit Our Campus</span>
+            </h3>
+            <p className="text-gray-700 mb-6">
+              JSS Polytechnic, Nanjangud is strategically located with easy access to public transportation. 
+              Use the map below to find directions to our campus.
+            </p>
+            
+            <GoogleMap />
+            
+            <div className="mt-4 flex justify-end">
+              <a 
+                href="https://maps.app.goo.gl/htjVxudFSL7P4yFL8" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center text-primary hover:text-primary/80 transition-colors"
+              >
+                <span>View Larger Map</span>
+                <Icon name="external-link-line ml-2" />
+              </a>
             </div>
           </div>
         </motion.div>

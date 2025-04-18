@@ -18,11 +18,12 @@ const Home = () => {
   useEffect(() => {
     // Ensure smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
+      anchor.addEventListener('click', (e: Event) => {
         e.preventDefault();
         
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
+        const link = e.currentTarget as HTMLAnchorElement;
+        const targetId = link.getAttribute('href');
+        if (!targetId || targetId === '#') return;
         
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
