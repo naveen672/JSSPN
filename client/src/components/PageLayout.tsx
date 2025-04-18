@@ -16,7 +16,7 @@ const PageLayout = ({ children }: PageLayoutProps) => {
       <Navbar />
       
       <motion.main 
-        className="flex-grow"
+        className="flex-grow pt-[120px]" /* Added padding-top to account for navbar + flash news */
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
