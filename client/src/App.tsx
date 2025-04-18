@@ -12,6 +12,7 @@ import AboutJSSPN from "@/pages/AboutJSSPN";
 import VisionMission from "@/pages/VisionMission";
 import Governance from "@/pages/Governance";
 import Administration from "@/pages/Administration";
+import Reports from "@/pages/Reports";
 
 function Router() {
   return (
@@ -22,6 +23,7 @@ function Router() {
       <Route path="/about/vision-mission" component={VisionMission} />
       <Route path="/about/governance" component={Governance} />
       <Route path="/about/administration" component={Administration} />
+      <Route path="/about/reports" component={Reports} />
       <Route path="/programs/:slug" component={ProgramPage} />
       <Route path="/:category/:slug" component={GenericPage} />
       <Route component={NotFound} />

@@ -37,7 +37,7 @@ const navigationItems: NavigationItem[] = [
       { name: 'Vision & Mission', href: '/about/vision-mission' },
       { name: 'Governance', href: '/about/governance' },
       { name: 'Administration', href: '/about/administration' },
-      { name: 'Reports', href: '#' },
+      { name: 'Reports', href: '/about/reports' },
       { name: 'Downloads', href: '#' },
       { name: 'Contact Us', href: '#contact' }
     ]
