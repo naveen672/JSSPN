@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Icon } from "@/lib/icons";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import jssImage from "@assets/jss.jpg";
 
 const AboutSection = () => {
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation<HTMLDivElement>();
@@ -106,8 +107,8 @@ const AboutSection = () => {
                 </div>
               </div>
               <img 
-                src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-                alt="Students in laboratory" 
+                src={jssImage} 
+                alt="JSS Polytechnic Building" 
                 className="w-full h-auto transform group-hover:scale-105 transition-transform duration-300"
               />
             </div>
