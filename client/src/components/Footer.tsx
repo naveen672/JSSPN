@@ -6,6 +6,8 @@ import {
   socialLinks,
   footerLinks
 } from "@/lib/constants";
+import VisitorCounter from "@/components/VisitorCounter";
+import logoImage from "@/assets/logo.jpg";
 
 const Footer = () => {
   return (
@@ -14,8 +16,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
             <div className="flex items-center mb-6">
-              <div className="w-10 h-10 bg-white rounded-md flex items-center justify-center mr-3">
-                <span className="text-primary font-poppins font-bold">JSS</span>
+              <div className="w-12 h-12 bg-white rounded-md flex items-center justify-center mr-3 overflow-hidden">
+                <img src={logoImage} alt="JSS Polytechnic Logo" className="w-full h-full object-contain" />
               </div>
               <div>
                 <span className="font-poppins font-semibold text-white text-lg block leading-tight">
@@ -27,7 +29,7 @@ const Footer = () => {
             <p className="text-gray-400 mb-6">
               Providing quality technical education since 1965, creating industry-ready professionals through practical training and innovative teaching methods.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 mb-6">
               {socialLinks.map((link) => (
                 <a
                   key={link.id}
@@ -38,6 +40,8 @@ const Footer = () => {
                 </a>
               ))}
             </div>
+            
+            <VisitorCounter />
           </div>
 
           <div>
@@ -47,9 +51,10 @@ const Footer = () => {
                 <li key={link.id}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="flex items-center text-gray-400 hover:text-accent hover:pl-2 transition-all duration-300"
                   >
-                    {link.name}
+                    <Icon name="arrow-right-s-line mr-2 text-primary" />
+                    <span>{link.name}</span>
                   </a>
                 </li>
               ))}
@@ -63,9 +68,10 @@ const Footer = () => {
                 <li key={link.id}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="flex items-center text-gray-400 hover:text-accent hover:pl-2 transition-all duration-300"
                   >
-                    {link.name}
+                    <Icon name="graduation-cap-line mr-2 text-primary" />
+                    <span>{link.name}</span>
                   </a>
                 </li>
               ))}
@@ -82,6 +88,16 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
+            
+            <a 
+              href="https://maps.app.goo.gl/htjVxudFSL7P4yFL8" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center text-primary mt-4 hover:text-accent transition-colors"
+            >
+              <Icon name="map-2-line mr-2" />
+              <span>View on Google Maps</span>
+            </a>
           </div>
         </div>
 
@@ -95,7 +111,7 @@ const Footer = () => {
                 <a
                   key={link.id}
                   href={link.href}
-                  className="text-gray-500 text-sm hover:text-white transition-colors"
+                  className="text-gray-500 text-sm hover:text-accent transition-colors"
                 >
                   {link.name}
                 </a>

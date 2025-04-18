@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import SplashScreen from "@/components/SplashScreen";
 import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/HeroSection";
+import FlashNews from "@/components/FlashNews";
+import ImageSlider from "@/components/ImageSlider";
 import StatsSection from "@/components/StatsSection";
 import AboutSection from "@/components/AboutSection";
 import AcademicsSection from "@/components/AcademicsSection";
@@ -45,7 +46,10 @@ const Home = () => {
   return (
     <div className="font-inter text-text bg-background overflow-x-hidden">
       <Navbar />
-      <HeroSection />
+      <FlashNews />
+      <div id="home">
+        <ImageSlider />
+      </div>
       <StatsSection />
       <AboutSection />
       <AcademicsSection />
