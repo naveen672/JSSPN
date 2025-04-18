@@ -37,10 +37,20 @@ const ContactUs = () => {
     },
     onSuccess: () => {
       toast({
-        title: "Message Sent",
-        description: "Thank you for your message. We'll get back to you soon!",
+        title: "Message Sent Successfully",
+        description: "Your message has been recorded. Thank you for contacting JSS Polytechnic!",
         variant: "default",
       });
+      
+      // Show a second toast about email
+      setTimeout(() => {
+        toast({
+          title: "Email Confirmation",
+          description: "We try to send a confirmation email to the address you provided. If you don't receive it, your submission is still recorded in our system.",
+          variant: "default",
+          duration: 8000,
+        });
+      }, 1000);
       
       // Reset form fields
       setFormData({
