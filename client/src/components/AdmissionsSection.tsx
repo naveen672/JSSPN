@@ -17,14 +17,14 @@ const AdmissionsSection = () => {
   const { ref: contactRef, isVisible: contactVisible } = useScrollAnimation<HTMLDivElement>();
 
   return (
-    <section id="admissions" className="py-20 relative overflow-hidden">
+    <section id="admissions" className="py-20 relative overflow-hidden bg-gray-50">
       <div className="absolute inset-0 bg-primary/5 z-0"></div>
       
       {/* Decorative elements */}
-      <div className="absolute top-10 right-10 text-primary/10 hidden lg:block">
+      <div className="absolute top-10 right-10 text-amber-400/20 hidden lg:block">
         <Icon name="graduation-cap-line text-8xl" />
       </div>
-      <div className="absolute bottom-10 left-10 text-secondary/10 hidden lg:block">
+      <div className="absolute bottom-10 left-10 text-primary/10 hidden lg:block">
         <Icon name="book-open-line text-8xl" />
       </div>
       
@@ -36,16 +36,16 @@ const AdmissionsSection = () => {
           transition={{ duration: 0.5 }}
           className="text-center max-w-2xl mx-auto mb-16"
         >
-          <span className="inline-flex items-center bg-primary/10 text-primary font-medium px-4 py-1 rounded-full text-sm mb-4">
+          <span className="inline-flex items-center bg-amber-400/10 text-amber-600 font-medium px-4 py-1 rounded-full text-sm mb-4 justify-center mx-auto w-fit">
             <Icon name="user-add-line mr-1" />
             <span>Admissions Open</span>
           </span>
-          <h2 className="font-poppins font-bold text-3xl md:text-4xl text-text mb-4 flex items-center justify-center">
-            <Icon name="building-2-line mr-3 text-primary" />
+          <h2 className="font-poppins font-bold text-3xl md:text-4xl text-primary mb-4 flex items-center justify-center">
+            <Icon name="building-2-line mr-3 text-amber-500" />
             <span>Join Our Institution</span>
           </h2>
           <p className="text-gray-600 flex items-center justify-center">
-            <Icon name="road-map-line mr-2 text-gray-400" />
+            <Icon name="road-map-line mr-2 text-amber-500" />
             <span>Take the first step towards a rewarding technical career by enrolling in our diploma programs.</span>
           </p>
         </motion.div>
