@@ -5,9 +5,7 @@ import { motion } from "framer-motion";
 import { Icon } from "@/lib/icons";
 
 // Import the principal photo
-// Note: This is a placeholder as we can't decode the image file
-// In production, you'd reference it correctly 
-// import principalImage from "@assets/nvs.jpeg";
+import principalImage from "@assets/nvs.jpeg";
 
 const Administration = () => {
   useEffect(() => {
@@ -70,9 +68,11 @@ const Administration = () => {
                 <div className="flex flex-col md:flex-row">
                   <div className="md:w-1/3 bg-primary/5 p-6 flex flex-col items-center justify-center">
                     <div className="w-40 h-40 rounded-full bg-gray-200 overflow-hidden border-4 border-amber-400/30 mb-4 shadow-md">
-                      <div className="w-full h-full flex items-center justify-center text-gray-400 bg-gray-100">
-                        <Icon name="user-3-line text-5xl" />
-                      </div>
+                      <img 
+                        src={principalImage} 
+                        alt="Sri Vidyashakar N - Principal" 
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                     <h3 className="font-poppins font-bold text-xl text-primary text-center">Sri.Vidyashakar N</h3>
                     <p className="text-gray-600 text-center mt-1">BE, M.Tech.</p>
