@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Icon } from "@/lib/icons";
 
 const heroSlides = [
@@ -55,27 +55,27 @@ const HeroSection = () => {
   return (
     <section id="home" className="relative h-[80vh] overflow-hidden">
       {/* Slider Background */}
-      <AnimatePresence mode="wait">
-        <motion.div 
-          key={currentSlide}
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -100 }}
-          transition={{ duration: 0.8 }}
-          className="absolute inset-0"
-        >
-          <div 
+      <div className="absolute inset-0 overflow-hidden">
+        {heroSlides.map((slide, index) => (
+          <motion.div 
+            key={index}
+            initial={false}
+            animate={{ 
+              opacity: currentSlide === index ? 1 : 0,
+              zIndex: currentSlide === index ? 1 : 0
+            }}
+            transition={{ opacity: { duration: 0.8, ease: "easeInOut" } }}
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${heroSlides[currentSlide].image})` }}
-          ></div>
-        </motion.div>
-      </AnimatePresence>
+            style={{ backgroundImage: `url(${slide.image})` }}
+          />
+        ))}
+      </div>
       
       {/* Slide navigation */}
       <div className="absolute top-1/2 transform -translate-y-1/2 left-4 z-10">
         <button 
           onClick={prevSlide}
-          className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition-all"
+          className="bg-primary/30 hover:bg-primary/40 backdrop-blur-sm text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition-all"
           aria-label="Previous slide"
         >
           <Icon name="arrow-left-line" />
@@ -84,7 +84,7 @@ const HeroSection = () => {
       <div className="absolute top-1/2 transform -translate-y-1/2 right-4 z-10">
         <button 
           onClick={nextSlide}
-          className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition-all"
+          className="bg-primary/30 hover:bg-primary/40 backdrop-blur-sm text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition-all"
           aria-label="Next slide"
         >
           <Icon name="arrow-right-line" />
@@ -106,70 +106,74 @@ const HeroSection = () => {
       </div>
       
       <div className="relative container mx-auto h-full px-4 flex items-center">
-        <AnimatePresence mode="wait">
-          <motion.div 
-            key={currentSlide}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.5 }}
-            className="max-w-3xl"
-          >
-            <motion.span
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="inline-flex items-center bg-amber-400 text-gray-900 font-medium px-4 py-1 rounded-full text-sm mb-4"
-            >
-              <Icon name="calendar-event-line mr-1" />
-              Established 1965
-            </motion.span>
-            
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="font-poppins font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6 text-shadow-lg"
-            >
-              {heroSlides[currentSlide].heading.split('\n').map((line, i) => (
-                <span key={i} className="block">{line}</span>
-              ))}
-            </motion.h1>
-            
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-              className="text-white text-lg md:text-xl mb-8 max-w-xl text-shadow-md flex items-start"
-            >
-              <Icon name="focus-3-line mr-2 mt-1 flex-shrink-0" />
-              <span>{heroSlides[currentSlide].subheading}</span>
-            </motion.p>
-            
+        <div className="max-w-3xl">
+          {heroSlides.map((slide, slideIndex) => (
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
-              transition={{ duration: 0.5, delay: 0.8 }}
-              className="flex flex-wrap gap-4"
+              key={slideIndex}
+              initial={false}
+              animate={{ 
+                opacity: currentSlide === slideIndex ? 1 : 0,
+                filter: currentSlide === slideIndex ? "blur(0px)" : "blur(10px)"
+              }}
+              transition={{ opacity: { duration: 0.5 }, filter: { duration: 0.5 } }}
+              style={{ display: currentSlide === slideIndex ? 'block' : 'none' }}
             >
-              <a 
-                href="#academics" 
-                className="bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-gray-900 px-6 py-3 rounded-md font-medium transition-all transform hover:scale-105 flex items-center shadow-md"
+              <motion.span
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="inline-flex items-center bg-amber-400 text-gray-900 font-medium px-4 py-1 rounded-full text-sm mb-4"
               >
-                <Icon name="book-open-line mr-2" />
-                <span>Explore Programs</span>
-                <Icon name="arrow-right-line ml-2" />
-              </a>
-              <a 
-                href="#campus" 
-                className="bg-transparent hover:bg-white/10 text-white border-2 border-white/70 hover:border-white px-6 py-3 rounded-md font-medium transition-all shadow-md flex items-center"
+                <Icon name="calendar-event-line mr-1" />
+                Established 1965
+              </motion.span>
+              
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="font-poppins font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6 text-shadow-lg"
               >
-                <Icon name="vidicon-line mr-2" />
-                <span>Virtual Tour</span>
-              </a>
+                {slide.heading.split('\n').map((line, i) => (
+                  <span key={i} className="block">{line}</span>
+                ))}
+              </motion.h1>
+              
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+                className="text-white text-lg md:text-xl mb-8 max-w-xl text-shadow-md flex items-start"
+              >
+                <Icon name="focus-3-line mr-2 mt-1 flex-shrink-0" />
+                <span>{slide.subheading}</span>
+              </motion.p>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+                className="flex flex-wrap gap-4"
+              >
+                <a 
+                  href="#academics" 
+                  className="bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-gray-900 px-6 py-3 rounded-md font-medium transition-all transform hover:scale-105 flex items-center shadow-md"
+                >
+                  <Icon name="book-open-line mr-2" />
+                  <span>Explore Programs</span>
+                  <Icon name="arrow-right-line ml-2" />
+                </a>
+                <a 
+                  href="#campus" 
+                  className="bg-transparent hover:bg-white/10 text-white border-2 border-white/70 hover:border-white px-6 py-3 rounded-md font-medium transition-all shadow-md flex items-center"
+                >
+                  <Icon name="vidicon-line mr-2" />
+                  <span>Virtual Tour</span>
+                </a>
+              </motion.div>
             </motion.div>
-          </motion.div>
-        </AnimatePresence>
+          ))}
+        </div>
       </div>
       <div className="absolute bottom-0 left-0 w-full">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" fill="#FFFFFF">
