@@ -27,8 +27,9 @@ const Home = () => {
         
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
+          const top = targetElement.getBoundingClientRect().top + window.pageYOffset - 80; // Offset for fixed header
           window.scrollTo({
-            top: targetElement.offsetTop - 80, // Offset for fixed header
+            top,
             behavior: 'smooth'
           });
         }
