@@ -82,8 +82,14 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-primary text-white relative">
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')] bg-cover bg-center opacity-10"></div>
+    <section id="contact" className="py-20 bg-[#0a2540] text-white relative">
+      {/* Subtle pattern background instead of image */}
+      <div className="absolute inset-0 opacity-10" 
+        style={{
+          backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
+          backgroundSize: '60px 60px'
+        }}
+      ></div>
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
           ref={headerRef}
@@ -205,12 +211,12 @@ const ContactSection = () => {
                   type="submit"
                   disabled={contactMutation.isPending}
                   className={`${
-                    contactMutation.isPending ? 'bg-gray-500' : 'bg-primary hover:bg-primary/90'
-                  } text-white px-6 py-3 rounded-md font-medium transition-all w-full flex items-center justify-center`}
+                    contactMutation.isPending ? 'bg-gray-500' : 'bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600'
+                  } text-gray-900 px-6 py-3 rounded-md font-medium transition-all w-full flex items-center justify-center shadow-md`}
                 >
                   {contactMutation.isPending ? (
                     <>
-                      <Icon name="loader-4-line mr-2 animate-spin" />
+                      <Icon name="loader-4-line mr-2 animate-spin text-gray-900" />
                       <span>Sending...</span>
                     </>
                   ) : (
@@ -223,7 +229,7 @@ const ContactSection = () => {
               </form>
             </div>
 
-            <div className="bg-gradient-to-br from-primary to-secondary h-full flex items-center justify-center p-8">
+            <div className="bg-gradient-to-br from-[#0a2540] to-[#103464] h-full flex items-center justify-center p-8">
               <div className="text-center text-white">
                 <div className="w-20 h-20 bg-white/20 rounded-full mx-auto flex items-center justify-center mb-6">
                   <Icon name="customer-service-2-line text-3xl text-white" />

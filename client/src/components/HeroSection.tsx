@@ -15,15 +15,25 @@ const HeroSection = () => {
 
   return (
     <section id="home" className="relative h-[80vh] overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-secondary/80"></div>
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1986&q=80')] bg-cover bg-center"></div>
+      {/* Modern professional background */}
+      <div className="absolute inset-0 bg-[#0a2540] bg-opacity-90"></div>
+      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1986&q=80')] bg-cover bg-center opacity-20"></div>
+      
+      {/* Geometric pattern overlay for modern look */}
+      <div className="absolute inset-0 opacity-10" 
+        style={{
+          backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
+          backgroundSize: '60px 60px'
+        }}
+      ></div>
+      
       <div className="relative container mx-auto h-full px-4 flex items-center">
         <div className="max-w-3xl">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="inline-block bg-accent/90 text-primary font-medium px-4 py-1 rounded-full text-sm mb-4"
+            className="inline-block bg-amber-400 text-gray-900 font-medium px-4 py-1 rounded-full text-sm mb-4"
           >
             Established 1965
           </motion.span>
@@ -41,7 +51,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="text-white/90 text-lg md:text-xl mb-8 max-w-xl"
+            className="text-gray-200 text-lg md:text-xl mb-8 max-w-xl"
           >
             JSS Polytechnic Nanjangud offers industry-focused technical education with state-of-the-art facilities and experienced faculty.
           </motion.p>
@@ -54,14 +64,14 @@ const HeroSection = () => {
           >
             <a 
               href="#academics" 
-              className="bg-white hover:bg-gray-100 text-primary px-6 py-3 rounded-md font-medium transition-all transform hover:scale-105 flex items-center"
+              className="bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-gray-900 px-6 py-3 rounded-md font-medium transition-all transform hover:scale-105 flex items-center shadow-md"
             >
               <span>Explore Programs</span>
               <Icon name="arrow-right-line ml-2" />
             </a>
             <a 
               href="#campus" 
-              className="bg-transparent hover:bg-white/10 text-white border-2 border-white px-6 py-3 rounded-md font-medium transition-all"
+              className="bg-transparent hover:bg-white/10 text-white border-2 border-white/70 hover:border-white px-6 py-3 rounded-md font-medium transition-all shadow-md"
             >
               Virtual Tour
             </a>
