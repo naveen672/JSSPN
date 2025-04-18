@@ -108,19 +108,28 @@ const ContactSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: infoVisible ? 1 : 0, y: infoVisible ? 0 : 20 }}
           transition={{ duration: 0.5 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto"
         >
-          {contactInfo.map((info) => (
-            <div key={info.id} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-              <div className="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center mb-4">
-                <Icon name={`${info.icon} text-2xl text-white`} />
-              </div>
-              <h3 className="font-poppins font-semibold text-xl mb-3">{info.title}</h3>
-              {info.lines.map((line, index) => (
-                <p key={index} className="text-white/80 mb-2">{line}</p>
-              ))}
+          <div className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20 flex items-center space-x-3">
+            <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+              <Icon name="map-pin-line text-lg text-white" />
             </div>
-          ))}
+            <span className="text-white text-sm">JSS Polytechnic, Suttur Road, Nanjangud</span>
+          </div>
+          
+          <div className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20 flex items-center space-x-3">
+            <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+              <Icon name="phone-line text-lg text-white" />
+            </div>
+            <span className="text-white text-sm">+91 8212482800</span>
+          </div>
+          
+          <div className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20 flex items-center space-x-3">
+            <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+              <Icon name="mail-line text-lg text-white" />
+            </div>
+            <span className="text-white text-sm">principal@jssnpoly.org</span>
+          </div>
         </motion.div>
 
         <motion.div
