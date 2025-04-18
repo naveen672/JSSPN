@@ -130,48 +130,50 @@ const ContactSection = () => {
           transition={{ duration: 0.5 }}
           className="bg-white rounded-xl shadow-lg mt-12 max-w-4xl mx-auto overflow-hidden"
         >
-          <div className="grid grid-cols-1 md:grid-cols-2">
-            <div className="p-8">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-0">
+            <div className="md:col-span-7 p-8">
               <h3 className="font-poppins font-semibold text-2xl text-primary mb-6 flex items-center">
                 <Icon name="mail-send-line mr-2 text-primary" />
                 Send Us a Message
               </h3>
-              <form onSubmit={handleSubmit}>
-                <div className="mb-4">
-                  <label htmlFor="name" className="block text-gray-700 mb-2 flex items-center">
-                    <Icon name="user-line mr-2 text-gray-500" />
-                    Your Name <span className="text-red-500 ml-1">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
-                    placeholder="Enter your name"
-                    required
-                  />
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="name" className="block text-gray-700 mb-2 font-medium flex items-center">
+                      <Icon name="user-line mr-2 text-primary" />
+                      Your Name <span className="text-red-500 ml-1">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary shadow-sm"
+                      placeholder="Enter your name"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="email" className="block text-gray-700 mb-2 font-medium flex items-center">
+                      <Icon name="mail-line mr-2 text-primary" />
+                      Email Address <span className="text-red-500 ml-1">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary shadow-sm"
+                      placeholder="Enter your email"
+                      required
+                    />
+                  </div>
                 </div>
 
-                <div className="mb-4">
-                  <label htmlFor="email" className="block text-gray-700 mb-2 flex items-center">
-                    <Icon name="mail-line mr-2 text-gray-500" />
-                    Email Address <span className="text-red-500 ml-1">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
-                    placeholder="Enter your email"
-                    required
-                  />
-                </div>
-
-                <div className="mb-4">
-                  <label htmlFor="subject" className="block text-gray-700 mb-2 flex items-center">
-                    <Icon name="chat-1-line mr-2 text-gray-500" />
+                <div>
+                  <label htmlFor="subject" className="block text-gray-700 mb-2 font-medium flex items-center">
+                    <Icon name="chat-1-line mr-2 text-primary" />
                     Subject
                   </label>
                   <input
@@ -179,22 +181,22 @@ const ContactSection = () => {
                     id="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary shadow-sm"
                     placeholder="Enter subject"
                   />
                 </div>
 
-                <div className="mb-6">
-                  <label htmlFor="message" className="block text-gray-700 mb-2 flex items-center">
-                    <Icon name="chat-3-line mr-2 text-gray-500" />
+                <div>
+                  <label htmlFor="message" className="block text-gray-700 mb-2 font-medium flex items-center">
+                    <Icon name="chat-3-line mr-2 text-primary" />
                     Message <span className="text-red-500 ml-1">*</span>
                   </label>
                   <textarea
                     id="message"
                     value={formData.message}
                     onChange={handleChange}
-                    rows={4}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
+                    rows={5}
+                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary shadow-sm"
                     placeholder="Enter your message"
                     required
                   ></textarea>
@@ -204,12 +206,12 @@ const ContactSection = () => {
                   type="submit"
                   disabled={contactMutation.isPending}
                   className={`${
-                    contactMutation.isPending ? 'bg-gray-500' : 'bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600'
-                  } text-gray-900 px-6 py-3 rounded-md font-medium transition-all w-full flex items-center justify-center shadow-md`}
+                    contactMutation.isPending ? 'bg-gray-500' : 'bg-primary hover:bg-primary/90'
+                  } text-white px-6 py-3 rounded-lg font-medium transition-all w-full flex items-center justify-center shadow-md`}
                 >
                   {contactMutation.isPending ? (
                     <>
-                      <Icon name="loader-4-line mr-2 animate-spin text-gray-900" />
+                      <Icon name="loader-4-line mr-2 animate-spin" />
                       <span>Sending...</span>
                     </>
                   ) : (
@@ -222,21 +224,34 @@ const ContactSection = () => {
               </form>
             </div>
 
-            <div className="bg-gradient-to-br from-[#183b6c] to-[#0c2444] h-full flex items-center justify-center p-8">
-              <div className="text-center text-white">
-                <div className="w-20 h-20 bg-white/20 rounded-full mx-auto flex items-center justify-center mb-6">
-                  <Icon name="customer-service-2-line text-3xl text-white" />
+            <div className="md:col-span-5 bg-gradient-to-br from-[#183b6c] to-[#0c2444] flex items-center">
+              <div className="text-white p-8">
+                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-6">
+                  <Icon name="customer-service-2-line text-2xl text-white" />
                 </div>
-                <h3 className="font-poppins font-semibold text-2xl mb-4">We're Here to Help</h3>
-                <p className="text-white/90 mb-6">
-                  Our support team is available Monday to Friday, 9:00 AM to 5:00 PM to assist you with any queries.
-                </p>
-                <div className="flex justify-center space-x-4">
+                <h3 className="font-poppins font-semibold text-2xl mb-4">Contact Information</h3>
+                <ul className="space-y-4 mb-8">
+                  <li className="flex items-start">
+                    <Icon name="map-pin-line text-xl mr-3 mt-1 text-white/80" />
+                    <span className="text-white/90">JSS Polytechnic, Suttur Road, Nanjangud - 571301, Karnataka</span>
+                  </li>
+                  <li className="flex items-center">
+                    <Icon name="phone-line text-xl mr-3 text-white/80" />
+                    <span className="text-white/90">+91 8212482800</span>
+                  </li>
+                  <li className="flex items-center">
+                    <Icon name="mail-line text-xl mr-3 text-white/80" />
+                    <span className="text-white/90">principal@jssnpoly.org</span>
+                  </li>
+                </ul>
+                
+                <h4 className="font-semibold text-lg mb-3">Follow Us</h4>
+                <div className="flex space-x-3">
                   {socialLinks.map((link) => (
                     <a
                       key={link.id}
                       href={link.href}
-                      className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-all"
+                      className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all"
                     >
                       <Icon name={`${link.icon} text-white`} />
                     </a>

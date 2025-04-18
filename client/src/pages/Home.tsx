@@ -7,7 +7,6 @@ import StatsSection from "@/components/StatsSection";
 import AboutSection from "@/components/AboutSection";
 import AcademicsSection from "@/components/AcademicsSection";
 import CampusSection from "@/components/CampusSection";
-import AdmissionsSection from "@/components/AdmissionsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
@@ -56,7 +55,6 @@ const Home = () => {
       <AboutSection />
       <AcademicsSection />
       <CampusSection />
-      <AdmissionsSection />
       <ContactSection />
       <Footer />
       <BackToTop />
