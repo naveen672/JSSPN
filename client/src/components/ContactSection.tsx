@@ -82,14 +82,9 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-[#0a2540] text-white relative">
-      {/* Subtle pattern background instead of image */}
-      <div className="absolute inset-0 opacity-10" 
-        style={{
-          backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
-          backgroundSize: '60px 60px'
-        }}
-      ></div>
+    <section id="contact" className="py-20 bg-gradient-to-r from-[#1a365d] to-[#2d3748] text-white relative">
+      {/* Dark and elegant texture overlay */}
+      <div className="absolute inset-0 opacity-5 bg-[url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2256%22 height=%2256%22 viewBox=%220 0 56 56%22%3E%3Cpath fill=%22%23fff%22 d=%22M28 0L0 28l28 28 28-28L28 0zm0 51.75L4.25 28 28 4.25 51.75 28 28 51.75z%22/%3E%3C/svg%3E')] bg-repeat"></div>
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
           ref={headerRef}
@@ -229,7 +224,7 @@ const ContactSection = () => {
               </form>
             </div>
 
-            <div className="bg-gradient-to-br from-[#0a2540] to-[#103464] h-full flex items-center justify-center p-8">
+            <div className="bg-gradient-to-br from-[#1a365d] to-[#2d3748] h-full flex items-center justify-center p-8">
               <div className="text-center text-white">
                 <div className="w-20 h-20 bg-white/20 rounded-full mx-auto flex items-center justify-center mb-6">
                   <Icon name="customer-service-2-line text-3xl text-white" />
