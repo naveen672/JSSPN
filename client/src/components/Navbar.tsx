@@ -101,13 +101,6 @@ const navigationItems = [
       { name: 'Women Grievances', href: '#' },
       { name: 'SC/CT Committee', href: '#' }
     ]
-  },
-  {
-    id: 'contact',
-    name: 'Contact',
-    href: '#contact',
-    icon: 'contacts-line',
-    dropdown: null
   }
 ];
 
@@ -189,7 +182,10 @@ const Navbar = () => {
                   ref={(el) => (dropdownRefs.current[item.id] = el)}
                 >
                   <button
-                    onClick={() => toggleDropdown(item.id)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      toggleDropdown(item.id);
+                    }}
                     className={`py-2 flex items-center ${
                       activeDropdown === item.id
                         ? "text-primary border-b-2 border-primary"
@@ -262,7 +258,10 @@ const Navbar = () => {
                 {item.dropdown ? (
                   <>
                     <button
-                      onClick={() => toggleDropdown(item.id)}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        toggleDropdown(item.id);
+                      }}
                       className={`flex items-center justify-between w-full py-2 px-4 rounded-md ${
                         activeDropdown === item.id 
                           ? "bg-primary/10 text-primary" 
