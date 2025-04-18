@@ -187,7 +187,7 @@ const Navbar = () => {
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
         className={`sticky top-0 bg-white z-50 transition-all duration-300 ${
-          scrolled ? "shadow-md py-2" : "py-3"
+          scrolled ? "shadow-lg py-2" : "py-3 shadow-md"
         }`}
       >
         <div className="container mx-auto px-4">
@@ -200,23 +200,23 @@ const Navbar = () => {
               >
                 <Icon name="menu-line text-2xl" />
               </button>
-              <a href="#" className="flex items-center">
-                <div className="w-12 h-12 mr-3 overflow-hidden">
+              <a href="#" className="flex items-center group">
+                <div className="w-12 h-12 mr-3 overflow-hidden rounded-full shadow-md border-2 border-gray-100 group-hover:border-primary transition-colors duration-200">
                   <img src={logoImage} alt="JSS Polytechnic Logo" className="w-full h-full object-contain" />
                 </div>
                 <div>
-                  <span className="font-poppins font-semibold text-primary text-lg block leading-tight">
+                  <span className="font-poppins font-semibold text-primary text-lg block leading-tight group-hover:text-amber-500 transition-colors duration-200">
                     JSS Polytechnic
                   </span>
                   <span className="text-xs text-gray-500">Nanjangud</span>
                 </div>
               </a>
             </div>
-            <div className="hidden md:flex space-x-6 font-poppins font-medium">
+            <div className="hidden md:flex space-x-1 font-poppins font-medium">
               {navigationItems.map((item) => (
                 <div
                   key={item.id}
-                  className="relative"
+                  className="relative px-2"
                   ref={(el) => (dropdownRefs.current[item.id] = el)}
                 >
                   <button
@@ -225,13 +225,13 @@ const Navbar = () => {
                       e.stopPropagation();
                       toggleDesktopDropdown(item.id);
                     }}
-                    className={`py-2 flex items-center ${
+                    className={`py-2 flex items-center rounded-md px-3 ${
                       activeDropdown === item.id
-                        ? "text-primary border-b-2 border-primary"
-                        : "hover:text-primary hover:border-b-2 hover:border-primary transition-all"
+                        ? "text-primary bg-primary/5 font-semibold"
+                        : "hover:text-primary hover:bg-primary/5 transition-all"
                     }`}
                   >
-                    <Icon name={`${item.icon} mr-1`} />
+                    <Icon name={`${item.icon} mr-1.5`} />
                     <span>{item.name}</span>
                     {item.dropdown && (
                       <Icon 
@@ -244,20 +244,24 @@ const Navbar = () => {
                   {/* Dropdown Menu */}
                   {item.dropdown && (
                     <div
-                      className={`absolute left-0 mt-1 bg-white shadow-lg border-t-2 border-primary min-w-[220px] max-w-[300px] z-50 transform transition-all duration-200 origin-top ${
+                      className={`absolute left-0 mt-1 bg-white shadow-xl rounded-lg border border-gray-100 min-w-[240px] max-w-[300px] z-50 transform transition-all duration-200 origin-top overflow-hidden ${
                         activeDropdown === item.id
                           ? "opacity-100 scale-100"
                           : "opacity-0 scale-95 pointer-events-none"
                       }`}
                     >
+                      <div className="py-1 bg-gradient-to-r from-primary to-primary/90 text-white px-4 py-2 font-medium">
+                        {item.name}
+                      </div>
                       <div className="py-1">
                         {item.dropdown.map((subItem, index) => (
                           <a
                             key={index}
                             href={subItem.href}
-                            className="block px-4 py-3 text-gray-800 hover:bg-primary/10 hover:text-primary border-b border-gray-100 last:border-b-0"
+                            className="flex items-center px-4 py-2.5 text-gray-800 hover:bg-primary/5 hover:text-primary border-b border-gray-100 last:border-b-0 transition-colors"
                             onClick={() => setActiveDropdown(null)}
                           >
+                            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 mr-2"></span>
                             {subItem.name}
                           </a>
                         ))}
@@ -276,83 +280,91 @@ const Navbar = () => {
         initial={{ x: "-100%" }}
         animate={{ x: isMenuOpen ? 0 : "-100%" }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className="fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-50 md:hidden"
+        className="fixed top-0 left-0 h-full w-72 bg-white shadow-xl z-50 md:hidden"
       >
-        <div className="p-5">
-          <div className="flex justify-between items-center mb-6">
-            <div className="w-12 h-12 overflow-hidden">
-              <img src={logoImage} alt="JSS Polytechnic Logo" className="w-full h-full object-contain" />
+        <div className="bg-gradient-to-r from-primary to-primary/90 p-6">
+          <div className="flex justify-between items-center">
+            <div className="flex items-center">
+              <div className="w-12 h-12 overflow-hidden rounded-full bg-white p-1">
+                <img src={logoImage} alt="JSS Polytechnic Logo" className="w-full h-full object-contain" />
+              </div>
+              <div className="ml-3 text-white">
+                <div className="font-bold text-lg">JSS Polytechnic</div>
+                <div className="text-xs opacity-80">Nanjangud</div>
+              </div>
             </div>
             <button
               onClick={closeMenu}
-              className="text-gray-500"
+              className="text-white/90 hover:text-white"
               aria-label="Close menu"
             >
               <Icon name="close-line text-2xl" />
             </button>
           </div>
-          <div className="space-y-2 font-poppins overflow-y-auto max-h-[calc(100vh-100px)]">
-            {navigationItems.map((item) => (
-              <div key={item.id} className="mb-1">
-                {item.dropdown ? (
-                  <>
-                    <button
-                      onClick={(e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        toggleMobileDropdown(item.id);
-                      }}
-                      className={`flex items-center justify-between w-full py-2 px-4 rounded-md ${
-                        mobileOpenItems.includes(item.id) 
-                          ? "bg-primary/10 text-primary" 
-                          : "hover:bg-primary/10 hover:text-primary"
-                      }`}
-                    >
-                      <div className="flex items-center">
-                        <Icon name={`${item.icon} mr-2`} />
-                        <span>{item.name}</span>
-                      </div>
-                      <Icon 
-                        name={`arrow-down-s-line ${mobileOpenItems.includes(item.id) ? 'rotate-180' : ''}`}
-                        className="transition-transform duration-200" 
-                      />
-                    </button>
-                    
-                    {/* Mobile Dropdown */}
-                    <div 
-                      className={`pl-6 mt-1 overflow-hidden transition-all duration-200 ${
-                        mobileOpenItems.includes(item.id) 
-                          ? "max-h-[1000px] opacity-100" 
-                          : "max-h-0 opacity-0"
-                      }`}
-                    >
-                      <div className="border-l-2 border-primary/30 pl-2 py-1">
-                        {item.dropdown.map((subItem, index) => (
-                          <a
-                            key={index}
-                            href={subItem.href}
-                            onClick={closeMenu}
-                            className="block py-2 px-3 text-gray-700 hover:text-primary rounded-md text-sm"
-                          >
-                            {subItem.name}
-                          </a>
-                        ))}
-                      </div>
-                    </div>
-                  </>
-                ) : (
-                  <a
-                    href={item.href}
-                    onClick={closeMenu}
-                    className="flex items-center py-2 px-4 hover:bg-primary/10 hover:text-primary rounded-md transition-all"
+        </div>
+        
+        <div className="p-4 space-y-1 font-poppins overflow-y-auto max-h-[calc(100vh-100px)]">
+          {navigationItems.map((item) => (
+            <div key={item.id} className="mb-1">
+              {item.dropdown ? (
+                <>
+                  <button
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      toggleMobileDropdown(item.id);
+                    }}
+                    className={`flex items-center justify-between w-full py-3 px-4 rounded-md ${
+                      mobileOpenItems.includes(item.id) 
+                        ? "bg-primary text-white" 
+                        : "hover:bg-primary/10 hover:text-primary text-gray-700"
+                    }`}
                   >
-                    <Icon name={`${item.icon} mr-2`} />
-                    <span>{item.name}</span>
-                  </a>
-                )}
-              </div>
-            ))}
-          </div>
+                    <div className="flex items-center">
+                      <Icon name={`${item.icon} mr-2`} />
+                      <span>{item.name}</span>
+                    </div>
+                    <Icon 
+                      name={`arrow-down-s-line ${mobileOpenItems.includes(item.id) ? 'rotate-180' : ''}`}
+                      className="transition-transform duration-200" 
+                    />
+                  </button>
+                  
+                  {/* Mobile Dropdown */}
+                  <div 
+                    className={`pl-4 mt-1 overflow-hidden transition-all duration-300 ${
+                      mobileOpenItems.includes(item.id) 
+                        ? "max-h-[1000px] opacity-100" 
+                        : "max-h-0 opacity-0"
+                    }`}
+                  >
+                    <div className="bg-gray-50 rounded-lg p-2 ml-2 border-l-2 border-amber-400">
+                      {item.dropdown.map((subItem, index) => (
+                        <a
+                          key={index}
+                          href={subItem.href}
+                          onClick={closeMenu}
+                          className="flex items-center py-2.5 px-3 text-gray-700 hover:text-primary rounded-md text-sm"
+                        >
+                          <span className="w-1.5 h-1.5 rounded-full bg-amber-400 mr-2"></span>
+                          {subItem.name}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <a
+                  href={item.href}
+                  onClick={closeMenu}
+                  className="flex items-center py-3 px-4 hover:bg-primary/10 hover:text-primary rounded-md text-gray-700 transition-all"
+                >
+                  <Icon name={`${item.icon} mr-2`} />
+                  <span>{item.name}</span>
+                </a>
+              )}
+            </div>
+          ))}
         </div>
       </motion.div>
     </>
