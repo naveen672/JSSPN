@@ -3,11 +3,20 @@ import { Icon } from "@/lib/icons";
 import { campusFeatures } from "@/lib/constants";
 import { useScrollAnimation, useScrollAnimationWithDelay } from "@/hooks/useScrollAnimation";
 
+// Import MOU images
+import mou1 from "@assets/mou1.jpg";
+import mou2 from "@assets/mou2.jpg";
+import mou3 from "@assets/mou3.jpg";
+import mou4 from "@assets/mou4.jpg";
+import mou5 from "@assets/mou5.jpg";
+import mou6 from "@assets/mou6.jpg";
+
 const CampusSection = () => {
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation<HTMLDivElement>();
   const { ref: mainImageRef, isVisible: mainImageVisible } = useScrollAnimation<HTMLDivElement>();
   const { ref: highlightsRef, isVisible: highlightsVisible } = useScrollAnimation<HTMLDivElement>();
   const { ref: btnRef, isVisible: btnVisible } = useScrollAnimation<HTMLDivElement>();
+  const { ref: industryRef, isVisible: industryVisible } = useScrollAnimation<HTMLDivElement>();
 
   return (
     <section id="campus" className="py-20 bg-gray-50">
@@ -95,6 +104,90 @@ const CampusSection = () => {
             <FeatureCard key={feature.id} feature={feature} index={index} />
           ))}
         </div>
+
+        {/* Industry Partnerships - MOUs Section */}
+        <motion.div
+          ref={industryRef}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: industryVisible ? 1 : 0, y: industryVisible ? 0 : 20 }}
+          transition={{ duration: 0.5 }}
+          className="mt-20"
+        >
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <span className="inline-block bg-primary/10 text-primary font-medium px-4 py-1 rounded-full text-sm mb-4">
+              <Icon name="building-2-line mr-2" />
+              Industry Partnerships
+            </span>
+            <h2 className="font-poppins font-bold text-2xl md:text-3xl text-text mb-4">
+              Our Industry Collaborations
+            </h2>
+            <p className="text-gray-600">
+              We maintain strong ties with leading industries through Memorandums of Understanding (MOUs) to provide our students with real-world experience and placement opportunities.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
+              <div className="h-48 overflow-hidden">
+                <img src={mou1} alt="MOU with Sundaram Auto Components" className="w-full h-full object-cover object-center hover:scale-105 transition-all duration-500" />
+              </div>
+              <div className="p-4">
+                <h3 className="font-poppins font-semibold text-lg text-primary mb-2">Sundaram Auto Components</h3>
+                <p className="text-gray-700 text-sm">Partnership for training and placement opportunities in automotive engineering.</p>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
+              <div className="h-48 overflow-hidden">
+                <img src={mou2} alt="MOU with Triphase Technologies" className="w-full h-full object-cover object-center hover:scale-105 transition-all duration-500" />
+              </div>
+              <div className="p-4">
+                <h3 className="font-poppins font-semibold text-lg text-primary mb-2">Triphase Technologies</h3>
+                <p className="text-gray-700 text-sm">Collaboration on technical education and hands-on engineering projects.</p>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
+              <div className="h-48 overflow-hidden">
+                <img src={mou3} alt="MOU with RishiFIBC" className="w-full h-full object-cover object-center hover:scale-105 transition-all duration-500" />
+              </div>
+              <div className="p-4">
+                <h3 className="font-poppins font-semibold text-lg text-primary mb-2">RishiFIBC</h3>
+                <p className="text-gray-700 text-sm">Strategic partnership for advancing technical education and student development.</p>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
+              <div className="h-48 overflow-hidden">
+                <img src={mou4} alt="MOU with BHEL Electronics Division" className="w-full h-full object-cover object-center hover:scale-105 transition-all duration-500" />
+              </div>
+              <div className="p-4">
+                <h3 className="font-poppins font-semibold text-lg text-primary mb-2">BHEL Electronics Division</h3>
+                <p className="text-gray-700 text-sm">Collaboration on cutting-edge electronics training and placement initiatives.</p>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
+              <div className="h-48 overflow-hidden">
+                <img src={mou5} alt="MOU with Engineering Firm" className="w-full h-full object-cover object-center hover:scale-105 transition-all duration-500" />
+              </div>
+              <div className="p-4">
+                <h3 className="font-poppins font-semibold text-lg text-primary mb-2">Engineering Excellence Program</h3>
+                <p className="text-gray-700 text-sm">Comprehensive student development program with certification opportunities.</p>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
+              <div className="h-48 overflow-hidden">
+                <img src={mou6} alt="MOU with BHEL Meeting" className="w-full h-full object-cover object-center hover:scale-105 transition-all duration-500" />
+              </div>
+              <div className="p-4">
+                <h3 className="font-poppins font-semibold text-lg text-primary mb-2">Industry Collaboration Summit</h3>
+                <p className="text-gray-700 text-sm">Regular industry meetings to align curriculum with industry requirements.</p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
 
         <motion.div
           ref={btnRef}
