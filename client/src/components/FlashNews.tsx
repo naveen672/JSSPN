@@ -9,7 +9,7 @@ const FlashNews = () => {
   const [currentNewsIndex, setCurrentNewsIndex] = useState(0);
   
   // Fetch active news items from the API
-  const { data: newsItems, isLoading } = useQuery({
+  const { data: newsItems, isLoading } = useQuery<NewsItem[]>({
     queryKey: ['/api/news?active=true'],
     refetchInterval: 60000, // Refetch every minute
   });
@@ -23,8 +23,8 @@ const FlashNews = () => {
   ];
   
   // Use news items from API if available, otherwise use defaults
-  const displayItems = newsItems?.length
-    ? newsItems.map(item => item.title)
+  const displayItems = newsItems && newsItems.length > 0
+    ? newsItems.map((item: NewsItem) => item.title)
     : defaultNewsItems;
   
   useEffect(() => {

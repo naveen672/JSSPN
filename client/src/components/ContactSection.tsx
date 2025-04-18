@@ -1,14 +1,85 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { Icon } from "@/lib/icons";
 import { contactInfo, socialLinks } from "@/lib/constants";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import GoogleMap from "@/components/GoogleMap";
+import { useMutation } from "@tanstack/react-query";
+import { apiRequest } from "@/lib/queryClient";
+import { useToast } from "@/hooks/use-toast";
 
 const ContactSection = () => {
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation<HTMLDivElement>();
   const { ref: infoRef, isVisible: infoVisible } = useScrollAnimation<HTMLDivElement>();
   const { ref: formRef, isVisible: formVisible } = useScrollAnimation<HTMLDivElement>();
   const { ref: mapRef, isVisible: mapVisible } = useScrollAnimation<HTMLDivElement>();
+  const { toast } = useToast();
+  
+  // State for form fields
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  
+  // Mutation for submitting the contact form
+  const contactMutation = useMutation({
+    mutationFn: async (data: typeof formData) => {
+      const response = await apiRequest('POST', '/api/contact', data);
+      return response.json();
+    },
+    onSuccess: () => {
+      toast({
+        title: "Message Sent",
+        description: "Thank you for your message. We'll get back to you soon!",
+        variant: "default",
+      });
+      
+      // Reset form fields
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+    },
+    onError: (error) => {
+      toast({
+        title: "Error",
+        description: "There was a problem sending your message. Please try again.",
+        variant: "destructive",
+      });
+      console.error("Contact form error:", error);
+    }
+  });
+  
+  // Handle form input changes
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [id]: value
+    }));
+  };
+  
+  // Handle form submission
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Basic validation
+    if (!formData.name || !formData.email || !formData.message) {
+      toast({
+        title: "Missing Information",
+        description: "Please fill in all required fields (name, email, message).",
+        variant: "destructive",
+      });
+      return;
+    }
+    
+    // Submit the form
+    contactMutation.mutate(formData);
+  };
 
   return (
     <section id="contact" className="py-20 bg-primary text-white relative">
@@ -66,30 +137,36 @@ const ContactSection = () => {
                 <Icon name="mail-send-line mr-2 text-primary" />
                 Send Us a Message
               </h3>
-              <form>
+              <form onSubmit={handleSubmit}>
                 <div className="mb-4">
                   <label htmlFor="name" className="block text-gray-700 mb-2 flex items-center">
                     <Icon name="user-line mr-2 text-gray-500" />
-                    Your Name
+                    Your Name <span className="text-red-500 ml-1">*</span>
                   </label>
                   <input
                     type="text"
                     id="name"
+                    value={formData.name}
+                    onChange={handleChange}
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
                     placeholder="Enter your name"
+                    required
                   />
                 </div>
 
                 <div className="mb-4">
                   <label htmlFor="email" className="block text-gray-700 mb-2 flex items-center">
                     <Icon name="mail-line mr-2 text-gray-500" />
-                    Email Address
+                    Email Address <span className="text-red-500 ml-1">*</span>
                   </label>
                   <input
                     type="email"
                     id="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
                     placeholder="Enter your email"
+                    required
                   />
                 </div>
 
@@ -101,6 +178,8 @@ const ContactSection = () => {
                   <input
                     type="text"
                     id="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
                     placeholder="Enter subject"
                   />
@@ -109,22 +188,37 @@ const ContactSection = () => {
                 <div className="mb-6">
                   <label htmlFor="message" className="block text-gray-700 mb-2 flex items-center">
                     <Icon name="chat-3-line mr-2 text-gray-500" />
-                    Message
+                    Message <span className="text-red-500 ml-1">*</span>
                   </label>
                   <textarea
                     id="message"
+                    value={formData.message}
+                    onChange={handleChange}
                     rows={4}
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
                     placeholder="Enter your message"
+                    required
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  className="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-md font-medium transition-all w-full flex items-center justify-center"
+                  disabled={contactMutation.isPending}
+                  className={`${
+                    contactMutation.isPending ? 'bg-gray-500' : 'bg-primary hover:bg-primary/90'
+                  } text-white px-6 py-3 rounded-md font-medium transition-all w-full flex items-center justify-center`}
                 >
-                  <Icon name="send-plane-line mr-2" />
-                  <span>Send Message</span>
+                  {contactMutation.isPending ? (
+                    <>
+                      <Icon name="loader-4-line mr-2 animate-spin" />
+                      <span>Sending...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Icon name="send-plane-line mr-2" />
+                      <span>Send Message</span>
+                    </>
+                  )}
                 </button>
               </form>
             </div>
