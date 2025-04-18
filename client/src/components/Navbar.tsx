@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
 import { Icon } from "@/lib/icons";
 import logoImage from "@/assets/logo.jpg";
@@ -108,6 +108,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [mobileOpenItems, setMobileOpenItems] = useState<string[]>([]);
   const dropdownRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
   useEffect(() => {
@@ -132,19 +133,31 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+    // Reset mobile open items when closing the menu
+    if (isMenuOpen) {
+      setMobileOpenItems([]);
+    }
   };
 
   const closeMenu = () => {
     setIsMenuOpen(false);
+    setMobileOpenItems([]);
   };
   
-  const toggleDropdown = (id: string) => {
-    if (activeDropdown === id) {
-      setActiveDropdown(null);
-    } else {
-      setActiveDropdown(id);
-    }
-  };
+  const toggleDesktopDropdown = useCallback((id: string) => {
+    setActiveDropdown(prevState => prevState === id ? null : id);
+  }, []);
+  
+  const toggleMobileDropdown = useCallback((id: string) => {
+    setMobileOpenItems(prev => {
+      // If item is already in the array, remove it (close dropdown)
+      if (prev.includes(id)) {
+        return prev.filter(item => item !== id);
+      }
+      // If not, add it (open dropdown)
+      return [...prev, id];
+    });
+  }, []);
 
   return (
     <>
@@ -187,12 +200,9 @@ const Navbar = () => {
                 >
                   <button
                     onClick={(e) => {
+                      e.preventDefault();
                       e.stopPropagation();
-                      if (activeDropdown === item.id) {
-                        setActiveDropdown(null);
-                      } else {
-                        setActiveDropdown(item.id);
-                      }
+                      toggleDesktopDropdown(item.id);
                     }}
                     className={`py-2 flex items-center ${
                       activeDropdown === item.id
@@ -267,15 +277,12 @@ const Navbar = () => {
                   <>
                     <button
                       onClick={(e) => {
+                        e.preventDefault();
                         e.stopPropagation();
-                        if (activeDropdown === item.id) {
-                          setActiveDropdown(null);
-                        } else {
-                          setActiveDropdown(item.id);
-                        }
+                        toggleMobileDropdown(item.id);
                       }}
                       className={`flex items-center justify-between w-full py-2 px-4 rounded-md ${
-                        activeDropdown === item.id 
+                        mobileOpenItems.includes(item.id) 
                           ? "bg-primary/10 text-primary" 
                           : "hover:bg-primary/10 hover:text-primary"
                       }`}
@@ -285,7 +292,7 @@ const Navbar = () => {
                         <span>{item.name}</span>
                       </div>
                       <Icon 
-                        name={`arrow-down-s-line ${activeDropdown === item.id ? 'rotate-180' : ''}`}
+                        name={`arrow-down-s-line ${mobileOpenItems.includes(item.id) ? 'rotate-180' : ''}`}
                         className="transition-transform duration-200" 
                       />
                     </button>
@@ -293,7 +300,7 @@ const Navbar = () => {
                     {/* Mobile Dropdown */}
                     <div 
                       className={`pl-6 mt-1 overflow-hidden transition-all duration-200 ${
-                        activeDropdown === item.id 
+                        mobileOpenItems.includes(item.id) 
                           ? "max-h-[1000px] opacity-100" 
                           : "max-h-0 opacity-0"
                       }`}
