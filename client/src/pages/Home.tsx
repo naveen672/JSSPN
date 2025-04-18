@@ -48,7 +48,8 @@ const Home = () => {
     <div className="font-inter text-text bg-background overflow-x-hidden">
       <Navbar />
       <FlashNews />
-      <div id="home">
+      {/* Added mt-[130px] to account for fixed navbar and flash news */}
+      <div id="home" className="mt-[130px]">
         <ImageSlider />
       </div>
       <StatsSection />

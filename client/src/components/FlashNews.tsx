@@ -39,7 +39,7 @@ const FlashNews = () => {
   if (!displayItems.length) return null;
 
   return (
-    <div className="bg-primary py-3 sticky top-[72px] z-30 border-b-4 border-amber-400 shadow-md">
+    <div className="bg-primary py-3 fixed top-[72px] left-0 right-0 z-30 border-b-4 border-amber-400 shadow-md">
       <div className="container mx-auto px-4">
         <div className="flex items-center">
           <div className="flex-shrink-0 flex items-center text-white mr-4">

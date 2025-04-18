@@ -186,12 +186,12 @@ const Navbar = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
-        className={`sticky top-0 bg-white z-50 transition-all duration-300 ${
-          scrolled ? "shadow-lg py-2" : "py-3 shadow-md"
+        className={`fixed top-0 left-0 right-0 bg-white z-50 transition-all duration-300 h-[72px] ${
+          scrolled ? "shadow-lg" : "shadow-md"
         }`}
       >
-        <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center">
+        <div className="container mx-auto px-4 h-full">
+          <div className="flex justify-between items-center h-full">
             <div className="flex items-center">
               <button
                 onClick={toggleMenu}
