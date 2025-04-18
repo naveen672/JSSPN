@@ -68,7 +68,6 @@ const ImageSlider = () => {
           transition={{ duration: 0.7 }}
           className="absolute inset-0"
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-secondary/80 z-10"></div>
           <div 
             className="absolute inset-0 bg-cover bg-center z-0" 
             style={{ backgroundImage: `url('${images[currentIndex].src}')` }}
@@ -82,7 +81,7 @@ const ImageSlider = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="inline-block bg-accent/90 text-primary font-medium px-4 py-1 rounded-full text-sm mb-4"
+            className="inline-block bg-white text-primary font-medium px-4 py-1 rounded-full text-sm mb-4 shadow-lg"
           >
             Established 1965
           </motion.span>
@@ -94,7 +93,7 @@ const ImageSlider = () => {
               animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="font-poppins font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6"
+              className="font-poppins font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6 drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]"
             >
               {images[currentIndex].title}
             </motion.h1>
@@ -107,7 +106,7 @@ const ImageSlider = () => {
               animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5, delay: 0.6 }}
-              className="text-white/90 text-lg md:text-xl mb-8 max-w-xl"
+              className="text-white text-lg md:text-xl mb-8 max-w-xl drop-shadow-[0_2px_3px_rgba(0,0,0,0.7)]"
             >
               {images[currentIndex].subtitle}
             </motion.p>
