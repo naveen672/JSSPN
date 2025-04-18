@@ -33,9 +33,9 @@ const navigationItems: NavigationItem[] = [
     icon: 'information-line',
     dropdown: [
       { name: 'About JSSMVP', href: '/about/jssmvp' },
-      { name: 'About JSSPN', href: '#' },
-      { name: 'Vision & Mission', href: '#' },
-      { name: 'Governance', href: '#' },
+      { name: 'About JSSPN', href: '/about/jss-polytechnic-nanjangud' },
+      { name: 'Vision & Mission', href: '/about/vision-mission' },
+      { name: 'Governance', href: '/about/governance' },
       { name: 'Administration', href: '#' },
       { name: 'Reports', href: '#' },
       { name: 'Downloads', href: '#' },

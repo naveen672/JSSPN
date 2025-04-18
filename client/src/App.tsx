@@ -8,12 +8,18 @@ import Home from "@/pages/Home";
 import ProgramPage from "@/pages/ProgramPage";
 import GenericPage from "@/pages/GenericPage";
 import AboutJSSMVP from "@/pages/AboutJSSMVP";
+import AboutJSSPN from "@/pages/AboutJSSPN";
+import VisionMission from "@/pages/VisionMission";
+import Governance from "@/pages/Governance";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/about/jssmvp" component={AboutJSSMVP} />
+      <Route path="/about/jss-polytechnic-nanjangud" component={AboutJSSPN} />
+      <Route path="/about/vision-mission" component={VisionMission} />
+      <Route path="/about/governance" component={Governance} />
       <Route path="/programs/:slug" component={ProgramPage} />
       <Route path="/:category/:slug" component={GenericPage} />
       <Route component={NotFound} />
