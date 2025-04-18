@@ -139,7 +139,11 @@ const Navbar = () => {
   };
   
   const toggleDropdown = (id: string) => {
-    setActiveDropdown(activeDropdown === id ? null : id);
+    if (activeDropdown === id) {
+      setActiveDropdown(null);
+    } else {
+      setActiveDropdown(id);
+    }
   };
 
   return (
@@ -184,7 +188,11 @@ const Navbar = () => {
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
-                      toggleDropdown(item.id);
+                      if (activeDropdown === item.id) {
+                        setActiveDropdown(null);
+                      } else {
+                        setActiveDropdown(item.id);
+                      }
                     }}
                     className={`py-2 flex items-center ${
                       activeDropdown === item.id
@@ -260,7 +268,11 @@ const Navbar = () => {
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
-                        toggleDropdown(item.id);
+                        if (activeDropdown === item.id) {
+                          setActiveDropdown(null);
+                        } else {
+                          setActiveDropdown(item.id);
+                        }
                       }}
                       className={`flex items-center justify-between w-full py-2 px-4 rounded-md ${
                         activeDropdown === item.id 
