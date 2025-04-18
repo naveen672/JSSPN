@@ -7,7 +7,6 @@ import logoImage from "@/assets/logo.jpg";
 interface DropdownItem {
   name: string;
   href: string;
-  isExpandable?: boolean;
 }
 
 interface NavigationItem {
@@ -17,17 +16,6 @@ interface NavigationItem {
   icon: string;
   dropdown: DropdownItem[] | null;
 }
-
-// Technical programs list to be displayed directly under Academic
-const technicalPrograms = [
-  { name: 'Computer Science Engineering', href: '#' },
-  { name: 'Mechanical Engineering', href: '#' },
-  { name: 'Electrical Engineering', href: '#' },
-  { name: 'Civil Engineering', href: '#' },
-  { name: 'Electronics & Communication', href: '#' },
-  { name: 'Science & Humanities', href: '#' },
-  { name: 'Mechatronics', href: '#' }
-];
 
 // Navigation menu data
 const navigationItems: NavigationItem[] = [
@@ -75,7 +63,13 @@ const navigationItems: NavigationItem[] = [
     href: '#academics',
     icon: 'graduation-cap-line',
     dropdown: [
-      { name: 'Technical Programs', href: '#', isExpandable: true },
+      { name: 'Computer Science Engineering', href: '#' },
+      { name: 'Mechanical Engineering', href: '#' },
+      { name: 'Electrical Engineering', href: '#' },
+      { name: 'Civil Engineering', href: '#' },
+      { name: 'Electronics & Communication', href: '#' },
+      { name: 'Science & Humanities', href: '#' },
+      { name: 'Mechatronics', href: '#' },
       { name: 'Calender Of Events', href: '#' },
       { name: 'Admission', href: '#' },
       { name: 'Examination', href: '#' },
@@ -258,37 +252,14 @@ const Navbar = () => {
                     >
                       <div className="py-1">
                         {item.dropdown.map((subItem, index) => (
-                          subItem.isExpandable ? (
-                            <div key={index} className="relative group">
-                              <div className="flex items-center justify-between block px-4 py-3 text-gray-800 hover:bg-primary/10 hover:text-primary border-b border-gray-100">
-                                <span>{subItem.name}</span>
-                                <Icon name="arrow-right-s-line text-xs" />
-                              </div>
-                              <div className="absolute left-full top-0 min-w-[220px] bg-white shadow-lg border-t-2 border-primary opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity duration-150">
-                                <div className="py-1">
-                                  {technicalPrograms.map((program, idx) => (
-                                    <a
-                                      key={idx}
-                                      href={program.href}
-                                      className="block px-4 py-3 text-gray-800 hover:bg-primary/10 hover:text-primary border-b border-gray-100 last:border-b-0"
-                                      onClick={() => setActiveDropdown(null)}
-                                    >
-                                      {program.name}
-                                    </a>
-                                  ))}
-                                </div>
-                              </div>
-                            </div>
-                          ) : (
-                            <a
-                              key={index}
-                              href={subItem.href}
-                              className="block px-4 py-3 text-gray-800 hover:bg-primary/10 hover:text-primary border-b border-gray-100 last:border-b-0"
-                              onClick={() => setActiveDropdown(null)}
-                            >
-                              {subItem.name}
-                            </a>
-                          )
+                          <a
+                            key={index}
+                            href={subItem.href}
+                            className="block px-4 py-3 text-gray-800 hover:bg-primary/10 hover:text-primary border-b border-gray-100 last:border-b-0"
+                            onClick={() => setActiveDropdown(null)}
+                          >
+                            {subItem.name}
+                          </a>
                         ))}
                       </div>
                     </div>
@@ -357,55 +328,14 @@ const Navbar = () => {
                     >
                       <div className="border-l-2 border-primary/30 pl-2 py-1">
                         {item.dropdown.map((subItem, index) => (
-                          subItem.isExpandable ? (
-                            <div key={index}>
-                              <button
-                                onClick={(e) => {
-                                  e.preventDefault();
-                                  e.stopPropagation();
-                                  toggleMobileDropdown("tech-programs");
-                                }}
-                                className={`flex items-center justify-between w-full py-2 px-3 text-gray-700 hover:text-primary rounded-md text-sm ${
-                                  mobileOpenItems.includes("tech-programs") ? "text-primary" : ""
-                                }`}
-                              >
-                                <span>{subItem.name}</span>
-                                <Icon 
-                                  name={`arrow-down-s-line ${mobileOpenItems.includes("tech-programs") ? 'rotate-180' : ''}`} 
-                                  className="transition-transform duration-200"
-                                />
-                              </button>
-                              <div 
-                                className={`ml-3 mt-1 overflow-hidden transition-all duration-200 ${
-                                  mobileOpenItems.includes("tech-programs") 
-                                    ? "max-h-[1000px] opacity-100" 
-                                    : "max-h-0 opacity-0"
-                                }`}
-                              >
-                                <div className="border-l-2 border-primary/30 pl-2 py-1">
-                                  {technicalPrograms.map((program, idx) => (
-                                    <a
-                                      key={idx}
-                                      href={program.href}
-                                      onClick={closeMenu}
-                                      className="block py-2 px-3 text-gray-700 hover:text-primary rounded-md text-sm"
-                                    >
-                                      {program.name}
-                                    </a>
-                                  ))}
-                                </div>
-                              </div>
-                            </div>
-                          ) : (
-                            <a
-                              key={index}
-                              href={subItem.href}
-                              onClick={closeMenu}
-                              className="block py-2 px-3 text-gray-700 hover:text-primary rounded-md text-sm"
-                            >
-                              {subItem.name}
-                            </a>
-                          )
+                          <a
+                            key={index}
+                            href={subItem.href}
+                            onClick={closeMenu}
+                            className="block py-2 px-3 text-gray-700 hover:text-primary rounded-md text-sm"
+                          >
+                            {subItem.name}
+                          </a>
                         ))}
                       </div>
                     </div>
