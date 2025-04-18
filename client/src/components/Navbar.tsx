@@ -48,13 +48,13 @@ const navigationItems: NavigationItem[] = [
     href: '#academics',
     icon: 'book-open-line',
     dropdown: [
-      { name: 'Computer Science Engineering', href: '#' },
-      { name: 'Mechanical Engineering', href: '#' },
-      { name: 'Electrical Engineering', href: '#' },
-      { name: 'Civil Engineering', href: '#' },
-      { name: 'Electronics & Communication', href: '#' },
-      { name: 'Science & Humanities', href: '#' },
-      { name: 'Mechatronics', href: '#' }
+      { name: 'Computer Science Engineering', href: '/programs/computer-science-engineering' },
+      { name: 'Mechanical Engineering', href: '/programs/mechanical-engineering' },
+      { name: 'Electrical Engineering', href: '/programs/electrical-engineering' },
+      { name: 'Civil Engineering', href: '/programs/civil-engineering' },
+      { name: 'Electronics & Communication', href: '/programs/electronics-communication' },
+      { name: 'Science & Humanities', href: '/programs/science-humanities' },
+      { name: 'Mechatronics', href: '/programs/mechatronics' }
     ]
   },
   {
@@ -63,17 +63,17 @@ const navigationItems: NavigationItem[] = [
     href: '#academics',
     icon: 'graduation-cap-line',
     dropdown: [
-      { name: 'Computer Science Engineering', href: '#' },
-      { name: 'Mechanical Engineering', href: '#' },
-      { name: 'Electrical Engineering', href: '#' },
-      { name: 'Civil Engineering', href: '#' },
-      { name: 'Electronics & Communication', href: '#' },
-      { name: 'Science & Humanities', href: '#' },
-      { name: 'Mechatronics', href: '#' },
-      { name: 'Calender Of Events', href: '#' },
-      { name: 'Admission', href: '#' },
-      { name: 'Examination', href: '#' },
-      { name: 'Circulars', href: '#' }
+      { name: 'Computer Science Engineering', href: '/programs/computer-science-engineering' },
+      { name: 'Mechanical Engineering', href: '/programs/mechanical-engineering' },
+      { name: 'Electrical Engineering', href: '/programs/electrical-engineering' },
+      { name: 'Civil Engineering', href: '/programs/civil-engineering' },
+      { name: 'Electronics & Communication', href: '/programs/electronics-communication' },
+      { name: 'Science & Humanities', href: '/programs/science-humanities' },
+      { name: 'Mechatronics', href: '/programs/mechatronics' },
+      { name: 'Calender Of Events', href: '/academic/calendar-of-events' },
+      { name: 'Admission', href: '/academic/admission' },
+      { name: 'Examination', href: '/academic/examination' },
+      { name: 'Circulars', href: '/academic/circulars' }
     ]
   },
   {
@@ -82,8 +82,8 @@ const navigationItems: NavigationItem[] = [
     href: '#campus',
     icon: 'building-4-line',
     dropdown: [
-      { name: 'Library', href: '#' },
-      { name: 'Sports', href: '#' }
+      { name: 'Library', href: '/facilities/library' },
+      { name: 'Sports', href: '/facilities/sports' }
     ]
   },
   {
@@ -92,11 +92,11 @@ const navigationItems: NavigationItem[] = [
     href: '#campus',
     icon: 'hand-heart-line',
     dropdown: [
-      { name: 'Scholarship', href: '#' },
-      { name: 'Mentoring Scheme', href: '#' },
-      { name: 'Social Out Reach Program', href: '#' },
-      { name: 'Student Grievance', href: '#' },
-      { name: 'Gallery', href: '#' }
+      { name: 'Scholarship', href: '/supports/scholarship' },
+      { name: 'Mentoring Scheme', href: '/supports/mentoring-scheme' },
+      { name: 'Social Out Reach Program', href: '/supports/social-outreach-program' },
+      { name: 'Student Grievance', href: '/supports/student-grievance' },
+      { name: 'Gallery', href: '/supports/gallery' }
     ]
   },
   {
@@ -105,8 +105,8 @@ const navigationItems: NavigationItem[] = [
     href: '#',
     icon: 'briefcase-line',
     dropdown: [
-      { name: 'Training', href: '#' },
-      { name: 'Placement', href: '#' }
+      { name: 'Training', href: '/placement/training' },
+      { name: 'Placement', href: '/placement/placement' }
     ]
   },
   {
@@ -115,12 +115,12 @@ const navigationItems: NavigationItem[] = [
     href: '#',
     icon: 'more-line',
     dropdown: [
-      { name: 'Mandatory Disclosure', href: '#' },
-      { name: 'IQAC', href: '#' },
-      { name: 'Media Coverage', href: '#' },
-      { name: 'Anti Ragging', href: '#' },
-      { name: 'Women Grievances', href: '#' },
-      { name: 'SC/CT Committee', href: '#' }
+      { name: 'Mandatory Disclosure', href: '/more/mandatory-disclosure' },
+      { name: 'IQAC', href: '/more/iqac' },
+      { name: 'Media Coverage', href: '/more/media-coverage' },
+      { name: 'Anti Ragging', href: '/more/anti-ragging' },
+      { name: 'Women Grievances', href: '/more/women-grievances' },
+      { name: 'SC/CT Committee', href: '/more/sc-ct-committee' }
     ]
   }
 ];
