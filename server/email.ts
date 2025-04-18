@@ -118,6 +118,15 @@ export async function sendContactConfirmation(
         
         <p style="font-size: 16px;">Thank you for contacting JSS Polytechnic Nanjangud. We have received your message and appreciate your interest in our institution.</p>
         
+        <div style="border-left: 4px solid #003366; padding-left: 15px; margin: 20px 0;">
+          <h3 style="margin-top: 0; color: #003366;">Your Message Details:</h3>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          ${phone ? `<p><strong>Phone:</strong> ${phone}</p>` : ''}
+          ${inquirySubject ? `<p><strong>Subject:</strong> ${inquirySubject}</p>` : ''}
+          ${message ? `<p><strong>Message:</strong> ${message}</p>` : ''}
+        </div>
+        
         <p style="font-size: 16px;">Our team will review your inquiry and get back to you as soon as possible. Please allow 1-2 business days for a response.</p>
         
         <p style="font-size: 16px;">If your matter is urgent, please feel free to contact us directly at:</p>
@@ -145,6 +154,13 @@ export async function sendContactConfirmation(
 Dear ${name},
 
 Thank you for contacting JSS Polytechnic Nanjangud. We have received your message and appreciate your interest in our institution.
+
+YOUR MESSAGE DETAILS:
+Name: ${name}
+Email: ${email}
+${phone ? `Phone: ${phone}` : ''}
+${inquirySubject ? `Subject: ${inquirySubject}` : ''}
+${message ? `Message: ${message}` : ''}
 
 Our team will review your inquiry and get back to you as soon as possible. Please allow 1-2 business days for a response.
 

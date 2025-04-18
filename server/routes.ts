@@ -107,8 +107,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const submission = insertContactSubmissionSchema.parse(req.body);
       const createdSubmission = await storage.createContactSubmission(submission);
       
-      // Send confirmation email to the user (don't await to prevent blocking)
-      sendContactConfirmation(submission.name, submission.email)
+      // Send confirmation email to the user with all form details
+      sendContactConfirmation(
+        submission.name, 
+        submission.email, 
+        '', // No phone in contactSubmissions schema
+        submission.subject || '', 
+        submission.message || ''
+      )
         .then(success => {
           if (success) {
             console.log(`Confirmation email sent to ${submission.email}`);
