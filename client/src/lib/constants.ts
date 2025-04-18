@@ -60,6 +60,46 @@ export const programs = [
     duration: "3 Years",
     seats: "60 Seats",
   },
+  {
+    id: 4,
+    title: "Civil Engineering",
+    description:
+      "Study structural design, construction materials, environmental engineering, and infrastructure development.",
+    icon: "building-2-line",
+    color: "primary",
+    duration: "3 Years",
+    seats: "60 Seats",
+  },
+  {
+    id: 5,
+    title: "Electronics & Communication",
+    description:
+      "Focus on electronic circuits, communication systems, signal processing, and telecommunications.",
+    icon: "router-line",
+    color: "secondary",
+    duration: "3 Years",
+    seats: "60 Seats",
+  },
+  {
+    id: 6,
+    title: "Science & Humanities",
+    description:
+      "Explore foundational sciences, mathematics, communication skills, and humanities subjects.",
+    icon: "flask-line",
+    color: "accent",
+    duration: "3 Years",
+    seats: "60 Seats",
+  },
+  {
+    id: 7,
+    title: "Mechatronics",
+    description:
+      "Combine mechanical, electrical, and computer engineering to design smart automated systems.",
+    icon: "robot-line",
+    color: "primary",
+    duration: "3 Years",
+    seats: "60 Seats",
+  },
 ];
 
 export const campusFeatures = [
@@ -188,7 +228,9 @@ export const programLinks = [
   { id: 3, name: "Electrical Engineering", href: "#" },
   { id: 4, name: "Civil Engineering", href: "#" },
   { id: 5, name: "Electronics & Communication", href: "#" },
-  { id: 6, name: "All Programs", href: "#" },
+  { id: 6, name: "Science & Humanities", href: "#" },
+  { id: 7, name: "Mechatronics", href: "#" },
+  { id: 8, name: "All Programs", href: "#" },
 ];
 
 export const footerContactInfo = [
