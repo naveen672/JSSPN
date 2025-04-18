@@ -32,7 +32,7 @@ const CampusSection = () => {
             Campus Life
           </span>
           <h2 className="font-poppins font-bold text-3xl md:text-4xl text-text mb-4">
-            Experience Our Campus
+            Campus Facilities
           </h2>
           <p className="text-gray-600">
             Our state-of-the-art campus provides a conducive environment for learning, innovation, and holistic development.
