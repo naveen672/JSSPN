@@ -18,15 +18,15 @@ interface NavigationItem {
   dropdown: DropdownItem[] | null;
 }
 
-// Technical programs list to be displayed under Academic > Technical Programs
+// Technical programs list to be displayed directly under Academic
 const technicalPrograms = [
-  { name: 'Science & Humanities', href: '#' },
-  { name: 'Civil', href: '#' },
-  { name: 'Computer Science', href: '#' },
-  { name: 'Electrical & Electronics', href: '#' },
+  { name: 'Computer Science Engineering', href: '#' },
+  { name: 'Mechanical Engineering', href: '#' },
+  { name: 'Electrical Engineering', href: '#' },
+  { name: 'Civil Engineering', href: '#' },
   { name: 'Electronics & Communication', href: '#' },
-  { name: 'Mechatronics', href: '#' },
-  { name: 'Mechanical', href: '#' }
+  { name: 'Science & Humanities', href: '#' },
+  { name: 'Mechatronics', href: '#' }
 ];
 
 // Navigation menu data
@@ -60,13 +60,13 @@ const navigationItems: NavigationItem[] = [
     href: '#academics',
     icon: 'book-open-line',
     dropdown: [
-      { name: 'Science & Humanities', href: '#' },
-      { name: 'Civil', href: '#' },
-      { name: 'Computer Science', href: '#' },
-      { name: 'Electrical & Electronics', href: '#' },
+      { name: 'Computer Science Engineering', href: '#' },
+      { name: 'Mechanical Engineering', href: '#' },
+      { name: 'Electrical Engineering', href: '#' },
+      { name: 'Civil Engineering', href: '#' },
       { name: 'Electronics & Communication', href: '#' },
-      { name: 'Mechatronics', href: '#' },
-      { name: 'Mechanical', href: '#' }
+      { name: 'Science & Humanities', href: '#' },
+      { name: 'Mechatronics', href: '#' }
     ]
   },
   {
