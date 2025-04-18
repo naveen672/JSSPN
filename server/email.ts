@@ -13,20 +13,30 @@ let transporter: nodemailer.Transporter | null = null;
 function getTransporter() {
   if (!transporter) {
     try {
+      // Make sure we have the credentials
+      if (!process.env.EMAIL_ADDRESS) {
+        log('Missing EMAIL_ADDRESS environment variable', 'email');
+        return null;
+      }
+      
+      // Get the app password and remove any spaces
+      const appPassword = process.env.EMAIL_APP_PASSWORD?.replace(/\s+/g, '');
+      if (!appPassword) {
+        log('Missing EMAIL_APP_PASSWORD environment variable', 'email');
+        return null;
+      }
+      
       transporter = nodemailer.createTransport({
-        host: 'smtp.gmail.com',
-        port: 587,
-        secure: false, // Use TLS
+        service: 'gmail',
         auth: {
           user: process.env.EMAIL_ADDRESS,
-          pass: process.env.EMAIL_APP_PASSWORD,
+          pass: appPassword,
         },
-        tls: {
-          rejectUnauthorized: false
-        }
+        logger: true,
+        debug: false // set to true to see detailed logs
       });
       
-      log('Email transporter created', 'email');
+      log('Email transporter created with updated credentials', 'email');
     } catch (error) {
       log(`Failed to create email transporter: ${error}`, 'email');
       return null;
@@ -64,6 +74,7 @@ export async function sendEmail(options: EmailOptions): Promise<boolean> {
     const mailOptions = {
       from: `JSS Polytechnic <${process.env.EMAIL_ADDRESS}>`,
       to: options.to,
+      cc: process.env.EMAIL_ADDRESS, // Send a copy to administrator
       subject: options.subject,
       text: options.text,
       html: options.html,
@@ -82,9 +93,18 @@ export async function sendEmail(options: EmailOptions): Promise<boolean> {
  * Send a contact form confirmation email to a user
  * @param name User's name
  * @param email User's email address
+ * @param phone User's phone number (optional)
+ * @param inquirySubject Subject of the inquiry (optional)
+ * @param message User's message
  * @returns Promise resolving to success (true/false)
  */
-export async function sendContactConfirmation(name: string, email: string): Promise<boolean> {
+export async function sendContactConfirmation(
+  name: string, 
+  email: string, 
+  phone: string = '', 
+  inquirySubject: string = '', 
+  message: string = ''
+): Promise<boolean> {
   const subject = 'Thank you for contacting JSS Polytechnic';
   
   const htmlContent = `
