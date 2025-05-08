@@ -43,11 +43,11 @@ const AboutSection = () => {
             </h3>
             <p className="text-gray-700 mb-4 flex items-start bg-white/80 p-3 rounded-lg shadow-sm border border-gray-100">
               <Icon name="calendar-line mt-1 mr-2 text-amber-500 flex-shrink-0" />
-              <span>JSS Polytechnic Nanjangud was established in 1965 with a vision to provide quality technical education that meets the evolving needs of industry and society.</span>
+              <span>JSS Polytechnic Nanjangud was established in the academic year 1983-84. It offers three year diploma courses in Electronics & Communication Engineering, Mechanical Engineering, Civil Engineering, Mechatronics Engineering, Computer Science & Engineering and Electrical & Electronics Engineering.</span>
             </p>
             <p className="text-gray-700 mb-6 flex items-start bg-white/80 p-3 rounded-lg shadow-sm border border-gray-100">
               <Icon name="award-line mt-1 mr-2 text-amber-500 flex-shrink-0" />
-              <span>Over the decades, we've grown to become one of the region's most respected technical institutions, known for our practical approach to education and strong industry connections.</span>
+              <span>The institution was admitted to Grant-in-Aid in 2001-02 and is known for its unique Industry Institution Interaction Programme (CO-OP scheme of Diploma) implemented since 1992.</span>
             </p>
 
             <div className="space-y-4 mb-8">

@@ -129,7 +129,7 @@ const HeroSection = () => {
                 className="inline-flex items-center bg-amber-400 text-gray-900 font-medium px-4 py-1 rounded-full text-sm mb-4"
               >
                 <Icon name="calendar-event-line mr-1" />
-                Established 1965
+                Established 1983-84
               </motion.span>
               
               <motion.h1
