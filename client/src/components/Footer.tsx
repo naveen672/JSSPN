@@ -27,7 +27,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-white/80 mb-6 backdrop-blur-sm bg-white/5 p-4 rounded-lg shadow-inner border border-white/10">
-              Providing quality technical education since 1965, creating industry-ready professionals through practical training and innovative teaching methods.
+              JSS Polytechnic Nanjangud was established in the academic year 1983-84. It offers three year diploma courses in Electronics & Communication Engineering, Mechanical Engineering, Civil Engineering, Mechatronics Engineering, Computer Science & Engineering and Electrical & Electronics Engineering.
             </p>
             <div className="flex space-x-3 mb-6">
               {socialLinks.map((link) => (
