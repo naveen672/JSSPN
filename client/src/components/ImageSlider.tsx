@@ -1,38 +1,52 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Icon } from "@/lib/icons";
-import jssPolytechnicImage from "@assets/jss-polytechnic-nanjangud-nanjangud-institutes-nytvhtac7j.avif";
 
-// Import more local images
-import heroImage1 from "@assets/image_1744969665272.png";
-import heroImage2 from "@assets/image_1744969675374.png";
-import heroImage3 from "@assets/image_1744969699791.png";
+// Import MOU images
+import mou1 from "@assets/mou1.jpg";
+import mou2 from "@assets/mou2.jpg";
+import mou3 from "@assets/mou3.jpg";
+import mou4 from "@assets/mou4.jpg";
+import mou5 from "@assets/mou5.jpg";
+import mou6 from "@assets/mou6.jpg";
 
 // Slider images
 const images = [
   {
     id: 1,
-    src: heroImage1,
+    src: mou1,
     title: "JSS Polytechnic Nanjangud",
     subtitle: "Established in 1983-84, offering six engineering diploma courses with industry-focused education."
   },
   {
     id: 2,
-    src: heroImage2,
+    src: mou2,
     title: "CO-OP Scheme - Unique in Karnataka",
     subtitle: "Our Industry Institution Interaction Programme provides six months of industrial training with stipend."
   },
   {
     id: 3,
-    src: heroImage3,
+    src: mou3,
     title: "Multiple Engineering Disciplines",
     subtitle: "We offer EC, Mechanical, Civil, Mechatronics, Computer Science and EEE diploma programmes."
   },
   {
     id: 4,
-    src: jssPolytechnicImage,
+    src: mou4,
     title: "Strong Industry Partnerships",
     subtitle: "Collaborating with HMT, BEL, BHEL, BEML and other leading companies for training and placement."
+  },
+  {
+    id: 5,
+    src: mou5,
+    title: "Industry Collaborations",
+    subtitle: "Our students work on industry-relevant projects with mentoring from professionals at partner companies."
+  },
+  {
+    id: 6,
+    src: mou6,
+    title: "Placement Opportunities",
+    subtitle: "Many companies conduct campus interviews to select candidates while they are still in their final year of study."
   }
 ];
 

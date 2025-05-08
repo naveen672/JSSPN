@@ -2,36 +2,50 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Icon } from "@/lib/icons";
 
-// Import local images
-import heroImage1 from "@assets/image_1744969675374.png";
-import heroImage2 from "@assets/image_1744969683825.png";
-import heroImage3 from "@assets/image_1744969692088.png";
-import heroImage4 from "@assets/jss-polytechnic-nanjangud-nanjangud-institutes-nytvhtac7j.avif";
+// Import MOU images for hero section
+import mou1 from "@assets/mou1.jpg";
+import mou2 from "@assets/mou2.jpg";
+import mou3 from "@assets/mou3.jpg";
+import mou4 from "@assets/mou4.jpg";
+import mou5 from "@assets/mou5.jpg";
+import mou6 from "@assets/mou6.jpg";
 
 const heroSlides = [
   {
     id: 1,
-    image: heroImage1,
+    image: mou1,
     heading: "JSS Polytechnic\nNanjangud",
     subheading: "Established in 1983-84, offering diploma courses in Engineering with emphasis on practical training and industry exposure."
   },
   {
     id: 2,
-    image: heroImage2,
+    image: mou2,
     heading: "Co-Op Scheme\nIndustry Partnerships",
     subheading: "Unique Industry Institution Interaction Programme implemented since 1992, the only polytechnic in Karnataka offering this course."
   },
   {
     id: 3,
-    image: heroImage3,
+    image: mou3,
     heading: "Six Engineering\nDiploma Programs",
     subheading: "Offering Electronics & Communication, Mechanical, Civil, Mechatronics, Computer Science and Electrical & Electronics Engineering diplomas."
   },
   {
     id: 4,
-    image: heroImage4,
+    image: mou4,
     heading: "Industry Training\nGuaranteed Experience",
     subheading: "Students undergo six months of industrial training with a stipend in our partner companies, enhancing employability."
+  },
+  {
+    id: 5,
+    image: mou5,
+    heading: "Industry Collaborations\nReal-world Projects",
+    subheading: "Our students work on industry-relevant projects with mentoring from professionals at partner companies."
+  },
+  {
+    id: 6,
+    image: mou6,
+    heading: "Placement\nOpportunities",
+    subheading: "Many companies conduct campus interviews to select candidates while they are still in their final year of study."
   }
 ];
 
