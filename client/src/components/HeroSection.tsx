@@ -13,25 +13,25 @@ const heroSlides = [
     id: 1,
     image: heroImage1,
     heading: "JSS Polytechnic\nNanjangud",
-    subheading: "Established in 1983-84, offering six diploma engineering courses with industry-focused technical education."
+    subheading: "Established in 1983-84, offering diploma courses in Engineering with emphasis on practical training and industry exposure."
   },
   {
     id: 2,
     image: heroImage2,
-    heading: "Industry Partnerships\nReal-world Experience",
-    subheading: "Our Industry Institution Interaction Programme (CO-OP scheme) provides hands-on training with top companies."
+    heading: "Co-Op Scheme\nIndustry Partnerships",
+    subheading: "Unique Industry Institution Interaction Programme implemented since 1992, the only polytechnic in Karnataka offering this course."
   },
   {
     id: 3,
     image: heroImage3,
-    heading: "Excellence in\nTechnical Education",
-    subheading: "Join our campus to gain the skills needed to excel in today's competitive technical environment with experienced faculty."
+    heading: "Six Engineering\nDiploma Programs",
+    subheading: "Offering Electronics & Communication, Mechanical, Civil, Mechatronics, Computer Science and Electrical & Electronics Engineering diplomas."
   },
   {
     id: 4,
     image: heroImage4,
-    heading: "Modern Campus\nQuality Infrastructure",
-    subheading: "State-of-the-art facilities, laboratories, and learning resources to support your technical education journey."
+    heading: "Industry Training\nGuaranteed Experience",
+    subheading: "Students undergo six months of industrial training with a stipend in our partner companies, enhancing employability."
   }
 ];
 
@@ -83,7 +83,10 @@ const HeroSection = () => {
               backgroundImage: `url(${slide.image})`,
               zIndex: 0 
             }}
-          />
+          >
+            {/* Dark overlay to make text more readable */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/30"></div>
+          </motion.div>
         ))}
       </div>
       
