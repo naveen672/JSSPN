@@ -3,31 +3,36 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Icon } from "@/lib/icons";
 import jssPolytechnicImage from "@assets/jss-polytechnic-nanjangud-nanjangud-institutes-nytvhtac7j.avif";
 
+// Import more local images
+import heroImage1 from "@assets/image_1744969665272.png";
+import heroImage2 from "@assets/image_1744969675374.png";
+import heroImage3 from "@assets/image_1744969699791.png";
+
 // Slider images
 const images = [
   {
     id: 1,
-    src: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1986&q=80",
-    title: "Building Tomorrow's Technical Leaders",
-    subtitle: "JSS Polytechnic offers industry-focused technical education with state-of-the-art facilities."
+    src: heroImage1,
+    title: "JSS Polytechnic Nanjangud",
+    subtitle: "Established in 1983-84, offering six engineering diploma courses with industry-focused education."
   },
   {
     id: 2,
-    src: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-    title: "Innovative Learning Environment",
-    subtitle: "Our campus provides advanced laboratories and facilities for hands-on technical training."
+    src: heroImage2,
+    title: "CO-OP Scheme - Unique in Karnataka",
+    subtitle: "Our Industry Institution Interaction Programme provides six months of industrial training with stipend."
   },
   {
     id: 3,
-    src: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-    title: "Excellence in Technical Education",
-    subtitle: "Join us in creating a bright future with quality education and practical training."
+    src: heroImage3,
+    title: "Multiple Engineering Disciplines",
+    subtitle: "We offer EC, Mechanical, Civil, Mechatronics, Computer Science and EEE diploma programmes."
   },
   {
     id: 4,
     src: jssPolytechnicImage,
-    title: "JSS Polytechnic Nanjangud",
-    subtitle: "A premier institution delivering high-quality diploma education with modern infrastructure."
+    title: "Strong Industry Partnerships",
+    subtitle: "Collaborating with HMT, BEL, BHEL, BEML and other leading companies for training and placement."
   }
 ];
 
@@ -82,7 +87,10 @@ const ImageSlider = () => {
           transition={{ 
             opacity: { duration: 1, ease: "easeInOut" } 
           }}
-        />
+        >
+          {/* Add a dark gradient overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20 z-10"></div>
+        </motion.div>
       ))}
 
       <div className="relative container mx-auto h-full px-4 flex items-center z-20">
@@ -94,7 +102,7 @@ const ImageSlider = () => {
             className="inline-flex items-center bg-amber-400/10 text-amber-600 font-medium px-4 py-1 rounded-full text-sm mb-4 shadow-lg backdrop-blur-sm"
           >
             <Icon name="home-4-line mr-1" />
-            <span>Established 1965</span>
+            <span>Established 1983-84</span>
           </motion.span>
           
           <AnimatePresence mode="wait">
