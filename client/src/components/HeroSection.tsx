@@ -2,24 +2,36 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Icon } from "@/lib/icons";
 
+// Import local images
+import heroImage1 from "@assets/image_1744969675374.png";
+import heroImage2 from "@assets/image_1744969683825.png";
+import heroImage3 from "@assets/image_1744969692088.png";
+import heroImage4 from "@assets/jss-polytechnic-nanjangud-nanjangud-institutes-nytvhtac7j.avif";
+
 const heroSlides = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1986&q=80",
-    heading: "Building Tomorrow's\nTechnical Leaders",
-    subheading: "JSS Polytechnic Nanjangud offers industry-focused technical education with state-of-the-art facilities and experienced faculty."
+    image: heroImage1,
+    heading: "JSS Polytechnic\nNanjangud",
+    subheading: "Established in 1983-84, offering six diploma engineering courses with industry-focused technical education."
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80",
-    heading: "Hands-on Learning\nReal-world Skills",
-    subheading: "Our cutting-edge facilities and practical learning approach prepare students for successful careers in their chosen fields."
+    image: heroImage2,
+    heading: "Industry Partnerships\nReal-world Experience",
+    subheading: "Our Industry Institution Interaction Programme (CO-OP scheme) provides hands-on training with top companies."
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1581093458791-9d11293814a7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80",
+    image: heroImage3,
     heading: "Excellence in\nTechnical Education",
-    subheading: "Join our vibrant campus community and gain the skills needed to excel in today's competitive technical environment."
+    subheading: "Join our campus to gain the skills needed to excel in today's competitive technical environment with experienced faculty."
+  },
+  {
+    id: 4,
+    image: heroImage4,
+    heading: "Modern Campus\nQuality Infrastructure",
+    subheading: "State-of-the-art facilities, laboratories, and learning resources to support your technical education journey."
   }
 ];
 

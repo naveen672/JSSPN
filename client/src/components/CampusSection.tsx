@@ -175,6 +175,93 @@ const CampusSection = () => {
           </div>
         </motion.div>
 
+        {/* Recruiters Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: industryVisible ? 1 : 0, y: industryVisible ? 0 : 20 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mt-16"
+        >
+          <h2 className="font-poppins font-bold text-2xl text-primary mb-8 text-center">
+            <Icon name="building-4-line mr-2 text-amber-500" />
+            Our Top Recruiters
+          </h2>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            {/* Recruiter 1 */}
+            <div className="bg-white rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 flex flex-col items-center">
+              <div className="w-16 h-16 bg-amber-400/10 rounded-full flex items-center justify-center mb-3">
+                <Icon name="building-line text-2xl text-amber-600" />
+              </div>
+              <h3 className="font-medium text-primary text-center text-sm">HMT</h3>
+            </div>
+            
+            {/* Recruiter 2 */}
+            <div className="bg-white rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 flex flex-col items-center">
+              <div className="w-16 h-16 bg-amber-400/10 rounded-full flex items-center justify-center mb-3">
+                <Icon name="dashboard-line text-2xl text-amber-600" />
+              </div>
+              <h3 className="font-medium text-primary text-center text-sm">BEL</h3>
+            </div>
+            
+            {/* Recruiter 3 */}
+            <div className="bg-white rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 flex flex-col items-center">
+              <div className="w-16 h-16 bg-amber-400/10 rounded-full flex items-center justify-center mb-3">
+                <Icon name="building-2-line text-2xl text-amber-600" />
+              </div>
+              <h3 className="font-medium text-primary text-center text-sm">BHEL</h3>
+            </div>
+            
+            {/* Recruiter 4 */}
+            <div className="bg-white rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 flex flex-col items-center">
+              <div className="w-16 h-16 bg-amber-400/10 rounded-full flex items-center justify-center mb-3">
+                <Icon name="home-gear-line text-2xl text-amber-600" />
+              </div>
+              <h3 className="font-medium text-primary text-center text-sm">BEML - KGF</h3>
+            </div>
+            
+            {/* Recruiter 5 */}
+            <div className="bg-white rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 flex flex-col items-center">
+              <div className="w-16 h-16 bg-amber-400/10 rounded-full flex items-center justify-center mb-3">
+                <Icon name="cpu-line text-2xl text-amber-600" />
+              </div>
+              <h3 className="font-medium text-primary text-center text-sm">Kaynes Technologies</h3>
+            </div>
+            
+            {/* Recruiter 6 */}
+            <div className="bg-white rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 flex flex-col items-center">
+              <div className="w-16 h-16 bg-amber-400/10 rounded-full flex items-center justify-center mb-3">
+                <Icon name="layout-grid-line text-2xl text-amber-600" />
+              </div>
+              <h3 className="font-medium text-primary text-center text-sm">ASKAR Microns</h3>
+            </div>
+            
+            {/* Recruiter 7 */}
+            <div className="bg-white rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 flex flex-col items-center">
+              <div className="w-16 h-16 bg-amber-400/10 rounded-full flex items-center justify-center mb-3">
+                <Icon name="bar-chart-box-line text-2xl text-amber-600" />
+              </div>
+              <h3 className="font-medium text-primary text-center text-sm">VWF Industries</h3>
+            </div>
+            
+            {/* Recruiter 8 */}
+            <div className="bg-white rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 flex flex-col items-center">
+              <div className="w-16 h-16 bg-amber-400/10 rounded-full flex items-center justify-center mb-3">
+                <Icon name="settings-5-line text-2xl text-amber-600" />
+              </div>
+              <h3 className="font-medium text-primary text-center text-sm">Elkayem Auto Ancillary</h3>
+            </div>
+            
+            {/* Recruiter 9 */}
+            <div className="bg-white rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 flex flex-col items-center">
+              <div className="w-16 h-16 bg-amber-400/10 rounded-full flex items-center justify-center mb-3">
+                <Icon name="service-line text-2xl text-amber-600" />
+              </div>
+              <h3 className="font-medium text-primary text-center text-sm">ATS India</h3>
+            </div>
+          </div>
+        </motion.div>
+
         <motion.div
           ref={btnRef}
           initial={{ opacity: 0, y: 20 }}
