@@ -255,6 +255,62 @@ const ExaminationPage = () => {
                 
                 <div className="mt-8 bg-primary/5 p-5 rounded-lg border border-primary/10">
                   <h4 className="font-medium text-primary mb-3 flex items-center">
+                    <Icon name="team-line mr-2 text-amber-500" />
+                    <span>Examination Department</span>
+                  </h4>
+                  <div className="space-y-3">
+                    <div className="flex items-start">
+                      <div className="bg-white rounded-full p-1 mr-3 shadow-sm">
+                        <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+                          <Icon name="user-3-line text-primary" />
+                        </div>
+                      </div>
+                      <div>
+                        <p className="font-medium text-gray-800">Sri. N Vidyashankar</p>
+                        <p className="text-gray-600 text-sm">Principal</p>
+                        <a href="tel:9886618231" className="text-primary flex items-center mt-1 text-sm">
+                          <Icon name="phone-line mr-1" />
+                          9886618231
+                        </a>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start">
+                      <div className="bg-white rounded-full p-1 mr-3 shadow-sm">
+                        <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+                          <Icon name="user-3-line text-primary" />
+                        </div>
+                      </div>
+                      <div>
+                        <p className="font-medium text-gray-800">Sri. Shashidhar K</p>
+                        <p className="text-gray-600 text-sm">Superintendent</p>
+                        <a href="tel:9880534739" className="text-primary flex items-center mt-1 text-sm">
+                          <Icon name="phone-line mr-1" />
+                          9880534739
+                        </a>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start">
+                      <div className="bg-white rounded-full p-1 mr-3 shadow-sm">
+                        <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+                          <Icon name="user-3-line text-primary" />
+                        </div>
+                      </div>
+                      <div>
+                        <p className="font-medium text-gray-800">Smt. Ramya</p>
+                        <p className="text-gray-600 text-sm">SDA</p>
+                        <a href="tel:7892210152" className="text-primary flex items-center mt-1 text-sm">
+                          <Icon name="phone-line mr-1" />
+                          7892210152
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="mt-8 bg-primary/5 p-5 rounded-lg border border-primary/10">
+                  <h4 className="font-medium text-primary mb-3 flex items-center">
                     <Icon name="information-line mr-2 text-amber-500" />
                     <span>Important Notes</span>
                   </h4>
