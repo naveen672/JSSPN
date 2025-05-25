@@ -248,6 +248,178 @@ const ProgramPage = () => {
             </div>
           </div>
         </section>
+        
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="text-center max-w-2xl mx-auto mb-12"
+            >
+              <h2 className="font-poppins font-bold text-3xl text-primary mb-4 flex items-center justify-center">
+                <Icon name="team-line mr-3 text-amber-500" />
+                <span>Faculty Members</span>
+              </h2>
+              <p className="text-gray-600">
+                Meet our dedicated and experienced faculty members who provide excellent guidance and mentorship
+              </p>
+            </motion.div>
+            
+            <div className="overflow-x-auto mb-12 rounded-lg shadow-lg border border-gray-200">
+              <table className="min-w-full bg-white">
+                <thead>
+                  <tr className="bg-primary text-white">
+                    <th className="px-6 py-3 text-left font-semibold text-sm uppercase">Sl. No</th>
+                    <th className="px-6 py-3 text-left font-semibold text-sm uppercase">Faculty Name</th>
+                    <th className="px-6 py-3 text-left font-semibold text-sm uppercase">Designation</th>
+                    <th className="px-6 py-3 text-left font-semibold text-sm uppercase">Qualification</th>
+                    <th className="px-6 py-3 text-left font-semibold text-sm uppercase">Year of Joining</th>
+                    <th className="px-6 py-3 text-left font-semibold text-sm uppercase">Contact</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-200">
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Sri. Prabhu prasad G</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">HOD</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">M.Sc</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">21-08-1991</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-blue-600 hover:text-blue-800">
+                      <a href="tel:9480191974" className="flex items-center">
+                        <Icon name="phone-line mr-1" />
+                        9480191974
+                      </a>
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Sri. Girish T S</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Selection Grade Lecturer</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">M.Sc</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">14-07-1997</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-blue-600 hover:text-blue-800">
+                      <a href="tel:9845431005" className="flex items-center">
+                        <Icon name="phone-line mr-1" />
+                        9845431005
+                      </a>
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">3</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Smt. Sowmya N</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Lecturer</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">M.Sc</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">19-07-2005</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-blue-600 hover:text-blue-800">
+                      <a href="tel:9916472363" className="flex items-center">
+                        <Icon name="phone-line mr-1" />
+                        9916472363
+                      </a>
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">4</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Sri. Rajesha H P</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Lecturer</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">M.Sc</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">02-08-2011</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-blue-600 hover:text-blue-800">
+                      <a href="tel:9538131000" className="flex items-center">
+                        <Icon name="phone-line mr-1" />
+                        9538131000
+                      </a>
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">5</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Smt. Pavithra G</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Lecturer</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">MA,B.Ed</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">01-07-2013</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-blue-600 hover:text-blue-800">
+                      <a href="tel:9740244245" className="flex items-center">
+                        <Icon name="phone-line mr-1" />
+                        9740244245
+                      </a>
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">6</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Sri. Mahadeva Prasad</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Lecturer</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">MA,M.Ed</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">08-07-2019</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-blue-600 hover:text-blue-800">
+                      <a href="tel:9845330779" className="flex items-center">
+                        <Icon name="phone-line mr-1" />
+                        9845330779
+                      </a>
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">7</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Sri. Basavanna M</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Instructor</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">B.Sc</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">12-03-2001</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-blue-600 hover:text-blue-800">
+                      <a href="tel:9448558672" className="flex items-center">
+                        <Icon name="phone-line mr-1" />
+                        9448558672
+                      </a>
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">8</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Sri. Mahadeva B P</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Helper</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">-</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">17-07-1997</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-blue-600 hover:text-blue-800">
+                      <a href="tel:9980377269" className="flex items-center">
+                        <Icon name="phone-line mr-1" />
+                        9980377269
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            
+            <div className="flex flex-wrap justify-center gap-6 mt-8">
+              <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100 max-w-sm w-full">
+                <div className="flex items-center mb-4">
+                  <div className="w-16 h-16 bg-amber-400/20 rounded-full flex items-center justify-center mr-4">
+                    <Icon name="flask-line text-amber-600 text-3xl" />
+                  </div>
+                  <div>
+                    <h3 className="font-poppins font-semibold text-lg text-primary">Statistics & Analytics Lab</h3>
+                    <p className="text-gray-500 text-sm">Well-equipped modern lab</p>
+                  </div>
+                </div>
+                <p className="text-gray-600">
+                  Our Statistics and Analytics laboratory provides students with hands-on experience with statistical software and analytical tools essential for technical education.
+                </p>
+              </div>
+              
+              <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100 max-w-sm w-full">
+                <div className="flex items-center mb-4">
+                  <div className="w-16 h-16 bg-amber-400/20 rounded-full flex items-center justify-center mr-4">
+                    <Icon name="translate-2 text-amber-600 text-3xl" />
+                  </div>
+                  <div>
+                    <h3 className="font-poppins font-semibold text-lg text-primary">Language Lab</h3>
+                    <p className="text-gray-500 text-sm">Communication skills development</p>
+                  </div>
+                </div>
+                <p className="text-gray-600">
+                  Our English Language Laboratory is designed to enhance communication skills of students with modern audio-visual equipment and interactive learning materials.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
       </PageLayout>
     );
   }
