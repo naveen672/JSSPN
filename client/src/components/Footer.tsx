@@ -107,7 +107,7 @@ const Footer = () => {
               <Icon name="copyright-line mr-1" />
               © {new Date().getFullYear()} <span className="font-semibold mx-1">JSS Polytechnic Nanjangud.</span> All rights reserved.
             </p>
-            <div className="flex flex-wrap gap-4 md:gap-6 justify-center">
+            <div className="flex flex-wrap gap-4 md:gap-6 items-center justify-center">
               {footerLinks.map((link) => (
                 <a
                   key={link.id}
@@ -117,6 +117,13 @@ const Footer = () => {
                   {link.name}
                 </a>
               ))}
+              <div className="flex items-center text-white/70 bg-white/10 px-3 py-1 rounded-full border border-white/10">
+                <Icon name="user-filled mr-2 text-amber-400" />
+                <span className="text-sm mr-1">Total Visitors:</span>
+                <span className="text-amber-400 font-semibold text-sm">
+                  <VisitorCounter displayMode="compact" />
+                </span>
+              </div>
             </div>
           </div>
         </div>
