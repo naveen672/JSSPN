@@ -63,14 +63,7 @@ const navigationItems: NavigationItem[] = [
     href: '#academics',
     icon: 'graduation-cap-line',
     dropdown: [
-      { name: 'Computer Science Engineering', href: '/programs/computer-science-engineering' },
-      { name: 'Mechanical Engineering', href: '/programs/mechanical-engineering' },
-      { name: 'Electrical Engineering', href: '/programs/electrical-engineering' },
-      { name: 'Civil Engineering', href: '/programs/civil-engineering' },
-      { name: 'Electronics & Communication', href: '/programs/electronics-communication' },
-      { name: 'Science & Humanities', href: '/programs/science-humanities' },
-      { name: 'Mechatronics', href: '/programs/mechatronics' },
-      { name: 'Calender Of Events', href: '/academic/calendar-of-events' },
+      { name: 'Calendar of Events', href: '/academic/calendar-of-events' },
       { name: 'Admission', href: '/academic/admission' },
       { name: 'Examination', href: '/academic/examination' },
       { name: 'Circulars', href: '/academic/circulars' }
