@@ -109,7 +109,12 @@ function NewsManager() {
   // Create news mutation
   const createNewsMutation = useMutation({
     mutationFn: async (data: typeof newsForm) => {
-      const response = await apiRequest('POST', '/api/news', data);
+      // Make sure priority is a number
+      const newsData = {
+        ...data,
+        priority: Number(data.priority)
+      };
+      const response = await apiRequest('POST', '/api/news', newsData);
       return response.json();
     },
     onSuccess: () => {
@@ -139,7 +144,12 @@ function NewsManager() {
   // Update news mutation
   const updateNewsMutation = useMutation({
     mutationFn: async ({ id, data }: { id: number, data: Partial<typeof newsForm> }) => {
-      const response = await apiRequest('PUT', `/api/news/${id}`, data);
+      // Make sure priority is a number if it exists
+      const newsData = {
+        ...data,
+        priority: data.priority !== undefined ? Number(data.priority) : undefined
+      };
+      const response = await apiRequest('PUT', `/api/news/${id}`, newsData);
       return response.json();
     },
     onSuccess: () => {
