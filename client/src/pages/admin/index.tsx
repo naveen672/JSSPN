@@ -31,6 +31,9 @@ export default function AdminDashboard() {
   const [, setLocation] = useLocation();
   const { toast } = useToast();
   
+  // Fix for TypeScript null check
+  const safeUser = user || { username: '', fullName: '' };
+  
   // If not logged in, redirect to login page
   if (!user) {
     setLocation('/admin/login');
@@ -52,7 +55,7 @@ export default function AdminDashboard() {
         <div className="container mx-auto flex justify-between items-center">
           <div>
             <h1 className="text-2xl font-bold">JSS Polytechnic Admin</h1>
-            <p>Welcome, {user.fullName || user.username}</p>
+            <p>Welcome, {safeUser.fullName || safeUser.username}</p>
           </div>
           <Button variant="outline" onClick={handleLogout} className="text-white">
             <LogOut className="mr-2 h-4 w-4" />
@@ -101,7 +104,7 @@ function NewsManager() {
   } = useQuery<NewsItem[]>({
     queryKey: ['/api/news'],
     queryFn: getQueryFn(),
-  });
+  }) as { data: NewsItem[] | undefined; isLoading: boolean; isError: boolean };
   
   // Create news mutation
   const createNewsMutation = useMutation({
@@ -381,7 +384,7 @@ function NewsManager() {
                 <p className="text-sm">{item.content}</p>
               </CardContent>
               <CardFooter className="text-xs text-gray-500">
-                Created: {new Date(item.createdAt).toLocaleDateString()}
+                Created: {item.createdAt ? new Date(item.createdAt).toLocaleDateString() : 'Unknown date'}
               </CardFooter>
             </Card>
           ))
@@ -406,7 +409,7 @@ function MessagesManager() {
   } = useQuery<ContactSubmission[]>({
     queryKey: ['/api/contact'],
     queryFn: getQueryFn(),
-  });
+  }) as { data: ContactSubmission[] | undefined; isLoading: boolean; isError: boolean };
   
   // Mark as read mutation
   const markAsReadMutation = useMutation({
@@ -490,7 +493,7 @@ function MessagesManager() {
                 <p className="whitespace-pre-wrap">{message.message}</p>
               </CardContent>
               <CardFooter className="text-xs text-gray-500">
-                Received: {new Date(message.createdAt).toLocaleString()}
+                Received: {message.createdAt ? new Date(message.createdAt).toLocaleString() : 'Unknown date'}
               </CardFooter>
             </Card>
           ))}
