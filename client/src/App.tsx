@@ -33,9 +33,9 @@ function Router() {
       <Route path="/about/downloads" component={Downloads} />
       <Route path="/about/contact" component={ContactUs} />
       <Route path="/programs/:slug" component={ProgramPage} />
-      <Route path="/:category/:slug" component={GenericPage} />
       <Route path="/admin/login" component={AdminLogin} />
       <ProtectedRoute path="/admin" component={AdminDashboard} adminOnly={true} />
+      <Route path="/:category/:slug" component={GenericPage} />
       <Route component={NotFound} />
     </Switch>
   );
