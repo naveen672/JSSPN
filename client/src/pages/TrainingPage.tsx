@@ -14,12 +14,23 @@ import image7 from "@assets/image_1744969708828.png";
 import image8 from "@assets/image_1744970767092.png";
 import image9 from "@assets/image_1744970934660.png";
 
+// Import MOU images
+import mou1 from "@assets/mou1.jpg";
+import mou2 from "@assets/mou2.jpg";
+import mou3 from "@assets/mou3.jpg";
+import mou4 from "@assets/mou4.jpg";
+import mou5 from "@assets/mou5.jpg";
+import mou6 from "@assets/mou6.jpg";
+
 const TrainingPage = () => {
   // Images array
   const sliderImages = [
     image1, image2, image3, image4, image5, 
     image6, image7, image8, image9
   ];
+  
+  // MOU images array
+  const mouImages = [mou1, mou2, mou3, mou4, mou5, mou6];
 
   return (
     <PageLayout>
@@ -42,7 +53,7 @@ const TrainingPage = () => {
             </h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {sliderImages.map((image, index) => (
               <motion.div
                 key={index}
@@ -55,6 +66,32 @@ const TrainingPage = () => {
                   <img 
                     src={image} 
                     alt={`Training image ${index + 1}`} 
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+          
+          <div className="mt-16 mb-12 text-center">
+            <h2 className="font-poppins font-bold text-3xl text-primary mb-6">
+              Industry Collaborations
+            </h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            {mouImages.map((image, index) => (
+              <motion.div
+                key={`mou-${index}`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 * index }}
+                className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 group"
+              >
+                <div className="h-64 bg-gray-200 relative overflow-hidden">
+                  <img 
+                    src={image} 
+                    alt={`Industry collaboration ${index + 1}`} 
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
