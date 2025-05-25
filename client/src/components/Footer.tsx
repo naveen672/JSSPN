@@ -108,7 +108,7 @@ const Footer = () => {
               </p>
               <div className="flex items-center px-3 py-1 bg-amber-500 rounded-full text-white">
                 <Icon name="user-filled mr-2" />
-                <span className="mr-1">Visitors:</span>
+                <span className="mr-1 font-bold">Total Visitors:</span>
                 <VisitorCounter displayMode="compact" />
               </div>
             </div>

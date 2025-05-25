@@ -47,7 +47,7 @@ const VisitorCounter = ({ displayMode = 'normal' }: VisitorCounterProps) => {
         {isLoading ? (
           <span className="animate-pulse">...</span>
         ) : (
-          <span>{visitorCount.toLocaleString()}</span>
+          <span className="font-bold">{visitorCount.toLocaleString()}</span>
         )}
       </>
     );
