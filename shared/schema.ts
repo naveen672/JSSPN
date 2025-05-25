@@ -10,6 +10,7 @@ export const users = pgTable("users", {
   email: text("email"),
   fullName: text("full_name"),
   role: text("role").default("user"),
+  isAdmin: boolean("is_admin").default(false),
   createdAt: timestamp("created_at").defaultNow(),
 });
 
@@ -72,6 +73,7 @@ export const insertUserSchema = createInsertSchema(users).pick({
   email: true,
   fullName: true,
   role: true,
+  isAdmin: true,
 });
 
 export const insertVisitorCounterSchema = createInsertSchema(visitorCounter).pick({
