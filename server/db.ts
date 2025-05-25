@@ -1,5 +1,5 @@
-import { Pool } from '@neondatabase/serverless';
-import { drizzle } from 'drizzle-orm/neon-serverless';
+import postgres from 'postgres';
+import { drizzle } from 'drizzle-orm/postgres-js';
 import * as schema from "@shared/schema";
 
 if (!process.env.DATABASE_URL) {
@@ -8,7 +8,24 @@ if (!process.env.DATABASE_URL) {
   );
 }
 
-export const pool = new Pool({ connectionString: process.env.DATABASE_URL });
-export const db = drizzle(pool, { schema });
+// Create postgres client
+const client = postgres(process.env.DATABASE_URL);
+
+// Create drizzle instance
+export const db = drizzle(client, { schema });
+
+// For session store
+export const pool = {
+  query: async (text: string, params: any[] = []) => {
+    try {
+      const result = await client.unsafe(text, params);
+      return { rows: result };
+    } catch (error) {
+      console.error('Error executing query', error);
+      throw error;
+    }
+  },
+  connect: () => client,
+};
 
 console.log("Database connection established");

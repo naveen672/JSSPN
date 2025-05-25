@@ -10,6 +10,7 @@ import {
 import { ZodError } from "zod";
 import { sendContactConfirmation } from "./email";
 import { setupAuth } from "./auth";
+import { hashPassword } from "./auth";
 
 // Error handler middleware
 const handleError = (res: Response, error: any) => {
