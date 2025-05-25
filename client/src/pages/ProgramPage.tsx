@@ -1,9 +1,85 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRoute } from "wouter";
 import PageLayout from "@/components/PageLayout";
 import PageBanner from "@/components/PageBanner";
 import { motion } from "framer-motion";
 import { Icon } from "@/lib/icons";
+
+interface FacultyMember {
+  id: number;
+  name: string;
+  designation: string;
+  qualification: string;
+  joined: string;
+  contact: string;
+}
+
+// Faculty Accordion component for expandable faculty information
+const FacultyAccordion = ({ faculty }: { faculty: FacultyMember }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  
+  return (
+    <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+      <div 
+        className="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-50"
+        onClick={() => setIsExpanded(!isExpanded)}
+      >
+        <div className="flex items-center">
+          <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center mr-3">
+            <Icon name="user-line text-primary" />
+          </div>
+          <div>
+            <h3 className="font-medium text-primary">{faculty.name}</h3>
+            <p className="text-sm text-gray-600">{faculty.designation}</p>
+          </div>
+        </div>
+        <div className="flex items-center">
+          <button className="w-8 h-8 flex items-center justify-center rounded-full bg-amber-100 text-amber-600 transition-transform duration-300" style={{ transform: isExpanded ? 'rotate(45deg)' : 'rotate(0deg)' }}>
+            <Icon name="add-line" />
+          </button>
+        </div>
+      </div>
+      
+      {isExpanded && (
+        <div className="p-4 bg-gray-50 border-t border-gray-100">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="flex items-center">
+              <div className="w-8 h-8 bg-amber-100 rounded-full flex items-center justify-center mr-2">
+                <Icon name="graduation-cap-line text-amber-600" />
+              </div>
+              <div>
+                <p className="text-xs text-gray-500">Qualification</p>
+                <p className="font-medium text-gray-800">{faculty.qualification}</p>
+              </div>
+            </div>
+            
+            <div className="flex items-center">
+              <div className="w-8 h-8 bg-amber-100 rounded-full flex items-center justify-center mr-2">
+                <Icon name="calendar-line text-amber-600" />
+              </div>
+              <div>
+                <p className="text-xs text-gray-500">Joined On</p>
+                <p className="font-medium text-gray-800">{faculty.joined}</p>
+              </div>
+            </div>
+            
+            <div className="flex items-center">
+              <div className="w-8 h-8 bg-amber-100 rounded-full flex items-center justify-center mr-2">
+                <Icon name="phone-line text-amber-600" />
+              </div>
+              <div>
+                <p className="text-xs text-gray-500">Contact</p>
+                <a href={`tel:${faculty.contact}`} className="font-medium text-blue-600 hover:text-blue-800">
+                  {faculty.contact}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
 
 // This is a template for program pages
 const ProgramPage = () => {
@@ -266,125 +342,75 @@ const ProgramPage = () => {
               </p>
             </motion.div>
             
-            <div className="overflow-x-auto mb-12 rounded-lg shadow-lg border border-gray-200">
-              <table className="min-w-full bg-white">
-                <thead>
-                  <tr className="bg-primary text-white">
-                    <th className="px-6 py-3 text-left font-semibold text-sm uppercase">Sl. No</th>
-                    <th className="px-6 py-3 text-left font-semibold text-sm uppercase">Faculty Name</th>
-                    <th className="px-6 py-3 text-left font-semibold text-sm uppercase">Designation</th>
-                    <th className="px-6 py-3 text-left font-semibold text-sm uppercase">Qualification</th>
-                    <th className="px-6 py-3 text-left font-semibold text-sm uppercase">Year of Joining</th>
-                    <th className="px-6 py-3 text-left font-semibold text-sm uppercase">Contact</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-200">
-                  <tr className="hover:bg-gray-50">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Sri. Prabhu prasad G</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">HOD</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">M.Sc</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">21-08-1991</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-blue-600 hover:text-blue-800">
-                      <a href="tel:9480191974" className="flex items-center">
-                        <Icon name="phone-line mr-1" />
-                        9480191974
-                      </a>
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-gray-50">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Sri. Girish T S</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Selection Grade Lecturer</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">M.Sc</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">14-07-1997</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-blue-600 hover:text-blue-800">
-                      <a href="tel:9845431005" className="flex items-center">
-                        <Icon name="phone-line mr-1" />
-                        9845431005
-                      </a>
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-gray-50">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">3</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Smt. Sowmya N</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Lecturer</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">M.Sc</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">19-07-2005</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-blue-600 hover:text-blue-800">
-                      <a href="tel:9916472363" className="flex items-center">
-                        <Icon name="phone-line mr-1" />
-                        9916472363
-                      </a>
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-gray-50">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">4</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Sri. Rajesha H P</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Lecturer</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">M.Sc</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">02-08-2011</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-blue-600 hover:text-blue-800">
-                      <a href="tel:9538131000" className="flex items-center">
-                        <Icon name="phone-line mr-1" />
-                        9538131000
-                      </a>
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-gray-50">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">5</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Smt. Pavithra G</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Lecturer</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">MA,B.Ed</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">01-07-2013</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-blue-600 hover:text-blue-800">
-                      <a href="tel:9740244245" className="flex items-center">
-                        <Icon name="phone-line mr-1" />
-                        9740244245
-                      </a>
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-gray-50">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">6</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Sri. Mahadeva Prasad</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Lecturer</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">MA,M.Ed</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">08-07-2019</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-blue-600 hover:text-blue-800">
-                      <a href="tel:9845330779" className="flex items-center">
-                        <Icon name="phone-line mr-1" />
-                        9845330779
-                      </a>
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-gray-50">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">7</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Sri. Basavanna M</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Instructor</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">B.Sc</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">12-03-2001</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-blue-600 hover:text-blue-800">
-                      <a href="tel:9448558672" className="flex items-center">
-                        <Icon name="phone-line mr-1" />
-                        9448558672
-                      </a>
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-gray-50">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">8</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Sri. Mahadeva B P</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Helper</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">-</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">17-07-1997</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-blue-600 hover:text-blue-800">
-                      <a href="tel:9980377269" className="flex items-center">
-                        <Icon name="phone-line mr-1" />
-                        9980377269
-                      </a>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+            <div className="grid grid-cols-1 gap-4 mb-12">
+              {[
+                {
+                  id: 1,
+                  name: "Sri. Prabhu prasad G",
+                  designation: "HOD",
+                  qualification: "M.Sc",
+                  joined: "21-08-1991",
+                  contact: "9480191974"
+                },
+                {
+                  id: 2,
+                  name: "Sri. Girish T S",
+                  designation: "Selection Grade Lecturer",
+                  qualification: "M.Sc",
+                  joined: "14-07-1997",
+                  contact: "9845431005"
+                },
+                {
+                  id: 3,
+                  name: "Smt. Sowmya N",
+                  designation: "Lecturer",
+                  qualification: "M.Sc",
+                  joined: "19-07-2005",
+                  contact: "9916472363"
+                },
+                {
+                  id: 4,
+                  name: "Sri. Rajesha H P",
+                  designation: "Lecturer",
+                  qualification: "M.Sc",
+                  joined: "02-08-2011",
+                  contact: "9538131000"
+                },
+                {
+                  id: 5,
+                  name: "Smt. Pavithra G",
+                  designation: "Lecturer",
+                  qualification: "MA,B.Ed",
+                  joined: "01-07-2013",
+                  contact: "9740244245"
+                },
+                {
+                  id: 6,
+                  name: "Sri. Mahadeva Prasad",
+                  designation: "Lecturer",
+                  qualification: "MA,M.Ed",
+                  joined: "08-07-2019",
+                  contact: "9845330779"
+                },
+                {
+                  id: 7,
+                  name: "Sri. Basavanna M",
+                  designation: "Instructor",
+                  qualification: "B.Sc",
+                  joined: "12-03-2001",
+                  contact: "9448558672"
+                },
+                {
+                  id: 8,
+                  name: "Sri. Mahadeva B P",
+                  designation: "Helper",
+                  qualification: "-",
+                  joined: "17-07-1997",
+                  contact: "9980377269"
+                }
+              ].map((faculty) => (
+                <FacultyAccordion key={faculty.id} faculty={faculty} />
+              ))}
             </div>
             
             <div className="flex flex-wrap justify-center gap-6 mt-8">
