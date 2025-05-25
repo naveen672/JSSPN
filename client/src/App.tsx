@@ -17,6 +17,7 @@ import Administration from "@/pages/Administration";
 import Reports from "@/pages/Reports";
 import Downloads from "@/pages/Downloads";
 import ContactUs from "@/pages/ContactUs";
+import ScienceAndHumanities from "@/pages/ScienceAndHumanities";
 import AdminLogin from "@/pages/admin/login";
 import AdminDashboard from "@/pages/admin/index";
 
