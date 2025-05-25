@@ -93,13 +93,132 @@ const AdmissionPage = () => {
                     </p>
                   </div>
                   
-                  <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                  <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 mb-8">
                     <h3 className="text-xl font-semibold text-primary mb-4 pb-2 border-b border-gray-100">
                       Attendance Requirement
                     </h3>
                     <p className="text-gray-700">
                       In each semester, the candidate to be Eligible for examination shall obtain a minimum attendance of 75% in each course (subject) with a provision of condonation of 15% of the attendance by the Secretary, Board of Technical Examination on the specific recommendation of the Principal on the reasons such as medical grounds, International/ National/ State level sports, NCC, NSS and such other social programs of national interest.
                     </p>
+                  </div>
+
+                  <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 mb-8">
+                    <h3 className="text-xl font-semibold text-primary mb-4 pb-2 border-b border-gray-100">
+                      Courses Offered & Intake
+                    </h3>
+                    <div className="overflow-x-auto">
+                      <table className="min-w-full border-collapse border border-gray-200 rounded-lg">
+                        <thead>
+                          <tr className="bg-primary text-white">
+                            <th className="px-4 py-3 text-left font-semibold text-sm border border-gray-300">Sl. No</th>
+                            <th className="px-4 py-3 text-left font-semibold text-sm border border-gray-300">Programs</th>
+                            <th className="px-4 py-3 text-left font-semibold text-sm border border-gray-300">Intake (Inc SNQ)</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr className="hover:bg-gray-50">
+                            <td className="px-4 py-3 border border-gray-300">1</td>
+                            <td className="px-4 py-3 border border-gray-300">Electronics & Communication Engineering</td>
+                            <td className="px-4 py-3 border border-gray-300">40+2=42</td>
+                          </tr>
+                          <tr className="hover:bg-gray-50 bg-gray-50">
+                            <td className="px-4 py-3 border border-gray-300">2</td>
+                            <td className="px-4 py-3 border border-gray-300">Mechanical Engineering</td>
+                            <td className="px-4 py-3 border border-gray-300">40+2=42</td>
+                          </tr>
+                          <tr className="hover:bg-gray-50">
+                            <td className="px-4 py-3 border border-gray-300">3</td>
+                            <td className="px-4 py-3 border border-gray-300">Civil Engineering</td>
+                            <td className="px-4 py-3 border border-gray-300">60+3=63</td>
+                          </tr>
+                          <tr className="hover:bg-gray-50 bg-gray-50">
+                            <td className="px-4 py-3 border border-gray-300">4</td>
+                            <td className="px-4 py-3 border border-gray-300">Mechatronics Engineering</td>
+                            <td className="px-4 py-3 border border-gray-300">60+3=63</td>
+                          </tr>
+                          <tr className="hover:bg-gray-50">
+                            <td className="px-4 py-3 border border-gray-300">5</td>
+                            <td className="px-4 py-3 border border-gray-300">Electrical & Electronics Engineering</td>
+                            <td className="px-4 py-3 border border-gray-300">60+3=63</td>
+                          </tr>
+                          <tr className="hover:bg-gray-50 bg-gray-50">
+                            <td className="px-4 py-3 border border-gray-300">6</td>
+                            <td className="px-4 py-3 border border-gray-300">Computer Science & Engineering</td>
+                            <td className="px-4 py-3 border border-gray-300">60+3=63</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                    <h3 className="text-xl font-semibold text-primary mb-4 pb-2 border-b border-gray-100">
+                      Admission Details (Year-wise)
+                    </h3>
+                    <div className="overflow-x-auto">
+                      <table className="min-w-full border-collapse border border-gray-200 rounded-lg">
+                        <thead>
+                          <tr className="bg-primary text-white">
+                            <th className="px-4 py-3 text-left font-semibold text-sm border border-gray-300">Sl. No</th>
+                            <th className="px-4 py-3 text-left font-semibold text-sm border border-gray-300">Programs</th>
+                            <th className="px-4 py-3 text-center font-semibold text-sm border border-gray-300">2021-22</th>
+                            <th className="px-4 py-3 text-center font-semibold text-sm border border-gray-300">2022-23</th>
+                            <th className="px-4 py-3 text-center font-semibold text-sm border border-gray-300">2023-24</th>
+                            <th className="px-4 py-3 text-center font-semibold text-sm border border-gray-300">2024-25</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr className="hover:bg-gray-50">
+                            <td className="px-4 py-3 border border-gray-300">1</td>
+                            <td className="px-4 py-3 border border-gray-300">Electronics & Communication Engineering</td>
+                            <td className="px-4 py-3 text-center border border-gray-300">42</td>
+                            <td className="px-4 py-3 text-center border border-gray-300">42</td>
+                            <td className="px-4 py-3 text-center border border-gray-300">42</td>
+                            <td className="px-4 py-3 text-center border border-gray-300">40</td>
+                          </tr>
+                          <tr className="hover:bg-gray-50 bg-gray-50">
+                            <td className="px-4 py-3 border border-gray-300">2</td>
+                            <td className="px-4 py-3 border border-gray-300">Mechanical Engineering</td>
+                            <td className="px-4 py-3 text-center border border-gray-300">42</td>
+                            <td className="px-4 py-3 text-center border border-gray-300">41</td>
+                            <td className="px-4 py-3 text-center border border-gray-300">42</td>
+                            <td className="px-4 py-3 text-center border border-gray-300">41</td>
+                          </tr>
+                          <tr className="hover:bg-gray-50">
+                            <td className="px-4 py-3 border border-gray-300">3</td>
+                            <td className="px-4 py-3 border border-gray-300">Civil Engineering</td>
+                            <td className="px-4 py-3 text-center border border-gray-300">27</td>
+                            <td className="px-4 py-3 text-center border border-gray-300">61</td>
+                            <td className="px-4 py-3 text-center border border-gray-300">61</td>
+                            <td className="px-4 py-3 text-center border border-gray-300">40</td>
+                          </tr>
+                          <tr className="hover:bg-gray-50 bg-gray-50">
+                            <td className="px-4 py-3 border border-gray-300">4</td>
+                            <td className="px-4 py-3 border border-gray-300">Mechatronics Engineering</td>
+                            <td className="px-4 py-3 text-center border border-gray-300">30</td>
+                            <td className="px-4 py-3 text-center border border-gray-300">62</td>
+                            <td className="px-4 py-3 text-center border border-gray-300">63</td>
+                            <td className="px-4 py-3 text-center border border-gray-300">54</td>
+                          </tr>
+                          <tr className="hover:bg-gray-50">
+                            <td className="px-4 py-3 border border-gray-300">5</td>
+                            <td className="px-4 py-3 border border-gray-300">Electrical & Electronics Engineering</td>
+                            <td className="px-4 py-3 text-center border border-gray-300">24</td>
+                            <td className="px-4 py-3 text-center border border-gray-300">63</td>
+                            <td className="px-4 py-3 text-center border border-gray-300">62</td>
+                            <td className="px-4 py-3 text-center border border-gray-300">63</td>
+                          </tr>
+                          <tr className="hover:bg-gray-50 bg-gray-50">
+                            <td className="px-4 py-3 border border-gray-300">6</td>
+                            <td className="px-4 py-3 border border-gray-300">Computer Science & Engineering</td>
+                            <td className="px-4 py-3 text-center border border-gray-300">28</td>
+                            <td className="px-4 py-3 text-center border border-gray-300">63</td>
+                            <td className="px-4 py-3 text-center border border-gray-300">62</td>
+                            <td className="px-4 py-3 text-center border border-gray-300">63</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -142,18 +261,59 @@ const AdmissionPage = () => {
                 <div className="mt-8 bg-primary/5 p-5 rounded-lg border border-primary/10">
                   <h4 className="font-medium text-primary mb-3 flex items-center">
                     <Icon name="customer-service-2-line mr-2 text-amber-500" />
-                    <span>Need Help?</span>
+                    <span>Help Desk</span>
                   </h4>
                   <p className="text-gray-600 text-sm mb-4">
                     Our admission team is available to answer your questions and guide you through the application process.
                   </p>
-                  <div className="flex items-center text-gray-700 mb-2">
-                    <Icon name="phone-line mr-2 text-primary" />
-                    <span>+91 88888-88888</span>
-                  </div>
-                  <div className="flex items-center text-gray-700">
-                    <Icon name="mail-line mr-2 text-primary" />
-                    <span>admissions@jsspnj.org</span>
+                  <div className="space-y-3">
+                    <div className="flex items-start">
+                      <div className="bg-white rounded-full p-1 mr-3 shadow-sm">
+                        <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+                          <Icon name="user-3-line text-primary" />
+                        </div>
+                      </div>
+                      <div>
+                        <p className="font-medium text-gray-800">Sri. N Vidyashankar</p>
+                        <p className="text-gray-600 text-sm">Principal</p>
+                        <a href="tel:9886618231" className="text-primary flex items-center mt-1 text-sm">
+                          <Icon name="phone-line mr-1" />
+                          9886618231
+                        </a>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start">
+                      <div className="bg-white rounded-full p-1 mr-3 shadow-sm">
+                        <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+                          <Icon name="user-3-line text-primary" />
+                        </div>
+                      </div>
+                      <div>
+                        <p className="font-medium text-gray-800">Sri. Shashidhar K</p>
+                        <p className="text-gray-600 text-sm">Superintendent</p>
+                        <a href="tel:9880534739" className="text-primary flex items-center mt-1 text-sm">
+                          <Icon name="phone-line mr-1" />
+                          9880534739
+                        </a>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start">
+                      <div className="bg-white rounded-full p-1 mr-3 shadow-sm">
+                        <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+                          <Icon name="user-3-line text-primary" />
+                        </div>
+                      </div>
+                      <div>
+                        <p className="font-medium text-gray-800">Sri. Mallesha M</p>
+                        <p className="text-gray-600 text-sm">SDA</p>
+                        <a href="tel:8880111007" className="text-primary flex items-center mt-1 text-sm">
+                          <Icon name="phone-line mr-1" />
+                          8880111007
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 
