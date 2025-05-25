@@ -9,6 +9,7 @@ import {
 } from "@shared/schema";
 import { ZodError } from "zod";
 import { sendContactConfirmation } from "./email";
+import { setupAuth } from "./auth";
 
 // Error handler middleware
 const handleError = (res: Response, error: any) => {
@@ -23,6 +24,26 @@ const handleError = (res: Response, error: any) => {
 };
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Setup authentication
+  const { requireAdmin } = setupAuth(app);
+  
+  // Create initial admin user if it doesn't exist
+  try {
+    const adminUser = await storage.getUserByUsername("admin");
+    if (!adminUser) {
+      // Create default admin user
+      await storage.createUser({
+        username: "admin",
+        password: "admin", // This will be hashed by the auth system
+        email: "admin@jsspolytechnic.org",
+        fullName: "Administrator",
+        isAdmin: true,
+      });
+      console.log("Default admin user created");
+    }
+  } catch (error) {
+    console.error("Error checking/creating admin user:", error);
+  }
   // Basic info API route
   app.get('/api/info', (req, res) => {
     res.json({
@@ -45,7 +66,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.post('/api/news', async (req, res) => {
+  app.post('/api/news', requireAdmin, async (req, res) => {
     try {
       const newsItem = insertNewsItemSchema.parse(req.body);
       const createdNews = await storage.createNewsItem(newsItem);
@@ -55,7 +76,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.put('/api/news/:id', async (req, res) => {
+  app.put('/api/news/:id', requireAdmin, async (req, res) => {
     try {
       const id = parseInt(req.params.id);
       const newsItem = insertNewsItemSchema.partial().parse(req.body);
@@ -69,7 +90,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.delete('/api/news/:id', async (req, res) => {
+  app.delete('/api/news/:id', requireAdmin, async (req, res) => {
     try {
       const id = parseInt(req.params.id);
       const success = await storage.deleteNewsItem(id);
@@ -133,7 +154,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.get('/api/contact', async (req, res) => {
+  app.get('/api/contact', requireAdmin, async (req, res) => {
     try {
       const submissions = await storage.getContactSubmissions();
       res.json(submissions);
@@ -142,7 +163,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.put('/api/contact/:id/read', async (req, res) => {
+  app.put('/api/contact/:id/read', requireAdmin, async (req, res) => {
     try {
       const id = parseInt(req.params.id);
       const success = await storage.markContactSubmissionAsRead(id);
