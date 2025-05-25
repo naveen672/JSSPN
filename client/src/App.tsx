@@ -22,6 +22,7 @@ import AdmissionPage from "@/pages/AdmissionPage";
 import CalendarEventsPage from "@/pages/CalendarEventsPage";
 import ExaminationPage from "@/pages/ExaminationPage";
 import CircularsPage from "@/pages/CircularsPage";
+import SportsPage from "@/pages/SportsPage";
 import AdminLogin from "@/pages/admin/login";
 import AdminDashboard from "@/pages/admin/index";
 
@@ -42,6 +43,7 @@ function Router() {
       <Route path="/academic/calendar-of-events" component={CalendarEventsPage} />
       <Route path="/academic/examination" component={ExaminationPage} />
       <Route path="/academic/circulars" component={CircularsPage} />
+      <Route path="/facilities/sports" component={SportsPage} />
       <Route path="/admin/login" component={AdminLogin} />
       <ProtectedRoute path="/admin" component={AdminDashboard} adminOnly={true} />
       <Route path="/:category/:slug" component={GenericPage} />
