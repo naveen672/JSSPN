@@ -1,5 +1,3 @@
-import { drizzle } from "drizzle-orm/postgres-js";
-import postgres from "postgres";
 import { 
   users, 
   newsItems,
@@ -20,19 +18,17 @@ import {
   type ImportantDate,
   type InsertImportantDate,
 } from "@shared/schema";
-import { eq } from "drizzle-orm";
-
-// Get the database connection string from environment variables
-const databaseUrl = process.env.DATABASE_URL || "";
-
-// Create the postgres client
-const client = postgres(databaseUrl);
-
-// Create the drizzle database instance
-const db = drizzle(client);
+import { eq, desc, and, asc } from "drizzle-orm";
+import { db } from './db';
+import connectPgSimple from 'connect-pg-simple';
+import session from 'express-session';
+import { pool } from './db';
 
 // Define the interface for all storage operations
 export interface IStorage {
+  // Session store
+  sessionStore: session.Store;
+  
   // User operations
   getUser(id: number): Promise<User | undefined>;
   getUserByUsername(username: string): Promise<User | undefined>;
@@ -67,141 +63,275 @@ export interface IStorage {
   deleteImportantDate(id: number): Promise<boolean>;
 }
 
+// Create PostgreSQL session store
+const PostgresStore = connectPgSimple(session);
+
 // Implement the database storage using Drizzle ORM
 export class DBStorage implements IStorage {
+  sessionStore: session.Store;
+  
+  constructor() {
+    this.sessionStore = new PostgresStore({
+      pool,
+      createTableIfMissing: true
+    });
+  }
+  
   // User operations
   async getUser(id: number): Promise<User | undefined> {
-    const result = await db.select().from(users).where(eq(users.id, id)).limit(1);
-    return result[0];
+    try {
+      const result = await db.select().from(users).where(eq(users.id, id)).limit(1);
+      return result[0];
+    } catch (error) {
+      console.error("Error getting user by ID:", error);
+      return undefined;
+    }
   }
 
   async getUserByUsername(username: string): Promise<User | undefined> {
-    const result = await db.select().from(users).where(eq(users.username, username)).limit(1);
-    return result[0];
+    try {
+      const result = await db.select().from(users).where(eq(users.username, username)).limit(1);
+      return result[0];
+    } catch (error) {
+      console.error("Error getting user by username:", error);
+      return undefined;
+    }
   }
 
   async createUser(insertUser: InsertUser): Promise<User> {
-    const result = await db.insert(users).values(insertUser).returning();
-    return result[0];
+    try {
+      const result = await db.insert(users).values(insertUser).returning();
+      return result[0];
+    } catch (error) {
+      console.error("Error creating user:", error);
+      throw error;
+    }
   }
   
   // News operations
   async getNewsItems(): Promise<NewsItem[]> {
-    return await db.select().from(newsItems).orderBy(newsItems.priority, newsItems.createdAt);
+    try {
+      return await db.select().from(newsItems)
+        .orderBy(desc(newsItems.priority), desc(newsItems.createdAt));
+    } catch (error) {
+      console.error("Error getting news items:", error);
+      return [];
+    }
   }
   
   async getActiveNewsItems(): Promise<NewsItem[]> {
-    return await db.select()
-      .from(newsItems)
-      .where(eq(newsItems.isActive, true))
-      .orderBy(newsItems.priority, newsItems.createdAt);
+    try {
+      return await db.select().from(newsItems)
+        .where(eq(newsItems.isActive, true))
+        .orderBy(desc(newsItems.priority), desc(newsItems.createdAt));
+    } catch (error) {
+      console.error("Error getting active news items:", error);
+      return [];
+    }
   }
   
   async createNewsItem(newsItem: InsertNewsItem): Promise<NewsItem> {
-    const result = await db.insert(newsItems).values(newsItem).returning();
-    return result[0];
+    try {
+      const result = await db.insert(newsItems).values(newsItem).returning();
+      return result[0];
+    } catch (error) {
+      console.error("Error creating news item:", error);
+      throw error;
+    }
   }
   
-  async updateNewsItem(id: number, newsItem: Partial<InsertNewsItem>): Promise<NewsItem | undefined> {
-    const result = await db.update(newsItems)
-      .set({ ...newsItem, updatedAt: new Date() })
-      .where(eq(newsItems.id, id))
-      .returning();
-    return result[0];
+  async updateNewsItem(id: number, newsItemUpdate: Partial<InsertNewsItem>): Promise<NewsItem | undefined> {
+    try {
+      const result = await db.update(newsItems)
+        .set(newsItemUpdate)
+        .where(eq(newsItems.id, id))
+        .returning();
+      return result[0];
+    } catch (error) {
+      console.error("Error updating news item:", error);
+      return undefined;
+    }
   }
   
   async deleteNewsItem(id: number): Promise<boolean> {
-    const result = await db.delete(newsItems).where(eq(newsItems.id, id)).returning();
-    return result.length > 0;
+    try {
+      const result = await db.delete(newsItems)
+        .where(eq(newsItems.id, id))
+        .returning();
+      return result.length > 0;
+    } catch (error) {
+      console.error("Error deleting news item:", error);
+      return false;
+    }
   }
   
   // Visitor counter operations
   async getVisitorCount(): Promise<number> {
-    const result = await db.select().from(visitorCounter).limit(1);
-    if (result.length === 0) {
-      // Initialize the counter if it doesn't exist
-      const newCounter = await db.insert(visitorCounter).values({ count: 0 }).returning();
-      return newCounter[0].count;
+    try {
+      const result = await db.select().from(visitorCounter).limit(1);
+      if (result.length === 0) {
+        // Create initial counter if it doesn't exist
+        const newCounter = await db.insert(visitorCounter)
+          .values({ count: 0 })
+          .returning();
+        return newCounter[0].count;
+      }
+      return result[0].count;
+    } catch (error) {
+      console.error("Error getting visitor count:", error);
+      return 0;
     }
-    return result[0].count;
   }
   
   async incrementVisitorCount(): Promise<number> {
-    // First, make sure we have a counter record
-    const initialCount = await this.getVisitorCount();
-    
-    // Update the counter
-    const result = await db.update(visitorCounter)
-      .set({ 
-        count: initialCount + 1,
-        lastUpdated: new Date()
-      })
-      .returning();
-    
-    return result[0].count;
+    try {
+      const currentCount = await this.getVisitorCount();
+      const newCount = currentCount + 1;
+      
+      // Update all counters - we should only have one, but just in case
+      await db.update(visitorCounter)
+        .set({ 
+          count: newCount,
+          lastUpdated: new Date()
+        });
+      
+      return newCount;
+    } catch (error) {
+      console.error("Error incrementing visitor count:", error);
+      return 0;
+    }
   }
   
   async resetVisitorCount(): Promise<void> {
-    await db.update(visitorCounter).set({ count: 0, lastUpdated: new Date() });
+    try {
+      await db.update(visitorCounter)
+        .set({ 
+          count: 0,
+          lastUpdated: new Date()
+        });
+    } catch (error) {
+      console.error("Error resetting visitor count:", error);
+    }
   }
   
   // Contact form operations
   async createContactSubmission(submission: InsertContactSubmission): Promise<ContactSubmission> {
-    const result = await db.insert(contactSubmissions).values(submission).returning();
-    return result[0];
+    try {
+      const result = await db.insert(contactSubmissions)
+        .values(submission)
+        .returning();
+      return result[0];
+    } catch (error) {
+      console.error("Error creating contact submission:", error);
+      throw error;
+    }
   }
   
   async getContactSubmissions(): Promise<ContactSubmission[]> {
-    return await db.select().from(contactSubmissions).orderBy(contactSubmissions.createdAt);
+    try {
+      return await db.select().from(contactSubmissions)
+        .orderBy(desc(contactSubmissions.createdAt));
+    } catch (error) {
+      console.error("Error getting contact submissions:", error);
+      return [];
+    }
   }
   
   async markContactSubmissionAsRead(id: number): Promise<boolean> {
-    const result = await db.update(contactSubmissions)
-      .set({ isRead: true })
-      .where(eq(contactSubmissions.id, id))
-      .returning();
-    return result.length > 0;
+    try {
+      const result = await db.update(contactSubmissions)
+        .set({ isRead: true })
+        .where(eq(contactSubmissions.id, id))
+        .returning();
+      return result.length > 0;
+    } catch (error) {
+      console.error("Error marking contact submission as read:", error);
+      return false;
+    }
   }
   
   // Admissions operations
   async createAdmissionsInquiry(inquiry: InsertAdmissionsInquiry): Promise<AdmissionsInquiry> {
-    const result = await db.insert(admissionsInquiries).values(inquiry).returning();
-    return result[0];
+    try {
+      const result = await db.insert(admissionsInquiries)
+        .values(inquiry)
+        .returning();
+      return result[0];
+    } catch (error) {
+      console.error("Error creating admissions inquiry:", error);
+      throw error;
+    }
   }
   
   async getAdmissionsInquiries(): Promise<AdmissionsInquiry[]> {
-    return await db.select().from(admissionsInquiries).orderBy(admissionsInquiries.submittedAt);
+    try {
+      return await db.select().from(admissionsInquiries)
+        .orderBy(desc(admissionsInquiries.submittedAt));
+    } catch (error) {
+      console.error("Error getting admissions inquiries:", error);
+      return [];
+    }
   }
   
   async updateAdmissionsInquiryStatus(id: number, status: string): Promise<boolean> {
-    const result = await db.update(admissionsInquiries)
-      .set({ status })
-      .where(eq(admissionsInquiries.id, id))
-      .returning();
-    return result.length > 0;
+    try {
+      const result = await db.update(admissionsInquiries)
+        .set({ status })
+        .where(eq(admissionsInquiries.id, id))
+        .returning();
+      return result.length > 0;
+    } catch (error) {
+      console.error("Error updating admissions inquiry status:", error);
+      return false;
+    }
   }
   
   // Important dates operations
   async getImportantDates(): Promise<ImportantDate[]> {
-    return await db.select().from(importantDates).orderBy(importantDates.eventDate);
+    try {
+      return await db.select().from(importantDates)
+        .orderBy(asc(importantDates.eventDate));
+    } catch (error) {
+      console.error("Error getting important dates:", error);
+      return [];
+    }
   }
   
   async createImportantDate(date: InsertImportantDate): Promise<ImportantDate> {
-    const result = await db.insert(importantDates).values(date).returning();
-    return result[0];
+    try {
+      const result = await db.insert(importantDates)
+        .values(date)
+        .returning();
+      return result[0];
+    } catch (error) {
+      console.error("Error creating important date:", error);
+      throw error;
+    }
   }
   
-  async updateImportantDate(id: number, date: Partial<InsertImportantDate>): Promise<ImportantDate | undefined> {
-    const result = await db.update(importantDates)
-      .set(date)
-      .where(eq(importantDates.id, id))
-      .returning();
-    return result[0];
+  async updateImportantDate(id: number, dateUpdate: Partial<InsertImportantDate>): Promise<ImportantDate | undefined> {
+    try {
+      const result = await db.update(importantDates)
+        .set(dateUpdate)
+        .where(eq(importantDates.id, id))
+        .returning();
+      return result[0];
+    } catch (error) {
+      console.error("Error updating important date:", error);
+      return undefined;
+    }
   }
   
   async deleteImportantDate(id: number): Promise<boolean> {
-    const result = await db.delete(importantDates).where(eq(importantDates.id, id)).returning();
-    return result.length > 0;
+    try {
+      const result = await db.delete(importantDates)
+        .where(eq(importantDates.id, id))
+        .returning();
+      return result.length > 0;
+    } catch (error) {
+      console.error("Error deleting important date:", error);
+      return false;
+    }
   }
 }
 
