@@ -4,7 +4,11 @@ import { Icon } from "@/lib/icons";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 
-const VisitorCounter = () => {
+interface VisitorCounterProps {
+  displayMode?: 'normal' | 'compact';
+}
+
+const VisitorCounter = ({ displayMode = 'normal' }: VisitorCounterProps) => {
   const [hasIncremented, setHasIncremented] = useState(false);
   const queryClient = useQueryClient();
 
@@ -36,6 +40,20 @@ const VisitorCounter = () => {
 
   const visitorCount = data?.count || 0;
 
+  // If we're using compact mode, just return the number
+  if (displayMode === 'compact') {
+    return (
+      <>
+        {isLoading ? (
+          <span className="animate-pulse">...</span>
+        ) : (
+          <span>{visitorCount.toLocaleString()}</span>
+        )}
+      </>
+    );
+  }
+
+  // Normal display mode
   return (
     <div className="flex items-center justify-center space-x-2 py-3 bg-primary/10 rounded-lg">
       <Icon name="user-line text-primary" />

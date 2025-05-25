@@ -101,10 +101,17 @@ const Footer = () => {
 
         <div className="border-t border-white/10 pt-8 mt-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-white/60 text-sm mb-4 md:mb-0 flex items-center">
-              <Icon name="copyright-line mr-1" />
-              © {new Date().getFullYear()} <span className="font-semibold mx-1">JSS Polytechnic Nanjangud.</span> All rights reserved.
-            </p>
+            <div className="flex items-center gap-4 mb-4 md:mb-0">
+              <p className="text-white/60 text-sm flex items-center">
+                <Icon name="copyright-line mr-1" />
+                © {new Date().getFullYear()} <span className="font-semibold mx-1">JSS Polytechnic Nanjangud.</span> All rights reserved.
+              </p>
+              <div className="flex items-center px-3 py-1 bg-amber-500 rounded-full text-white">
+                <Icon name="user-filled mr-2" />
+                <span className="mr-1">Visitors:</span>
+                <VisitorCounter displayMode="compact" />
+              </div>
+            </div>
             <div className="flex flex-wrap gap-4 md:gap-6 items-center justify-center">
               {footerLinks.map((link) => (
                 <a
