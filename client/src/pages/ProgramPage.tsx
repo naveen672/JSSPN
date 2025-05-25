@@ -384,76 +384,104 @@ const ProgramPage = () => {
               </p>
             </motion.div>
             
-            <div className="grid grid-cols-1 gap-4 mb-12">
-              {[
-                {
-                  id: 1,
-                  name: "Sri. Prabhu prasad G",
-                  designation: "HOD",
-                  qualification: "M.Sc",
-                  joined: "21-08-1991",
-                  contact: "9480191974"
-                },
-                {
-                  id: 2,
-                  name: "Sri. Girish T S",
-                  designation: "Selection Grade Lecturer",
-                  qualification: "M.Sc",
-                  joined: "14-07-1997",
-                  contact: "9845431005"
-                },
-                {
-                  id: 3,
-                  name: "Smt. Sowmya N",
-                  designation: "Lecturer",
-                  qualification: "M.Sc",
-                  joined: "19-07-2005",
-                  contact: "9916472363"
-                },
-                {
-                  id: 4,
-                  name: "Sri. Rajesha H P",
-                  designation: "Lecturer",
-                  qualification: "M.Sc",
-                  joined: "02-08-2011",
-                  contact: "9538131000"
-                },
-                {
-                  id: 5,
-                  name: "Smt. Pavithra G",
-                  designation: "Lecturer",
-                  qualification: "MA,B.Ed",
-                  joined: "01-07-2013",
-                  contact: "9740244245"
-                },
-                {
-                  id: 6,
-                  name: "Sri. Mahadeva Prasad",
-                  designation: "Lecturer",
-                  qualification: "MA,M.Ed",
-                  joined: "08-07-2019",
-                  contact: "9845330779"
-                },
-                {
-                  id: 7,
-                  name: "Sri. Basavanna M",
-                  designation: "Instructor",
-                  qualification: "B.Sc",
-                  joined: "12-03-2001",
-                  contact: "9448558672"
-                },
-                {
-                  id: 8,
-                  name: "Sri. Mahadeva B P",
-                  designation: "Helper",
-                  qualification: "-",
-                  joined: "17-07-1997",
-                  contact: "9980377269"
-                }
-              ].map((faculty) => (
-                <FacultyAccordion key={faculty.id} faculty={faculty} />
-              ))}
-            </div>
+            <InfoAccordion title="Faculty Members" icon="team-line">
+              <div className="overflow-x-auto">
+                <table className="min-w-full border-collapse border border-gray-200 rounded-lg">
+                  <thead>
+                    <tr className="bg-primary text-white">
+                      <th className="px-4 py-3 text-left font-semibold text-sm">Sl. No</th>
+                      <th className="px-4 py-3 text-left font-semibold text-sm">Faculty Name</th>
+                      <th className="px-4 py-3 text-left font-semibold text-sm">Designation</th>
+                      <th className="px-4 py-3 text-left font-semibold text-sm">Qualification</th>
+                      <th className="px-4 py-3 text-left font-semibold text-sm">Year of Joining</th>
+                      <th className="px-4 py-3 text-left font-semibold text-sm">Contact</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-gray-200">
+                    {[
+                      {
+                        id: 1,
+                        name: "Sri. Prabhu prasad G",
+                        designation: "HOD",
+                        qualification: "M.Sc",
+                        joined: "21-08-1991",
+                        contact: "9480191974"
+                      },
+                      {
+                        id: 2,
+                        name: "Sri. Girish T S",
+                        designation: "Selection Grade Lecturer",
+                        qualification: "M.Sc",
+                        joined: "14-07-1997",
+                        contact: "9845431005"
+                      },
+                      {
+                        id: 3,
+                        name: "Smt. Sowmya N",
+                        designation: "Lecturer",
+                        qualification: "M.Sc",
+                        joined: "19-07-2005",
+                        contact: "9916472363"
+                      },
+                      {
+                        id: 4,
+                        name: "Sri. Rajesha H P",
+                        designation: "Lecturer",
+                        qualification: "M.Sc",
+                        joined: "02-08-2011",
+                        contact: "9538131000"
+                      },
+                      {
+                        id: 5,
+                        name: "Smt. Pavithra G",
+                        designation: "Lecturer",
+                        qualification: "MA,B.Ed",
+                        joined: "01-07-2013",
+                        contact: "9740244245"
+                      },
+                      {
+                        id: 6,
+                        name: "Sri. Mahadeva Prasad",
+                        designation: "Lecturer",
+                        qualification: "MA,M.Ed",
+                        joined: "08-07-2019",
+                        contact: "9845330779"
+                      },
+                      {
+                        id: 7,
+                        name: "Sri. Basavanna M",
+                        designation: "Instructor",
+                        qualification: "B.Sc",
+                        joined: "12-03-2001",
+                        contact: "9448558672"
+                      },
+                      {
+                        id: 8,
+                        name: "Sri. Mahadeva B P",
+                        designation: "Helper",
+                        qualification: "-",
+                        joined: "17-07-1997",
+                        contact: "9980377269"
+                      }
+                    ].map((faculty) => (
+                      <tr key={faculty.id} className="hover:bg-gray-50">
+                        <td className="px-4 py-3 whitespace-nowrap text-sm font-medium text-gray-900">{faculty.id}</td>
+                        <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-900">{faculty.name}</td>
+                        <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-900">{faculty.designation}</td>
+                        <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-900">{faculty.qualification}</td>
+                        <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-900">{faculty.joined}</td>
+                        <td className="px-4 py-3 whitespace-nowrap text-sm text-blue-600 hover:text-blue-800">
+                          <a href={`tel:${faculty.contact}`} className="flex items-center">
+                            <Icon name="phone-line mr-1" />
+                            {faculty.contact}
+                          </a>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </InfoAccordion>
             
             <div className="flex flex-wrap justify-center gap-6 mt-8">
               <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100 max-w-sm w-full">
