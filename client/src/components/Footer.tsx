@@ -40,8 +40,6 @@ const Footer = () => {
                 </a>
               ))}
             </div>
-            
-            <VisitorCounter />
           </div>
 
           <div>
@@ -117,13 +115,6 @@ const Footer = () => {
                   {link.name}
                 </a>
               ))}
-              <div className="flex items-center text-white/70 bg-white/10 px-3 py-1 rounded-full border border-white/10">
-                <Icon name="user-filled mr-2 text-amber-400" />
-                <span className="text-sm mr-1">Total Visitors:</span>
-                <span className="text-amber-400 font-semibold text-sm">
-                  <VisitorCounter displayMode="compact" />
-                </span>
-              </div>
             </div>
           </div>
         </div>
