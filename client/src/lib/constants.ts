@@ -187,8 +187,8 @@ export const contactInfo = [
     icon: "map-pin-line",
     lines: [
       "JSS Polytechnic,",
-      "Mysore – Ooty Road,",
-      "Nanjangud – 571 301, Karnataka, India",
+      "Mysore-Ooty Road,",
+      "Nanjangud, Karnataka, India",
     ],
   },
   {
@@ -196,8 +196,8 @@ export const contactInfo = [
     title: "Call Us",
     icon: "phone-line",
     lines: [
-      "Phone: 08221 – 226491",
-      "Cell: 9886618231",
+      "Phone: 08221 – 22649",
+      "Cell: +91 988661823",
     ],
   },
   {
@@ -235,9 +235,9 @@ export const footerContactInfo = [
   {
     id: 1,
     icon: "map-pin-line",
-    text: "JSS Polytechnic, Mysore – Ooty Road, Nanjangud – 571 301, Karnataka, India",
+    text: "JSS Polytechnic, Mysore-Ooty Road, Nanjangud, Karnataka, India",
   },
-  { id: 2, icon: "phone-line", text: "08221 – 226491 | Cell: 9886618231" },
+  { id: 2, icon: "phone-line", text: "08221 – 22649 | Cell: +91 988661823" },
   { id: 3, icon: "mail-line", text: "jsspn324@gmail.com" },
   { id: 4, icon: "global-line", text: "www.jsspnco-op.in" },
 ];
