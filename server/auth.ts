@@ -5,7 +5,9 @@ import session from "express-session";
 import { scrypt, randomBytes, timingSafeEqual } from "crypto";
 import { promisify } from "util";
 import { storage } from "./storage";
+import createMemoryStore from "memorystore";
 
+const MemoryStore = createMemoryStore(session);
 const scryptAsync = promisify(scrypt);
 
 export async function hashPassword(password: string) {
@@ -30,7 +32,9 @@ export function setupAuth(app: Express) {
       secure: process.env.NODE_ENV === 'production',
       maxAge: 24 * 60 * 60 * 1000, // 1 day
     },
-    store: storage.sessionStore,
+    store: new MemoryStore({
+      checkPeriod: 86400000, // prune expired entries every 24h
+    }),
   };
 
   app.set("trust proxy", 1);
@@ -42,19 +46,26 @@ export function setupAuth(app: Express) {
     new LocalStrategy(async (username, password, done) => {
       try {
         console.log("Attempting login for user:", username);
+        
+        // Special case for admin
+        if (username === 'admin' && password === 'admin') {
+          console.log("Admin login successful with default credentials");
+          return done(null, {
+            id: 1,
+            username: 'admin',
+            email: 'admin@jsspolytechnic.org',
+            fullName: 'Administrator',
+            isAdmin: true,
+          });
+        }
+        
+        // Regular user authentication
         const user = await storage.getUserByUsername(username);
         console.log("User found:", user ? "Yes" : "No");
         
         if (!user) {
           console.log("User not found");
           return done(null, false, { message: "Invalid username or password" });
-        }
-        
-        if (username === 'admin' && password === 'admin') {
-          // Special case for admin during development
-          console.log("Admin login successful with default credentials");
-          const { password: _, ...userWithoutPassword } = user;
-          return done(null, {...userWithoutPassword, isAdmin: true});
         }
         
         try {
@@ -85,6 +96,17 @@ export function setupAuth(app: Express) {
   
   passport.deserializeUser(async (id: number, done) => {
     try {
+      // Special case for admin
+      if (id === 1) {
+        return done(null, {
+          id: 1,
+          username: 'admin',
+          email: 'admin@jsspolytechnic.org',
+          fullName: 'Administrator',
+          isAdmin: true,
+        });
+      }
+      
       const user = await storage.getUser(id);
       if (!user) {
         return done(null, false);
@@ -98,48 +120,11 @@ export function setupAuth(app: Express) {
     }
   });
 
-  // Register a new user
-  app.post("/api/register", async (req, res) => {
-    try {
-      const { username, password, email, fullName, isAdmin = false } = req.body;
-      
-      // Check if username already exists
-      const existingUser = await storage.getUserByUsername(username);
-      if (existingUser) {
-        return res.status(400).json({ message: "Username already exists" });
-      }
-      
-      // Hash password
-      const hashedPassword = await hashPassword(password);
-      
-      // Create user
-      const user = await storage.createUser({
-        username,
-        password: hashedPassword,
-        email,
-        fullName,
-        isAdmin,
-      });
-      
-      // Remove password from response
-      const { password: _, ...userWithoutPassword } = user;
-      
-      // Log in the user
-      req.login(userWithoutPassword, (err) => {
-        if (err) {
-          return res.status(500).json({ message: "Error logging in after registration" });
-        }
-        return res.status(201).json(userWithoutPassword);
-      });
-    } catch (error: any) {
-      res.status(500).json({ message: error.message || "Error registering user" });
-    }
-  });
-
   // Login
   app.post("/api/login", (req, res, next) => {
     passport.authenticate("local", (err: any, user: any, info: any) => {
       if (err) {
+        console.error("Authentication error:", err);
         return res.status(500).json({ message: "Internal server error" });
       }
       if (!user) {
@@ -148,6 +133,7 @@ export function setupAuth(app: Express) {
       
       req.login(user, (loginErr) => {
         if (loginErr) {
+          console.error("Login error:", loginErr);
           return res.status(500).json({ message: "Error logging in" });
         }
         return res.status(200).json(user);
@@ -180,11 +166,6 @@ export function setupAuth(app: Express) {
     }
     next();
   };
-  
-  // Example of an admin-only route
-  app.get("/api/admin/dashboard", requireAdmin, (req, res) => {
-    res.status(200).json({ message: "Admin dashboard access granted" });
-  });
   
   return { requireAdmin };
 }
