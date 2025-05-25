@@ -103,8 +103,8 @@ function NewsManager() {
     isError 
   } = useQuery<NewsItem[]>({
     queryKey: ['/api/news'],
-    queryFn: getQueryFn(),
-  }) as { data: NewsItem[] | undefined; isLoading: boolean; isError: boolean };
+    queryFn: () => apiRequest('GET', '/api/news').then(res => res.json()),
+  });
   
   // Create news mutation
   const createNewsMutation = useMutation({
@@ -217,8 +217,8 @@ function NewsManager() {
     setNewsForm({
       title: item.title,
       content: item.content,
-      isActive: item.isActive,
-      priority: item.priority
+      isActive: item.isActive || false,
+      priority: item.priority || 0
     });
     setIsAddingNews(true);
   };
@@ -408,8 +408,8 @@ function MessagesManager() {
     isError 
   } = useQuery<ContactSubmission[]>({
     queryKey: ['/api/contact'],
-    queryFn: getQueryFn(),
-  }) as { data: ContactSubmission[] | undefined; isLoading: boolean; isError: boolean };
+    queryFn: () => apiRequest('GET', '/api/contact').then(res => res.json()),
+  });
   
   // Mark as read mutation
   const markAsReadMutation = useMutation({

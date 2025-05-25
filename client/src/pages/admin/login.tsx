@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useAuth } from '@/hooks/use-auth';
 import { useLocation } from 'wouter';
 import { 
@@ -22,10 +22,11 @@ export default function AdminLoginPage() {
   });
   
   // If user is already logged in, redirect to admin dashboard
-  if (user) {
-    setLocation('/admin');
-    return null;
-  }
+  useEffect(() => {
+    if (user) {
+      setLocation('/admin');
+    }
+  }, [user, setLocation]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCredentials({
