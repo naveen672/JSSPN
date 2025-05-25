@@ -21,8 +21,8 @@ interface SectionProps {
 }
 
 // Information Accordion component for expandable sections
-const InfoAccordion = ({ title, icon, children }: SectionProps) => {
-  const [isExpanded, setIsExpanded] = useState(false);
+const InfoAccordion = ({ title, icon, children, defaultOpen = false }: SectionProps & { defaultOpen?: boolean }) => {
+  const [isExpanded, setIsExpanded] = useState(defaultOpen);
   
   return (
     <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden mb-6">
@@ -167,7 +167,7 @@ const ProgramPage = () => {
                 </h2>
 
                 <div className="prose max-w-none">
-                  <InfoAccordion title="About the Department" icon="information-line">
+                  <InfoAccordion title="About the Department" icon="information-line" defaultOpen={true}>
                     <div>
                       <p className="text-gray-700">
                         The department of Science and Humanities plays a vital role in grooming the students with the basic knowledge of sciences and language. The department offers Engineering Mathematics, Statistics and Analytics, Communication Skills, Project Management Skills, Environmental Sustainability and Kannada, devoted for all round development of first year students. Kannada is also offered in second year as well.
