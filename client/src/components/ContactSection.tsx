@@ -116,21 +116,21 @@ const ContactSection = () => {
             <div className="w-9 h-9 bg-amber-400/30 rounded-full flex items-center justify-center">
               <Icon name="map-pin-line text-lg text-amber-300" />
             </div>
-            <span className="text-white text-sm">JSS Polytechnic, Suttur Road, Nanjangud</span>
+            <span className="text-white text-sm">JSS Polytechnic, Mysore-Ooty Road, Nanjangud</span>
           </div>
           
           <div className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-amber-400/30 flex items-center space-x-3 hover:bg-white/20 transition-all duration-300 shadow-md">
             <div className="w-9 h-9 bg-amber-400/30 rounded-full flex items-center justify-center">
               <Icon name="phone-line text-lg text-amber-300" />
             </div>
-            <span className="text-white text-sm">+91 8212482800</span>
+            <span className="text-white text-sm">08221 – 22649 | +91 988661823</span>
           </div>
           
           <div className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-amber-400/30 flex items-center space-x-3 hover:bg-white/20 transition-all duration-300 shadow-md">
             <div className="w-9 h-9 bg-amber-400/30 rounded-full flex items-center justify-center">
               <Icon name="mail-line text-lg text-amber-300" />
             </div>
-            <span className="text-white text-sm">principal@jssnpoly.org</span>
+            <span className="text-white text-sm">jsspn324@gmail.com</span>
           </div>
         </motion.div>
 
@@ -262,15 +262,15 @@ const ContactSection = () => {
                 <ul className="space-y-4 mb-8">
                   <li className="flex items-start bg-white/5 p-3 rounded-lg border border-white/10 shadow-inner">
                     <Icon name="map-pin-line text-xl mr-3 mt-1 text-amber-400" />
-                    <span className="text-white/90">JSS Polytechnic, Suttur Road, Nanjangud - 571301, Karnataka</span>
+                    <span className="text-white/90">JSS Polytechnic, Mysore-Ooty Road, Nanjangud, Karnataka</span>
                   </li>
                   <li className="flex items-center bg-white/5 p-3 rounded-lg border border-white/10 shadow-inner">
                     <Icon name="phone-line text-xl mr-3 text-amber-400" />
-                    <span className="text-white/90">+91 8212482800</span>
+                    <span className="text-white/90">08221 – 22649 | +91 988661823</span>
                   </li>
                   <li className="flex items-center bg-white/5 p-3 rounded-lg border border-white/10 shadow-inner">
                     <Icon name="mail-line text-xl mr-3 text-amber-400" />
-                    <span className="text-white/90">principal@jssnpoly.org</span>
+                    <span className="text-white/90">jsspn324@gmail.com</span>
                   </li>
                 </ul>
                 
