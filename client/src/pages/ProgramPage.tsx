@@ -14,6 +14,46 @@ interface FacultyMember {
   contact: string;
 }
 
+interface SectionProps {
+  title: string;
+  icon: string;
+  children: React.ReactNode;
+}
+
+// Information Accordion component for expandable sections
+const InfoAccordion = ({ title, icon, children }: SectionProps) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  
+  return (
+    <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden mb-6">
+      <div 
+        className="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-50"
+        onClick={() => setIsExpanded(!isExpanded)}
+      >
+        <div className="flex items-center">
+          <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-3">
+            <Icon name={`${icon} text-primary text-xl`} />
+          </div>
+          <div>
+            <h3 className="font-medium text-lg text-primary">{title}</h3>
+          </div>
+        </div>
+        <div className="flex items-center">
+          <button className="w-8 h-8 flex items-center justify-center rounded-full bg-amber-100 text-amber-600 transition-transform duration-300" style={{ transform: isExpanded ? 'rotate(45deg)' : 'rotate(0deg)' }}>
+            <Icon name="add-line" />
+          </button>
+        </div>
+      </div>
+      
+      {isExpanded && (
+        <div className="p-5 bg-gray-50 border-t border-gray-100">
+          {children}
+        </div>
+      )}
+    </div>
+  );
+};
+
 // Faculty Accordion component for expandable faculty information
 const FacultyAccordion = ({ faculty }: { faculty: FacultyMember }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -127,51 +167,54 @@ const ProgramPage = () => {
                 </h2>
 
                 <div className="prose max-w-none">
-                  <p className="text-gray-700 bg-gray-50 p-4 rounded-lg border border-gray-100">
-                    The department of Science and Humanities plays a vital role in grooming the students with the basic knowledge of sciences and language. The department offers Engineering Mathematics, Statistics and Analytics, Communication Skills, Project Management Skills, Environmental Sustainability and Kannada, devoted for all round development of first year students. Kannada is also offered in second year as well.
-                  </p>
+                  <InfoAccordion title="About the Department" icon="information-line">
+                    <div>
+                      <p className="text-gray-700">
+                        The department of Science and Humanities plays a vital role in grooming the students with the basic knowledge of sciences and language. The department offers Engineering Mathematics, Statistics and Analytics, Communication Skills, Project Management Skills, Environmental Sustainability and Kannada, devoted for all round development of first year students. Kannada is also offered in second year as well.
+                      </p>
+                      
+                      <p className="mt-4">
+                        The department of Science and Humanities is strengthened by experienced lecturers. The faculty is highly qualified and well experienced in academic activities.
+                      </p>
+                      
+                      <p className="mt-4">
+                        The department has well equipped laboratory of Statistics and Analytics and English language Laboratory for the effective Communication Skills among the students.
+                      </p>
+                      
+                      <p className="mt-4">
+                        The average teaching experience of faculty members is more than ten years. In both Theory and Practical classes, students are given individual attention. Faculty members increase healthy interaction with students in both academic and personal matters, which leads to excellent academic performance of the student.
+                      </p>
+                      
+                      <p className="mt-4">
+                        The department of Science and Humanities is supported by seven members of faculty in field of Science, English and Kannada. Most of the faculty in the department employs ICT based teaching via tools like Google Classroom, Google Forms, Teachmint, PowerPoint Presentation etc.
+                      </p>
+                    </div>
+                  </InfoAccordion>
                   
-                  <p className="mt-4">
-                    The department of Science and Humanities is strengthened by experienced lecturers. The faculty is highly qualified and well experienced in academic activities.
-                  </p>
+                  <InfoAccordion title="From HOD's Desk" icon="user-settings-line">
+                    <div className="bg-primary/5 p-5 rounded-lg border border-primary/10">
+                      <p className="italic text-gray-700">
+                        Welcome to JSS Polytechnic, Nanjangud, Department of Science and Humanities. I am pleased to get connected to you and share my message this way.
+                      </p>
+                      <p className="mt-3 italic text-gray-700">
+                        The Department has a rich curriculum and allied activities to provide Comprehensive Education for Diploma graduates.
+                      </p>
+                      <p className="mt-3 italic text-gray-700">
+                        The Department correlates with six diploma Programs, namely Electronics and Communication Engineering, Mechanical Engineering, Civil Engineering, Mechatronics Engineering, Computer Science Engineering, Electrical and Electronics Engineering. The department has adequate academic and teaching staff.
+                      </p>
+                      <p className="mt-3 italic text-gray-700">
+                        The mission of the department is to produce the top Quality Education and to conduct leading edge Programmes. My Sincere thanks to all the faculty members and the students who contribute so much to the success of the department.
+                      </p>
+                    </div>
+                  </InfoAccordion>
                   
-                  <p className="mt-4">
-                    The department has well equipped laboratory of Statistics and Analytics and English language Laboratory for the effective Communication Skills among the students.
-                  </p>
-                  
-                  <p className="mt-4">
-                    The average teaching experience of faculty members is more than ten years. In both Theory and Practical classes, students are given individual attention. Faculty members increase healthy interaction with students in both academic and personal matters, which leads to excellent academic performance of the student.
-                  </p>
-                  
-                  <p className="mt-4">
-                    The department of Science and Humanities is supported by seven members of faculty in field of Science, English and Kannada. Most of the faculty in the department employs ICT based teaching via tools like Google Classroom, Google Forms, Teachmint, PowerPoint Presentation etc.
-                  </p>
-                  
-                  <div className="bg-primary/5 p-5 rounded-lg mt-8 border border-primary/10">
-                    <h3 className="font-semibold text-xl text-primary mb-4">From HOD's Desk</h3>
-                    <p className="italic text-gray-700">
-                      Welcome to JSS Polytechnic, Nanjangud, Department of Science and Humanities. I am pleased to get connected to you and share my message this way.
-                    </p>
-                    <p className="mt-3 italic text-gray-700">
-                      The Department has a rich curriculum and allied activities to provide Comprehensive Education for Diploma graduates.
-                    </p>
-                    <p className="mt-3 italic text-gray-700">
-                      The Department correlates with six diploma Programs, namely Electronics and Communication Engineering, Mechanical Engineering, Civil Engineering, Mechatronics Engineering, Computer Science Engineering, Electrical and Electronics Engineering. The department has adequate academic and teaching staff.
-                    </p>
-                    <p className="mt-3 italic text-gray-700">
-                      The mission of the department is to produce the top Quality Education and to conduct leading edge Programmes. My Sincere thanks to all the faculty members and the students who contribute so much to the success of the department.
-                    </p>
-                  </div>
-                  
-                  <div className="mt-8">
-                    <h3 className="font-semibold text-xl text-primary mb-4">Department Vision</h3>
+                  <InfoAccordion title="Department Vision" icon="eye-line">
                     <p className="text-gray-700">
                       The Science and Humanities department works as a team to make all the students By inculcating knowledge and understanding of engineering sciences with social, ethical and moral values, to make them a smart worker rather than being a hard Worker alone.
                     </p>
-                  </div>
+                  </InfoAccordion>
                   
-                  <div className="mt-8">
-                    <h3 className="font-semibold text-xl text-primary mb-4">Department Mission</h3>
+                  <InfoAccordion title="Department Mission" icon="flag-line">
                     <div className="space-y-4">
                       <div className="flex">
                         <div className="bg-amber-500 text-white font-bold w-12 h-8 flex items-center justify-center rounded-l-lg">M1</div>
@@ -201,10 +244,9 @@ const ProgramPage = () => {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </InfoAccordion>
                   
-                  <div className="mt-8">
-                    <h3 className="font-semibold text-xl text-primary mb-4">Programme Outcomes</h3>
+                  <InfoAccordion title="Programme Outcomes" icon="trophy-line">
                     <div className="overflow-x-auto">
                       <table className="min-w-full border-collapse border border-gray-200 rounded-lg">
                         <thead>
@@ -253,7 +295,7 @@ const ProgramPage = () => {
                         </tbody>
                       </table>
                     </div>
-                  </div>
+                  </InfoAccordion>
                 </div>
               </motion.div>
               
