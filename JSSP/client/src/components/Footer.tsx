@@ -40,8 +40,6 @@ const Footer = () => {
                 </a>
               ))}
             </div>
-            
-            <VisitorCounter />
           </div>
 
           <div>
