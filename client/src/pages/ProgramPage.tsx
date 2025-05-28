@@ -312,30 +312,198 @@ const ProgramPage = () => {
                     <div className="space-y-4">
                       <p className="text-gray-600 mb-6">Our Civil Engineering department is strengthened by experienced and qualified faculty members dedicated to providing quality education.</p>
                       
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                         <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
                           <div className="flex items-center mb-3">
                             <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-3">
-                              H
+                              DS
                             </div>
                             <div>
-                              <h4 className="font-medium text-gray-800">Head of Department</h4>
-                              <p className="text-sm text-gray-600">Civil Engineering</p>
+                              <h4 className="font-medium text-gray-800">Dr. Sadashiva Shailendra J K</h4>
+                              <p className="text-sm text-gray-600">HOD</p>
+                              <p className="text-sm text-green-600">9449130613</p>
                             </div>
                           </div>
                         </div>
                         
                         <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
                           <div className="flex items-center mb-3">
-                            <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-3">
-                              F
+                            <div className="w-12 h-12 bg-gradient-to-r from-pink-500 to-pink-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-3">
+                              SH
                             </div>
                             <div>
-                              <h4 className="font-medium text-gray-800">Faculty Members</h4>
-                              <p className="text-sm text-gray-600">Experienced & Dedicated</p>
+                              <h4 className="font-medium text-gray-800">Shobha H R</h4>
+                              <p className="text-sm text-gray-600">Instructor</p>
+                              <p className="text-sm text-green-600">9611209883</p>
                             </div>
                           </div>
                         </div>
+                        
+                        <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                          <div className="flex items-center mb-3">
+                            <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-3">
+                              RM
+                            </div>
+                            <div>
+                              <h4 className="font-medium text-gray-800">Ranjini M P</h4>
+                              <p className="text-sm text-gray-600">Lecturer</p>
+                              <p className="text-sm text-green-600">7760619395</p>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                          <div className="flex items-center mb-3">
+                            <div className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-3">
+                              BM
+                            </div>
+                            <div>
+                              <h4 className="font-medium text-gray-800">Bindu Malini M T</h4>
+                              <p className="text-sm text-gray-600">Lecturer</p>
+                              <p className="text-sm text-green-600">9481170570</p>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                          <div className="flex items-center mb-3">
+                            <div className="w-12 h-12 bg-gradient-to-r from-teal-500 to-teal-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-3">
+                              VM
+                            </div>
+                            <div>
+                              <h4 className="font-medium text-gray-800">Veerabhadraswamy M P</h4>
+                              <p className="text-sm text-gray-600">Lecturer</p>
+                              <p className="text-sm text-green-600">9739675727</p>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                          <div className="flex items-center mb-3">
+                            <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-3">
+                              MM
+                            </div>
+                            <div>
+                              <h4 className="font-medium text-gray-800">Manjunatha M</h4>
+                              <p className="text-sm text-gray-600">Lecturer</p>
+                              <p className="text-sm text-green-600">9880800918</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </InfoAccordion>
+
+                  <InfoAccordion title="Higher Education Achievements" icon="graduation-cap-line">
+                    <div className="space-y-4">
+                      <p className="text-gray-600 mb-6">Our students continue their academic journey at prestigious institutions.</p>
+                      
+                      <div className="overflow-x-auto">
+                        <table className="min-w-full bg-white border border-gray-200 rounded-lg">
+                          <thead className="bg-gray-50">
+                            <tr>
+                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Sl.No.</th>
+                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Name</th>
+                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Higher Education</th>
+                            </tr>
+                          </thead>
+                          <tbody className="divide-y divide-gray-200">
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">1</td><td className="px-4 py-3 text-sm text-gray-900">Usha K M</td><td className="px-4 py-3 text-sm text-gray-900">SJCE Engineering College, Mysore</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">2</td><td className="px-4 py-3 text-sm text-gray-900">Anitha</td><td className="px-4 py-3 text-sm text-gray-900">SJCE Engineering College, Mysore</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">3</td><td className="px-4 py-3 text-sm text-gray-900">Yashwanth</td><td className="px-4 py-3 text-sm text-gray-900">SJCE Engineering College, Mysore</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">4</td><td className="px-4 py-3 text-sm text-gray-900">Abhishek</td><td className="px-4 py-3 text-sm text-gray-900">NIE College, Mysore</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">5</td><td className="px-4 py-3 text-sm text-gray-900">Nithyashree</td><td className="px-4 py-3 text-sm text-gray-900">NIE College, Mysore</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">6</td><td className="px-4 py-3 text-sm text-gray-900">Chandru</td><td className="px-4 py-3 text-sm text-gray-900">PES College, Mandya</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">7</td><td className="px-4 py-3 text-sm text-gray-900">Chandan</td><td className="px-4 py-3 text-sm text-gray-900">PES College, Mandya</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">8</td><td className="px-4 py-3 text-sm text-gray-900">Vidhyamba</td><td className="px-4 py-3 text-sm text-gray-900">PES College, Mandya</td></tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </InfoAccordion>
+
+                  <InfoAccordion title="Placement & Employment Details" icon="briefcase-line">
+                    <div className="space-y-6">
+                      <div>
+                        <h4 className="font-medium text-lg text-gray-800 mb-4 flex items-center">
+                          <Icon name="building-line mr-2 text-green-600" />
+                          Government Employment
+                        </h4>
+                        <div className="overflow-x-auto">
+                          <table className="min-w-full bg-white border border-gray-200 rounded-lg">
+                            <thead className="bg-green-50">
+                              <tr>
+                                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Sl.No.</th>
+                                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Name</th>
+                                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Government Employment Details</th>
+                              </tr>
+                            </thead>
+                            <tbody className="divide-y divide-gray-200">
+                              <tr><td className="px-4 py-3 text-sm text-gray-900">1</td><td className="px-4 py-3 text-sm text-gray-900">Chandrashekar Patel</td><td className="px-4 py-3 text-sm text-gray-900">Assistant Engineering in Town Planning Department, Ramanagara</td></tr>
+                              <tr><td className="px-4 py-3 text-sm text-gray-900">2</td><td className="px-4 py-3 text-sm text-gray-900">Ashwin R</td><td className="px-4 py-3 text-sm text-gray-900">Engineer in Housing Board, Mysore</td></tr>
+                              <tr><td className="px-4 py-3 text-sm text-gray-900">3</td><td className="px-4 py-3 text-sm text-gray-900">Subhas</td><td className="px-4 py-3 text-sm text-gray-900">Junior Engineering Panchayath Raj Engineering Department Periyapatna</td></tr>
+                              <tr><td className="px-4 py-3 text-sm text-gray-900">4</td><td className="px-4 py-3 text-sm text-gray-900">Meghana</td><td className="px-4 py-3 text-sm text-gray-900">Assistant Engineering Corporation, Mysore</td></tr>
+                              <tr><td className="px-4 py-3 text-sm text-gray-900">5</td><td className="px-4 py-3 text-sm text-gray-900">Mohammed Ayan</td><td className="px-4 py-3 text-sm text-gray-900">Site Assistant Engineering National Project Construction Corporation at South Zone, Bangalore</td></tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+
+                      <div>
+                        <h4 className="font-medium text-lg text-gray-800 mb-4 flex items-center">
+                          <Icon name="briefcase-line mr-2 text-blue-600" />
+                          Private Placement Details
+                        </h4>
+                        <div className="overflow-x-auto">
+                          <table className="min-w-full bg-white border border-gray-200 rounded-lg">
+                            <thead className="bg-blue-50">
+                              <tr>
+                                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Sl.No.</th>
+                                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Name</th>
+                                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Placement Details</th>
+                              </tr>
+                            </thead>
+                            <tbody className="divide-y divide-gray-200">
+                              <tr><td className="px-4 py-3 text-sm text-gray-900">1</td><td className="px-4 py-3 text-sm text-gray-900">Parimala N K</td><td className="px-4 py-3 text-sm text-gray-900">Golden Key Construction, Mysore</td></tr>
+                              <tr><td className="px-4 py-3 text-sm text-gray-900">2</td><td className="px-4 py-3 text-sm text-gray-900">Udaykumar S</td><td className="px-4 py-3 text-sm text-gray-900">Gravity Structure, Mysore</td></tr>
+                              <tr><td className="px-4 py-3 text-sm text-gray-900">3</td><td className="px-4 py-3 text-sm text-gray-900">Yashwanth</td><td className="px-4 py-3 text-sm text-gray-900">Lakshmi Construction, Mysore</td></tr>
+                              <tr><td className="px-4 py-3 text-sm text-gray-900">4</td><td className="px-4 py-3 text-sm text-gray-900">Harshitha</td><td className="px-4 py-3 text-sm text-gray-900">CAD Center</td></tr>
+                              <tr><td className="px-4 py-3 text-sm text-gray-900">5</td><td className="px-4 py-3 text-sm text-gray-900">Gururaj B P</td><td className="px-4 py-3 text-sm text-gray-900">Golden Key Construction, Mysore</td></tr>
+                              <tr><td className="px-4 py-3 text-sm text-gray-900">6</td><td className="px-4 py-3 text-sm text-gray-900">Anitha</td><td className="px-4 py-3 text-sm text-gray-900">Gravity Structure, Mysore</td></tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </InfoAccordion>
+
+                  <InfoAccordion title="Alumni Achievements" icon="star-line">
+                    <div className="space-y-4">
+                      <p className="text-gray-600 mb-6">Our alumni have achieved remarkable success in their careers and continue to make us proud.</p>
+                      
+                      <div className="overflow-x-auto">
+                        <table className="min-w-full bg-white border border-gray-200 rounded-lg">
+                          <thead className="bg-yellow-50">
+                            <tr>
+                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Sl.No.</th>
+                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Name</th>
+                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Batch</th>
+                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Position</th>
+                            </tr>
+                          </thead>
+                          <tbody className="divide-y divide-gray-200">
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">1</td><td className="px-4 py-3 text-sm text-gray-900">Ms. Bhavana D R</td><td className="px-4 py-3 text-sm text-gray-900">2014-2018</td><td className="px-4 py-3 text-sm text-gray-900">M.Tech – RICS School of built environment, Mumbai</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">2</td><td className="px-4 py-3 text-sm text-gray-900">Mr. Vishal R Bharadwaj</td><td className="px-4 py-3 text-sm text-gray-900">2014-2018</td><td className="px-4 py-3 text-sm text-gray-900">2nd generation entrepreneur @ SLN constructions, Bangalore</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">3</td><td className="px-4 py-3 text-sm text-gray-900">Mr. Gowrish M U</td><td className="px-4 py-3 text-sm text-gray-900">2014-2018</td><td className="px-4 py-3 text-sm text-gray-900">MS in Construction management @DEAKIN university, Australia</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">4</td><td className="px-4 py-3 text-sm text-gray-900">Mr. Madhushree P V</td><td className="px-4 py-3 text-sm text-gray-900">2013-2017</td><td className="px-4 py-3 text-sm text-gray-900">M.Tech at UVCE Bangalore</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">5</td><td className="px-4 py-3 text-sm text-gray-900">Mr Roopesh M</td><td className="px-4 py-3 text-sm text-gray-900">2013-2017</td><td className="px-4 py-3 text-sm text-gray-900">BMRCL, Bangalore</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">6</td><td className="px-4 py-3 text-sm text-gray-900">Mr. Dhruva P</td><td className="px-4 py-3 text-sm text-gray-900">2013-2017</td><td className="px-4 py-3 text-sm text-gray-900">MBA (Construction Project Management) @ AMITY UNIVERSITY, Mumbai</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">7</td><td className="px-4 py-3 text-sm text-gray-900">Mr. Karthik S</td><td className="px-4 py-3 text-sm text-gray-900">2011-2015</td><td className="px-4 py-3 text-sm text-gray-900">Proprietor C.N.S Group of Company & AADYA Constructions Kengeri, Bangalore</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">8</td><td className="px-4 py-3 text-sm text-gray-900">Mr. B R Gautham Raj</td><td className="px-4 py-3 text-sm text-gray-900">2011-2015</td><td className="px-4 py-3 text-sm text-gray-900">Managing Director@ M/S Sadruda Constructions (B) Pvt Ltd, Bangalore</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">9</td><td className="px-4 py-3 text-sm text-gray-900">Ms. Swathi Shantharaju</td><td className="px-4 py-3 text-sm text-gray-900">2011-2015</td><td className="px-4 py-3 text-sm text-gray-900">Masters at Universitlibre de Bruxelles</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">10</td><td className="px-4 py-3 text-sm text-gray-900">Mr. Naveen Kumar V</td><td className="px-4 py-3 text-sm text-gray-900">2009-2014</td><td className="px-4 py-3 text-sm text-gray-900">Entrepreneur - Klarheit Valuers & engineering services Pvt ltd, Bangalore</td></tr>
+                          </tbody>
+                        </table>
                       </div>
                     </div>
                   </InfoAccordion>
