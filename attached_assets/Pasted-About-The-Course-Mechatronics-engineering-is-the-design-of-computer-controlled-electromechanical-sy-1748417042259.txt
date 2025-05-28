@@ -1,0 +1,24 @@
+About The Course
+Mechatronics engineering is the design of computer-controlled electromechanical systems. The essence of it is that the design of the mechanical system must be performed together with the design of the electrical/electronic and computer control aspects that together, comprise a complete system. Mechatronics is a multidisciplinary field that refers to the skill sets needed in the contemporary, advanced automated manufacturing industry
+From Hod's Desk
+Mechatronics Engineering also called as Mechatronics, is an interdisciplinary branch of engineering that focuses on the integration or combination of mechanical, electrical and electronics engineering systems, and also includes a combination of robotics, electronics, computer science, telecommunications, control systems and automation systems. In recent, the mechatronic systems are available in our daily life such as washing machines with electronic controls, smart refrigeration, cruise control technology in modern vehicles, etc. are the applications that are worked with such interdisciplinary branches. Considering the future growth and current trend of innovation and multidisciplinary approach, we have started this branch in our institute from 2000-2001.
+Dept. Vision
+To produce creative, innovative, and ethical technologists who can lead in the dynamic field of Mechatronics.
+Dept. Mission
+M1	The mission of the Mechatronics Program is to benefit the society at large by offering a thorough theoretical knowledge, practical exposure, skills for overall personality development towards self-directed lifelong learning a mist societal sustainability.
+M2	To encourage ethical values and leadership abilities in the minds of students so as to work towards the betterment of the society Program Educational Objectives Statements .
+Program Educational Objectives
+PEO1	Program Educational Objectives Statements
+PEO2	Work effectively as individuals and as team members in multidisciplinary projects
+PEO3	Engage in lifelong learning, career enhancement and adopt to changing professional and societal needs.
+Programme Outcome
+PO1	Basic and Discipline specific knowledge	Apply knowledge of basic mathematics, science and engineering fundamentals and engineering specialization to solve the engineering problems.
+PO2	Problem analysis	Identify and analyze well-defined engineering problems using codified standard methods.
+PO3	Design/ development of solutions	Design solutions for well-defined technical problems and assist with the design of systems components or processes to meet specified needs.
+PO4	Engineering Tools, Experimentation and Testing	Apply modern engineering tools and appropriate technique to conduct standard tests and measurements.
+PO5	Engineering practices for society, sustainability and environment	Apply appropriate technology in context of society, sustainability, environment and ethical practices.
+PO6	Project Management	Use engineering management principles individually, as a team member or a leader to manage projects and effectively communicate about well-defined engineering activities.
+PO7	Life-long learning	Ability to analyze individual needs and engage in updating in the context of technological changes.
+Programme SPECIFIC OUTCOMES
+PSO1	Apply concepts in core areas of Mechanical engineering – Hydraulics and fluid power, Management Systems, Mechanics of machines and thermal Engineering to solve technical issues.
+PSO2	Develop and optimize solutions in Computer aided manufacturing platforms
