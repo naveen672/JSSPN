@@ -138,6 +138,516 @@ const ProgramPage = () => {
     window.scrollTo(0, 0);
   }, []);
   
+  // Special case for Computer Science Engineering department
+  if (slug === "computer-science-engineering") {
+    return (
+      <PageLayout>
+        <PageBanner
+          title="Computer Science Engineering Department"
+          subtitle="Innovating the future through technology and software development"
+          iconName="code-line"
+          breadcrumbs={[
+            { name: "Programs", href: "/programs" },
+            { name: "Computer Science Engineering", href: `/programs/${slug}` }
+          ]}
+        />
+
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <motion.div
+                className="md:col-span-2"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                <h2 className="font-poppins font-bold text-2xl text-primary mb-6 flex items-center pl-4 border-l-4 border-amber-400">
+                  <Icon name="information-line mr-2 text-amber-500" />
+                  <span>About The Department</span>
+                </h2>
+
+                <div className="prose max-w-none">
+                  <InfoAccordion title="About the Course" icon="information-line" defaultOpen={true}>
+                    <div>
+                      <p className="text-gray-700">
+                        Computer science focuses on the development and testing of software and software systems. It involves working with mathematical models, data analysis and security, algorithms, and computational theory. Computer scientists define the computational principles that are the basis of all software.
+                      </p>
+                    </div>
+                  </InfoAccordion>
+
+                  <InfoAccordion title="Department Vision" icon="eye-line">
+                    <div className="bg-blue-50 p-5 rounded-lg border border-blue-200">
+                      <p className="text-gray-700 font-medium">
+                        To build a strong learning environment in the field of Computer Science and Engineering in technical education that responds to the challenges of the century.
+                      </p>
+                    </div>
+                  </InfoAccordion>
+
+                  <InfoAccordion title="Department Mission" icon="target-line">
+                    <div className="space-y-4">
+                      <div className="flex items-start">
+                        <span className="bg-green-100 text-green-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">M1</span>
+                        <p className="text-gray-700">To produce computer science diploma graduates who are trained in design, implementation, testing and maintenance of computational systems through competitive curriculum in collaboration with industry and other organizations.</p>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="bg-green-100 text-green-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">M2</span>
+                        <p className="text-gray-700">Providing state of art facilities for enhancing skills in the field of computer science and engineering.</p>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="bg-green-100 text-green-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">M3</span>
+                        <p className="text-gray-700">To encourage ethical values and leadership abilities in the minds of students so as to work towards the growth of the society.</p>
+                      </div>
+                    </div>
+                  </InfoAccordion>
+
+                  <InfoAccordion title="Program Educational Objectives" icon="graduation-cap-line">
+                    <div className="space-y-4">
+                      <div className="flex items-start">
+                        <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">PEO1</span>
+                        <p className="text-gray-700">Attainment of key principles and practices of computation and basic principles of engineering to ensure that technicians are able to apply their software development skills to implement practical systems consisting of software and/or hardware components.</p>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">PEO2</span>
+                        <p className="text-gray-700">Get hands on domain knowledge to pursue higher education.</p>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">PEO3</span>
+                        <p className="text-gray-700">Become socially responsible technicians with good leadership qualities, ethical values and effective interpersonal skills.</p>
+                      </div>
+                    </div>
+                  </InfoAccordion>
+
+                  <InfoAccordion title="Programme Outcomes" icon="award-line">
+                    <div className="space-y-4">
+                      <div className="flex items-start">
+                        <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">PO1</span>
+                        <div>
+                          <p className="font-medium text-gray-800">Basic and Discipline specific knowledge</p>
+                          <p className="text-gray-700 text-sm mt-1">Apply knowledge of basic mathematics, science and engineering fundamentals and engineering specialization to solve the engineering problems.</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">PO2</span>
+                        <div>
+                          <p className="font-medium text-gray-800">Problem analysis</p>
+                          <p className="text-gray-700 text-sm mt-1">Identify and analyze well-defined engineering problems using codified standard methods.</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">PO3</span>
+                        <div>
+                          <p className="font-medium text-gray-800">Design/development of solutions</p>
+                          <p className="text-gray-700 text-sm mt-1">Design solutions for well-defined technical problems and assist with the design of systems components or processes to meet specified needs.</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">PO4</span>
+                        <div>
+                          <p className="font-medium text-gray-800">Engineering Tools, Experimentation and Testing</p>
+                          <p className="text-gray-700 text-sm mt-1">Apply modern engineering tools and appropriate technique to conduct standard tests and measurements.</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">PO5</span>
+                        <div>
+                          <p className="font-medium text-gray-800">Engineering practices for society, sustainability and environment</p>
+                          <p className="text-gray-700 text-sm mt-1">Apply appropriate technology in context of society, sustainability, environment and ethical practices.</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">PO6</span>
+                        <div>
+                          <p className="font-medium text-gray-800">Project Management</p>
+                          <p className="text-gray-700 text-sm mt-1">Use engineering management principles individually, as a team member or a leader to manage projects and effectively communicate about well-defined engineering activities.</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">PO7</span>
+                        <div>
+                          <p className="font-medium text-gray-800">Life-long learning</p>
+                          <p className="text-gray-700 text-sm mt-1">Ability to analyze individual needs and engage in updating in the context of technological changes.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </InfoAccordion>
+
+                  <InfoAccordion title="Programme Specific Outcomes" icon="lightbulb-line">
+                    <div className="space-y-4">
+                      <div className="flex items-start">
+                        <span className="bg-orange-100 text-orange-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">PSO1</span>
+                        <p className="text-gray-700">Demonstrate skills in the core knowledge areas of Data Structures, Programming Languages, Databases, Software Engineering, Development & testing, Computer Hardware and Networking.</p>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="bg-orange-100 text-orange-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">PSO2</span>
+                        <p className="text-gray-700">Apply problem-solving skills and the knowledge of computer science to solve real world problems.</p>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="bg-orange-100 text-orange-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">PSO3</span>
+                        <p className="text-gray-700">Develop technical project and present the reports effectively.</p>
+                      </div>
+                    </div>
+                  </InfoAccordion>
+
+                  <InfoAccordion title="Faculty Members" icon="team-line">
+                    <div className="space-y-4">
+                      <p className="text-gray-600 mb-6">Our Computer Science Engineering department has experienced faculty and support staff dedicated to excellence in technical education.</p>
+                      
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                          <div className="flex items-center mb-3">
+                            <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-3">
+                              GP
+                            </div>
+                            <div>
+                              <h4 className="font-medium text-gray-800">Sri. Ganesh Prasad S</h4>
+                              <p className="text-sm text-gray-600">HOD</p>
+                              <p className="text-sm text-green-600">9535737505</p>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                          <div className="flex items-center mb-3">
+                            <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-3">
+                              NM
+                            </div>
+                            <div>
+                              <h4 className="font-medium text-gray-800">Sri. Niranjana Murthy H N</h4>
+                              <p className="text-sm text-gray-600">Lecturer</p>
+                              <p className="text-sm text-green-600">9538734252</p>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                          <div className="flex items-center mb-3">
+                            <div className="w-12 h-12 bg-gradient-to-r from-pink-500 to-pink-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-3">
+                              KG
+                            </div>
+                            <div>
+                              <h4 className="font-medium text-gray-800">Smt. Kavyashree G</h4>
+                              <p className="text-sm text-gray-600">Lecturer</p>
+                              <p className="text-sm text-green-600">9739920591</p>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                          <div className="flex items-center mb-3">
+                            <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-3">
+                              SM
+                            </div>
+                            <div>
+                              <h4 className="font-medium text-gray-800">Sri. Shivashankara M</h4>
+                              <p className="text-sm text-gray-600">Lecturer</p>
+                              <p className="text-sm text-green-600">9844910134</p>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                          <div className="flex items-center mb-3">
+                            <div className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-3">
+                              AS
+                            </div>
+                            <div>
+                              <h4 className="font-medium text-gray-800">Sri. Abdul Shukur</h4>
+                              <p className="text-sm text-gray-600">Lecturer</p>
+                              <p className="text-sm text-green-600">9611327022</p>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                          <div className="flex items-center mb-3">
+                            <div className="w-12 h-12 bg-gradient-to-r from-teal-500 to-teal-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-3">
+                              NM
+                            </div>
+                            <div>
+                              <h4 className="font-medium text-gray-800">Kum. Nisarga M</h4>
+                              <p className="text-sm text-gray-600">Lecturer</p>
+                              <p className="text-sm text-green-600">8296747898</p>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                          <div className="flex items-center mb-3">
+                            <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-3">
+                              VG
+                            </div>
+                            <div>
+                              <h4 className="font-medium text-gray-800">Sri. Virupaksha Gouda U</h4>
+                              <p className="text-sm text-gray-600">System Analyst</p>
+                              <p className="text-sm text-green-600">9886801029</p>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                          <div className="flex items-center mb-3">
+                            <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-red-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-3">
+                              MK
+                            </div>
+                            <div>
+                              <h4 className="font-medium text-gray-800">Sri. Mahadevaswamy K P</h4>
+                              <p className="text-sm text-gray-600">Instructor</p>
+                              <p className="text-sm text-green-600">9886368541</p>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                          <div className="flex items-center mb-3">
+                            <div className="w-12 h-12 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-3">
+                              RT
+                            </div>
+                            <div>
+                              <h4 className="font-medium text-gray-800">Smt. Ranjini T J</h4>
+                              <p className="text-sm text-gray-600">Instructor</p>
+                              <p className="text-sm text-green-600">9060937260</p>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                          <div className="flex items-center mb-3">
+                            <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-cyan-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-3">
+                              RTM
+                            </div>
+                            <div>
+                              <h4 className="font-medium text-gray-800">Smt. Rashmi T M</h4>
+                              <p className="text-sm text-gray-600">Instructor</p>
+                              <p className="text-sm text-green-600">8050804640</p>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                          <div className="flex items-center mb-3">
+                            <div className="w-12 h-12 bg-gradient-to-r from-gray-500 to-gray-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-3">
+                              SC
+                            </div>
+                            <div>
+                              <h4 className="font-medium text-gray-800">Sri. Siddaraju C M</h4>
+                              <p className="text-sm text-gray-600">Technician</p>
+                              <p className="text-sm text-green-600">9742521417</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </InfoAccordion>
+
+                  <InfoAccordion title="Higher Education Achievements" icon="graduation-cap-line">
+                    <div className="space-y-4">
+                      <p className="text-gray-600 mb-6">Our students continue their academic journey at prestigious engineering institutions.</p>
+                      
+                      <div className="overflow-x-auto">
+                        <table className="min-w-full bg-white border border-gray-200 rounded-lg">
+                          <thead className="bg-gray-50">
+                            <tr>
+                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Sl.No.</th>
+                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Year</th>
+                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Name</th>
+                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Higher Education</th>
+                            </tr>
+                          </thead>
+                          <tbody className="divide-y divide-gray-200">
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">1</td><td className="px-4 py-3 text-sm text-gray-900">2023-24</td><td className="px-4 py-3 text-sm text-gray-900">Aishwarya</td><td className="px-4 py-3 text-sm text-gray-900">SJCE Engineering College, Mysore</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">2</td><td className="px-4 py-3 text-sm text-gray-900">2023-24</td><td className="px-4 py-3 text-sm text-gray-900">Mahadevaprasad</td><td className="px-4 py-3 text-sm text-gray-900">SJCE Engineering College, Mysore</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">3</td><td className="px-4 py-3 text-sm text-gray-900">2023-24</td><td className="px-4 py-3 text-sm text-gray-900">Amrutha</td><td className="px-4 py-3 text-sm text-gray-900">NIE College, Mysore</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">4</td><td className="px-4 py-3 text-sm text-gray-900">2023-24</td><td className="px-4 py-3 text-sm text-gray-900">Maheshwari</td><td className="px-4 py-3 text-sm text-gray-900">NIE College, Mysore</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">5</td><td className="px-4 py-3 text-sm text-gray-900">2023-24</td><td className="px-4 py-3 text-sm text-gray-900">Ullash</td><td className="px-4 py-3 text-sm text-gray-900">PES College, Mandya</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">6</td><td className="px-4 py-3 text-sm text-gray-900">2022-23</td><td className="px-4 py-3 text-sm text-gray-900">Kiran</td><td className="px-4 py-3 text-sm text-gray-900">RV College, Bangalore</td></tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </InfoAccordion>
+
+                  <InfoAccordion title="Placement Details" icon="briefcase-line">
+                    <div className="space-y-4">
+                      <p className="text-gray-600 mb-6">Our graduates have secured excellent positions in leading technology companies.</p>
+                      
+                      <div className="overflow-x-auto">
+                        <table className="min-w-full bg-white border border-gray-200 rounded-lg">
+                          <thead className="bg-blue-50">
+                            <tr>
+                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Sl.No.</th>
+                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Name</th>
+                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Designation</th>
+                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Organization Details</th>
+                            </tr>
+                          </thead>
+                          <tbody className="divide-y divide-gray-200">
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">1</td><td className="px-4 py-3 text-sm text-gray-900">Saravanan M</td><td className="px-4 py-3 text-sm text-gray-900">Developer</td><td className="px-4 py-3 text-sm text-gray-900">-</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">2</td><td className="px-4 py-3 text-sm text-gray-900">Rajeshwari K</td><td className="px-4 py-3 text-sm text-gray-900">Division Technician</td><td className="px-4 py-3 text-sm text-gray-900">Jubilient, Nanjangud</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">3</td><td className="px-4 py-3 text-sm text-gray-900">Ashwini Singh S</td><td className="px-4 py-3 text-sm text-gray-900">Team Leader</td><td className="px-4 py-3 text-sm text-gray-900">Star Mark Solution Pvt. Ltd., Mysuru</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">4</td><td className="px-4 py-3 text-sm text-gray-900">Raghav S</td><td className="px-4 py-3 text-sm text-gray-900">Production Software Engineer</td><td className="px-4 py-3 text-sm text-gray-900">Cerner Healthcare Solutions India Pvt. Ltd., Bengaluru</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">5</td><td className="px-4 py-3 text-sm text-gray-900">Sharathkumar S B</td><td className="px-4 py-3 text-sm text-gray-900">Business Head</td><td className="px-4 py-3 text-sm text-gray-900">Qspiders Campus Connect, Bengaluru</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">6</td><td className="px-4 py-3 text-sm text-gray-900">Prasad K G</td><td className="px-4 py-3 text-sm text-gray-900">Tech Lead</td><td className="px-4 py-3 text-sm text-gray-900">Tech Mahindra, Mysuru</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">7</td><td className="px-4 py-3 text-sm text-gray-900">Sathish C T</td><td className="px-4 py-3 text-sm text-gray-900">DevOps Engineer</td><td className="px-4 py-3 text-sm text-gray-900">Opstree Solution Noida</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">8</td><td className="px-4 py-3 text-sm text-gray-900">Kiran M S</td><td className="px-4 py-3 text-sm text-gray-900">Sr. Technical Consultant</td><td className="px-4 py-3 text-sm text-gray-900">Stoics Software Pvt. Ltd., Bengaluru</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">9</td><td className="px-4 py-3 text-sm text-gray-900">Chandrashekar</td><td className="px-4 py-3 text-sm text-gray-900">Software Developer</td><td className="px-4 py-3 text-sm text-gray-900">Krtefactsys India Pvt. Ltd., Bengaluru</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">10</td><td className="px-4 py-3 text-sm text-gray-900">Divya M</td><td className="px-4 py-3 text-sm text-gray-900">Jr. Software Developer</td><td className="px-4 py-3 text-sm text-gray-900">Sethy Mech Pvt.Ltd Mysore</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">11</td><td className="px-4 py-3 text-sm text-gray-900">Veena K P</td><td className="px-4 py-3 text-sm text-gray-900">Software Developer</td><td className="px-4 py-3 text-sm text-gray-900">Pune</td></tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </InfoAccordion>
+
+                  <InfoAccordion title="Alumni Achievements" icon="star-line">
+                    <div className="space-y-4">
+                      <p className="text-gray-600 mb-6">Our alumni continue to excel in their careers and make significant contributions to the technology industry.</p>
+                      
+                      <div className="overflow-x-auto">
+                        <table className="min-w-full bg-white border border-gray-200 rounded-lg">
+                          <thead className="bg-yellow-50">
+                            <tr>
+                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Sl.No.</th>
+                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Name</th>
+                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Designation</th>
+                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Organization Details</th>
+                            </tr>
+                          </thead>
+                          <tbody className="divide-y divide-gray-200">
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">1</td><td className="px-4 py-3 text-sm text-gray-900">Saravanan M</td><td className="px-4 py-3 text-sm text-gray-900">Developer</td><td className="px-4 py-3 text-sm text-gray-900">-</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">2</td><td className="px-4 py-3 text-sm text-gray-900">Rajeshwari K</td><td className="px-4 py-3 text-sm text-gray-900">Division Technician</td><td className="px-4 py-3 text-sm text-gray-900">Jubilient, Nanjangud</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">3</td><td className="px-4 py-3 text-sm text-gray-900">Ashwini Singh S</td><td className="px-4 py-3 text-sm text-gray-900">Team Leader</td><td className="px-4 py-3 text-sm text-gray-900">Star Mark Solution Pvt. Ltd., Mysuru</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">4</td><td className="px-4 py-3 text-sm text-gray-900">Raghav S</td><td className="px-4 py-3 text-sm text-gray-900">Production Software Engineer</td><td className="px-4 py-3 text-sm text-gray-900">Cerner Healthcare Solutions India Pvt. Ltd., Bengaluru</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">5</td><td className="px-4 py-3 text-sm text-gray-900">Sharathkumar S B</td><td className="px-4 py-3 text-sm text-gray-900">Business Head</td><td className="px-4 py-3 text-sm text-gray-900">Qspiders Campus Connect, Bengaluru</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">6</td><td className="px-4 py-3 text-sm text-gray-900">Prasad K G</td><td className="px-4 py-3 text-sm text-gray-900">Tech Lead</td><td className="px-4 py-3 text-sm text-gray-900">Tech Mahindra, Mysuru</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">7</td><td className="px-4 py-3 text-sm text-gray-900">Sathish C T</td><td className="px-4 py-3 text-sm text-gray-900">DevOps Engineer</td><td className="px-4 py-3 text-sm text-gray-900">Opstree Solution Noida</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">8</td><td className="px-4 py-3 text-sm text-gray-900">Kiran M S</td><td className="px-4 py-3 text-sm text-gray-900">Sr. Technical Consultant</td><td className="px-4 py-3 text-sm text-gray-900">Stoics Software Pvt. Ltd., Bengaluru</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">9</td><td className="px-4 py-3 text-sm text-gray-900">Chandrashekar</td><td className="px-4 py-3 text-sm text-gray-900">Software Developer</td><td className="px-4 py-3 text-sm text-gray-900">Krtefactsys India Pvt. Ltd., Bengaluru</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">10</td><td className="px-4 py-3 text-sm text-gray-900">Divya M</td><td className="px-4 py-3 text-sm text-gray-900">Jr. Software Developer</td><td className="px-4 py-3 text-sm text-gray-900">Sethy Mech Pvt.Ltd Mysore</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">11</td><td className="px-4 py-3 text-sm text-gray-900">Veena K P</td><td className="px-4 py-3 text-sm text-gray-900">Software Developer</td><td className="px-4 py-3 text-sm text-gray-900">Pune</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">12</td><td className="px-4 py-3 text-sm text-gray-900">Dayanand Sagar</td><td className="px-4 py-3 text-sm text-gray-900">Developer</td><td className="px-4 py-3 text-sm text-gray-900">BMAP, Mysore</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">13</td><td className="px-4 py-3 text-sm text-gray-900">Deepak M</td><td className="px-4 py-3 text-sm text-gray-900">Manager</td><td className="px-4 py-3 text-sm text-gray-900">Sudharshan Silks, Mysuru</td></tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </InfoAccordion>
+                </div>
+              </motion.div>
+              
+              <motion.div 
+                className="md:col-span-1"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+              >
+                <div className="bg-white rounded-lg shadow-sm border border-gray-100 p-6 sticky top-24">
+                  <h3 className="font-poppins font-bold text-lg text-primary mb-6 pb-3 border-b border-gray-100">
+                    Department Highlights
+                  </h3>
+                  
+                  <div className="space-y-4">
+                    <div className="flex items-center border-b border-gray-100 pb-3">
+                      <div className="w-8 h-8 bg-amber-400/20 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                        <Icon name="code-line text-amber-600" />
+                      </div>
+                      <div>
+                        <span className="text-gray-500 text-sm">Department</span>
+                        <p className="font-medium text-gray-800">Computer Science Engineering</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center border-b border-gray-100 pb-3">
+                      <div className="w-8 h-8 bg-amber-400/20 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                        <Icon name="tools-line text-amber-600" />
+                      </div>
+                      <div>
+                        <span className="text-gray-500 text-sm">Key Areas</span>
+                        <p className="font-medium text-gray-800">Software Development, Programming</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center border-b border-gray-100 pb-3">
+                      <div className="w-8 h-8 bg-amber-400/20 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                        <Icon name="team-line text-amber-600" />
+                      </div>
+                      <div>
+                        <span className="text-gray-500 text-sm">Faculty Strength</span>
+                        <p className="font-medium text-gray-800">11 Experienced Members</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center border-b border-gray-100 pb-3">
+                      <div className="w-8 h-8 bg-amber-400/20 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                        <Icon name="briefcase-line text-amber-600" />
+                      </div>
+                      <div>
+                        <span className="text-gray-500 text-sm">Industry Focus</span>
+                        <p className="font-medium text-gray-800">Tech Companies & Startups</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-8">
+                    <h4 className="font-medium text-primary mb-4 pb-2 border-b border-gray-100">
+                      Other Departments
+                    </h4>
+                    <ul className="space-y-2">
+                      <li>
+                        <a href="/programs/science-humanities" className="flex items-center text-gray-600 hover:text-primary transition-colors py-1.5">
+                          <Icon name="arrow-right-s-line mr-2 text-amber-500" />
+                          <span>Science & Humanities</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/programs/civil-engineering" className="flex items-center text-gray-600 hover:text-primary transition-colors py-1.5">
+                          <Icon name="arrow-right-s-line mr-2 text-amber-500" />
+                          <span>Civil Engineering</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/programs/electronics-communication" className="flex items-center text-gray-600 hover:text-primary transition-colors py-1.5">
+                          <Icon name="arrow-right-s-line mr-2 text-amber-500" />
+                          <span>Electronics & Communication</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/programs/mechanical" className="flex items-center text-gray-600 hover:text-primary transition-colors py-1.5">
+                          <Icon name="arrow-right-s-line mr-2 text-amber-500" />
+                          <span>Mechanical Engineering</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/programs/mechatronics" className="flex items-center text-gray-600 hover:text-primary transition-colors py-1.5">
+                          <Icon name="arrow-right-s-line mr-2 text-amber-500" />
+                          <span>Mechatronics Engineering</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/programs/electrical-electronics" className="flex items-center text-gray-600 hover:text-primary transition-colors py-1.5">
+                          <Icon name="arrow-right-s-line mr-2 text-amber-500" />
+                          <span>Electrical & Electronics</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  
+                  <div className="mt-6">
+                    <a
+                      href="/about/contact"
+                      className="block bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full font-medium transition-all text-center shadow-md"
+                    >
+                      Contact Department
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+      </PageLayout>
+    );
+  }
+
   // Special case for Civil Engineering department
   if (slug === "civil-engineering") {
     return (

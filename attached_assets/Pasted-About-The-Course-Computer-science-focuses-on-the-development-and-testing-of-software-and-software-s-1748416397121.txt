@@ -1,0 +1,25 @@
+About The Course
+Computer science focuses on the development and testing of software and software systems. It involves working with mathematical models, data analysis and security, algorithms, and computational theory. Computer scientists define the computational principles that are the basis of all software.
+From Hod's Desk
+Dept. Vision
+To build a strong learning environment in the field of Computer Science and Engineering in technical education that responds to the challenges of the century.
+Dept. Mission
+M1	To produce computer science diploma graduates who are trained in design, implementation, testing and maintenance of computational systems through competitive curriculum in collaboration with industry and other organizations.
+M2	Providing state of art facilities for enhancing skills in the field of computer science and engineering.
+M3	To encourage ethical values and leadership abilities in the minds of students so as to work towards the growth of the society.
+Program Educational Objectives
+PEO1	Attainment of key principles and practices of computation and basic principles of engineering to ensure that technicians are able to apply their software development skills to implement practical systems consisting of software and/or hardware components.
+PEO2	Get hands on domain knowledge to pursue higher education.
+PEO3	Become socially responsible technicians with good leadership qualities, ethical values and effective interpersonal skills.
+Programme Outcome
+PO1	Basic and Discipline specific knowledge	Apply knowledge of basic mathematics, science and engineering fundamentals and engineering specialization to solve the engineering problems.
+PO2	Problem analysis	Identify and analyze well-defined engineering problems using codified standard methods.
+PO3	Design/ development of solutions	Design solutions for well-defined technical problems and assist with the design of systems components or processes to meet specified needs.
+PO4	Engineering Tools, Experimentation and Testing	Apply modern engineering tools and appropriate technique to conduct standard tests and measurements.
+PO5	Engineering practices for society, sustainability and environment	Apply appropriate technology in context of society, sustainability, environment and ethical practices.
+PO6	Project Management	Use engineering management principles individually, as a team member or a leader to manage projects and effectively communicate about well-defined engineering activities.
+PO7	Life-long learning	Ability to analyze individual needs and engage in updating in the context of technological changes.
+Programme SPECIFIC OUTCOMES
+PSO1	Demonstrate skills in the core knowledge areas of Data Structures, Programming Languages, Databases, Software Engineering, Development & testing, Computer Hardware and Networking.
+PSO2	Apply problem-solving skills and the knowledge of computer science to solve real world problems.
+PSO3	Develop technical project and present the reports effectively.
