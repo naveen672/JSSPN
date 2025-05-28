@@ -31,6 +31,7 @@ import IQACPage from "@/pages/IQACPage";
 import AntiRaggingPage from "@/pages/AntiRaggingPage";
 import WomenGrievancesPage from "@/pages/WomenGrievancesPage";
 import SCSTCommitteePage from "@/pages/SCSTCommitteePage";
+import MandatoryDisclosurePage from "@/pages/MandatoryDisclosurePage";
 import TrainingPage from "@/pages/TrainingPage";
 import AdminLogin from "@/pages/admin/login";
 import AdminDashboard from "@/pages/admin/index";
@@ -61,6 +62,7 @@ function Router() {
       <Route path="/more/anti-ragging" component={AntiRaggingPage} />
       <Route path="/more/women-grievances" component={WomenGrievancesPage} />
       <Route path="/more/sc-st-committee" component={SCSTCommitteePage} />
+      <Route path="/more/mandatory-disclosure" component={MandatoryDisclosurePage} />
       <Route path="/placement/training" component={TrainingPage} />
       <Route path="/admin/login" component={AdminLogin} />
       <ProtectedRoute path="/admin" component={AdminDashboard} adminOnly={true} />
