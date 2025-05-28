@@ -20,102 +20,117 @@ interface NavigationItem {
 // Navigation menu data
 const navigationItems: NavigationItem[] = [
   {
-    id: 'home',
-    name: 'Home',
-    href: '/',
-    icon: 'home-4-line',
-    dropdown: null
+    id: "home",
+    name: "Home",
+    href: "/",
+    icon: "home-4-line",
+    dropdown: null,
   },
   {
-    id: 'about',
-    name: 'About',
-    href: '#about',
-    icon: 'information-line',
+    id: "about",
+    name: "About",
+    href: "#about",
+    icon: "information-line",
     dropdown: [
-      { name: 'About JSSMVP', href: '/about/jssmvp' },
-      { name: 'About JSSPN', href: '/about/jss-polytechnic-nanjangud' },
-      { name: 'Vision & Mission', href: '/about/vision-mission' },
-      { name: 'Governance', href: '/about/governance' },
-      { name: 'Administration', href: '/about/administration' },
-      { name: 'Reports', href: '/about/reports' },
-      { name: 'Downloads', href: '/about/downloads' },
-      { name: 'Contact Us', href: '/about/contact' }
-    ]
+      { name: "About JSSMVP", href: "/about/jssmvp" },
+      { name: "About JSSPN", href: "/about/jss-polytechnic-nanjangud" },
+      { name: "Vision & Mission", href: "/about/vision-mission" },
+      { name: "Governance", href: "/about/governance" },
+      { name: "Administration", href: "/about/administration" },
+      { name: "Reports", href: "/about/reports" },
+      { name: "Downloads", href: "/about/downloads" },
+      { name: "Contact Us", href: "/about/contact" },
+    ],
   },
   {
-    id: 'programmes',
-    name: 'Programmes',
-    href: '#academics',
-    icon: 'book-open-line',
+    id: "programmes",
+    name: "Programmes",
+    href: "#academics",
+    icon: "book-open-line",
     dropdown: [
-      { name: 'Computer Science Engineering', href: '/programs/computer-science-engineering' },
-      { name: 'Mechanical Engineering', href: '/programs/mechanical-engineering' },
-      { name: 'Electrical Engineering', href: '/programs/electrical-engineering' },
-      { name: 'Civil Engineering', href: '/programs/civil-engineering' },
-      { name: 'Electronics & Communication', href: '/programs/electronics-communication' },
-      { name: 'Science & Humanities', href: '/programs/science-humanities' },
-      { name: 'Mechatronics', href: '/programs/mechatronics' }
-    ]
+      {
+        name: "Computer Science Engineering",
+        href: "/programs/computer-science-engineering",
+      },
+      {
+        name: "Mechanical Engineering",
+        href: "/programs/mechanical-engineering",
+      },
+      {
+        name: "Electrical Engineering",
+        href: "/programs/electrical-engineering",
+      },
+      { name: "Civil Engineering", href: "/programs/civil-engineering" },
+      {
+        name: "Electronics & Communication",
+        href: "/programs/electronics-communication",
+      },
+      { name: "Science & Humanities", href: "/programs/science-humanities" },
+      { name: "Mechatronics", href: "/programs/mechatronics" },
+    ],
   },
   {
-    id: 'academic',
-    name: 'Academic',
-    href: '#academics',
-    icon: 'graduation-cap-line',
+    id: "academic",
+    name: "Academic",
+    href: "#academics",
+    icon: "graduation-cap-line",
     dropdown: [
-      { name: 'Calendar of Events', href: '/academic/calendar-of-events' },
-      { name: 'Admission', href: '/academic/admission' },
-      { name: 'Examination', href: '/academic/examination' },
-      { name: 'Circulars', href: '/academic/circulars' }
-    ]
+      { name: "Calendar of Events", href: "/academic/calendar-of-events" },
+      { name: "Admission", href: "/academic/admission" },
+      { name: "Examination", href: "/academic/examination" },
+      { name: "Circulars", href: "/academic/circulars" },
+    ],
   },
   {
-    id: 'facilities',
-    name: 'Facilities',
-    href: '#campus',
-    icon: 'building-4-line',
+    id: "facilities",
+    name: "Facilities",
+    href: "#campus",
+    icon: "building-4-line",
     dropdown: [
-      { name: 'Library', href: '/facilities/library' },
-      { name: 'Sports', href: '/facilities/sports' }
-    ]
+      { name: "Library", href: "/facilities/library" },
+      { name: "Sports", href: "/facilities/sports" },
+    ],
   },
   {
-    id: 'supports',
-    name: 'Supports',
-    href: '#campus',
-    icon: 'hand-heart-line',
+    id: "supports",
+    name: "Supports",
+    href: "#campus",
+    icon: "hand-heart-line",
     dropdown: [
-      { name: 'Scholarship', href: '/supports/scholarship' },
-      { name: 'Mentoring Scheme', href: '/supports/mentoring-scheme' },
-      { name: 'Social Out Reach Program', href: '/supports/social-outreach-program' },
-      { name: 'Student Grievance', href: '/supports/student-grievance' },
-      { name: 'Gallery', href: '/supports/gallery' }
-    ]
+      { name: "Scholarship", href: "/supports/scholarship" },
+      { name: "Mentoring Scheme", href: "/supports/mentoring-scheme" },
+      {
+        name: "Social Out Reach Program",
+        href: "/supports/social-outreach-program",
+      },
+      { name: "Student Grievance", href: "/supports/student-grievance" },
+      { name: "Gallery", href: "/supports/gallery" },
+    ],
   },
   {
-    id: 'placement',
-    name: 'Placement',
-    href: '#',
-    icon: 'briefcase-line',
+    id: "placement",
+    name: "Placement",
+    href: "#",
+    icon: "briefcase-line",
     dropdown: [
-      { name: 'Training', href: '/placement/training' },
-      { name: 'Placement', href: '/placement/placement' }
-    ]
+      { name: "Training", href: "/placement/training" },
+      { name: "Placement", href: "/placement/placement" },
+    ],
   },
   {
-    id: 'more',
-    name: 'More',
-    href: '#',
-    icon: 'more-line',
+    id: "more",
+    name: "More",
+    href: "#",
+    icon: "more-line",
     dropdown: [
-      { name: 'Mandatory Disclosure', href: '/more/mandatory-disclosure' },
-      { name: 'IQAC', href: '/more/iqac' },
-      { name: 'Media Coverage', href: '/more/media-coverage' },
-      { name: 'Anti Ragging', href: '/more/anti-ragging' },
-      { name: 'Women Grievances', href: '/more/women-grievances' },
-      { name: 'SC/CT Committee', href: '/more/sc-ct-committee' }
-    ]
-  }
+      { name: "Mandatory Disclosure", href: "/more/mandatory-disclosure" },
+      { name: "IQAC", href: "/more/iqac" },
+      { name: "Media Coverage", href: "/more/media-coverage" },
+      { name: "Anti Ragging", href: "/more/anti-ragging" },
+      { name: "Women Grievances", href: "/more/women-grievances" },
+      { name: "SC/ST Committee", href: "/more/sc-ct-committee" },
+    ],
+  },
 ];
 
 const Navbar = () => {
@@ -131,14 +146,17 @@ const Navbar = () => {
     };
 
     const handleClickOutside = (event: MouseEvent) => {
-      if (activeDropdown && !dropdownRefs.current[activeDropdown]?.contains(event.target as Node)) {
+      if (
+        activeDropdown &&
+        !dropdownRefs.current[activeDropdown]?.contains(event.target as Node)
+      ) {
         setActiveDropdown(null);
       }
     };
 
     window.addEventListener("scroll", handleScroll);
     document.addEventListener("mousedown", handleClickOutside);
-    
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
       document.removeEventListener("mousedown", handleClickOutside);
@@ -157,16 +175,16 @@ const Navbar = () => {
     setIsMenuOpen(false);
     setMobileOpenItems([]);
   };
-  
+
   const toggleDesktopDropdown = useCallback((id: string) => {
-    setActiveDropdown(prevState => prevState === id ? null : id);
+    setActiveDropdown((prevState) => (prevState === id ? null : id));
   }, []);
-  
+
   const toggleMobileDropdown = useCallback((id: string) => {
-    setMobileOpenItems(prev => {
+    setMobileOpenItems((prev) => {
       // If item is already in the array, remove it (close dropdown)
       if (prev.includes(id)) {
-        return prev.filter(item => item !== id);
+        return prev.filter((item) => item !== id);
       }
       // If not, add it (open dropdown)
       return [...prev, id];
@@ -195,7 +213,11 @@ const Navbar = () => {
               </button>
               <a href="/" className="flex items-center group">
                 <div className="w-12 h-12 mr-3 overflow-hidden rounded-full shadow-md border-2 border-gray-100 group-hover:border-primary transition-colors duration-200">
-                  <img src={logoImage} alt="JSS Polytechnic Logo" className="w-full h-full object-contain" />
+                  <img
+                    src={logoImage}
+                    alt="JSS Polytechnic Logo"
+                    className="w-full h-full object-contain"
+                  />
                 </div>
                 <div>
                   <span className="font-poppins font-semibold text-primary text-lg block leading-tight group-hover:text-amber-500 transition-colors duration-200">
@@ -227,8 +249,8 @@ const Navbar = () => {
                     >
                       <Icon name={`${item.icon} mr-1.5`} />
                       <span>{item.name}</span>
-                      <Icon 
-                        name={`arrow-down-s-line ml-1 text-xs ${activeDropdown === item.id ? 'rotate-180' : ''}`} 
+                      <Icon
+                        name={`arrow-down-s-line ml-1 text-xs ${activeDropdown === item.id ? "rotate-180" : ""}`}
                         className="transition-transform duration-200"
                       />
                     </button>
@@ -241,7 +263,7 @@ const Navbar = () => {
                       <span>{item.name}</span>
                     </a>
                   )}
-                  
+
                   {/* Dropdown Menu */}
                   {item.dropdown && (
                     <div
@@ -287,7 +309,11 @@ const Navbar = () => {
           <div className="flex justify-between items-center">
             <div className="flex items-center">
               <div className="w-12 h-12 overflow-hidden rounded-full bg-white p-1">
-                <img src={logoImage} alt="JSS Polytechnic Logo" className="w-full h-full object-contain" />
+                <img
+                  src={logoImage}
+                  alt="JSS Polytechnic Logo"
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div className="ml-3 text-white">
                 <div className="font-bold text-lg">JSS Polytechnic</div>
@@ -303,7 +329,7 @@ const Navbar = () => {
             </button>
           </div>
         </div>
-        
+
         <div className="p-4 space-y-1 font-poppins overflow-y-auto max-h-[calc(100vh-100px)]">
           {navigationItems.map((item) => (
             <div key={item.id} className="mb-1">
@@ -316,8 +342,8 @@ const Navbar = () => {
                       toggleMobileDropdown(item.id);
                     }}
                     className={`flex items-center justify-between w-full py-3 px-4 rounded-md ${
-                      mobileOpenItems.includes(item.id) 
-                        ? "bg-primary text-white" 
+                      mobileOpenItems.includes(item.id)
+                        ? "bg-primary text-white"
                         : "hover:bg-primary/10 hover:text-primary text-gray-700"
                     }`}
                   >
@@ -325,17 +351,17 @@ const Navbar = () => {
                       <Icon name={`${item.icon} mr-2`} />
                       <span>{item.name}</span>
                     </div>
-                    <Icon 
-                      name={`arrow-down-s-line ${mobileOpenItems.includes(item.id) ? 'rotate-180' : ''}`}
-                      className="transition-transform duration-200" 
+                    <Icon
+                      name={`arrow-down-s-line ${mobileOpenItems.includes(item.id) ? "rotate-180" : ""}`}
+                      className="transition-transform duration-200"
                     />
                   </button>
-                  
+
                   {/* Mobile Dropdown */}
-                  <div 
+                  <div
                     className={`pl-4 mt-1 overflow-hidden transition-all duration-300 ${
-                      mobileOpenItems.includes(item.id) 
-                        ? "max-h-[1000px] opacity-100" 
+                      mobileOpenItems.includes(item.id)
+                        ? "max-h-[1000px] opacity-100"
                         : "max-h-0 opacity-0"
                     }`}
                   >
