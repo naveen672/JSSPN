@@ -25,6 +25,12 @@ import CircularsPage from "@/pages/CircularsPage";
 import SportsPage from "@/pages/SportsPage";
 import LibraryPage from "@/pages/LibraryPage";
 import ScholarshipPage from "@/pages/ScholarshipPage";
+import MentoringPage from "@/pages/MentoringPage";
+import StudentGrievancePage from "@/pages/StudentGrievancePage";
+import IQACPage from "@/pages/IQACPage";
+import AntiRaggingPage from "@/pages/AntiRaggingPage";
+import WomenGrievancesPage from "@/pages/WomenGrievancesPage";
+import SCSTCommitteePage from "@/pages/SCSTCommitteePage";
 import TrainingPage from "@/pages/TrainingPage";
 import AdminLogin from "@/pages/admin/login";
 import AdminDashboard from "@/pages/admin/index";
@@ -49,6 +55,12 @@ function Router() {
       <Route path="/facilities/sports" component={SportsPage} />
       <Route path="/facilities/library" component={LibraryPage} />
       <Route path="/supports/scholarship" component={ScholarshipPage} />
+      <Route path="/supports/mentoring-scheme" component={MentoringPage} />
+      <Route path="/supports/student-grievance" component={StudentGrievancePage} />
+      <Route path="/more/iqac" component={IQACPage} />
+      <Route path="/more/anti-ragging" component={AntiRaggingPage} />
+      <Route path="/more/women-grievances" component={WomenGrievancesPage} />
+      <Route path="/more/sc-st-committee" component={SCSTCommitteePage} />
       <Route path="/placement/training" component={TrainingPage} />
       <Route path="/admin/login" component={AdminLogin} />
       <ProtectedRoute path="/admin" component={AdminDashboard} adminOnly={true} />
