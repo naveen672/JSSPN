@@ -138,6 +138,407 @@ const ProgramPage = () => {
     window.scrollTo(0, 0);
   }, []);
   
+  // Special case for Electrical Engineering department
+  if (slug === "electrical-engineering") {
+    return (
+      <PageLayout>
+        <PageBanner
+          title="Electrical & Electronics Engineering Department"
+          subtitle="Powering the future with innovation and technology"
+          iconName="flashlight-line"
+          breadcrumbs={[
+            { name: "Programs", href: "/programs" },
+            { name: "Electrical & Electronics Engineering", href: `/programs/${slug}` }
+          ]}
+        />
+
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <motion.div
+                className="md:col-span-2"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                <h2 className="font-poppins font-bold text-2xl text-primary mb-6 flex items-center pl-4 border-l-4 border-amber-400">
+                  <Icon name="information-line mr-2 text-amber-500" />
+                  <span>About The Department</span>
+                </h2>
+
+                <div className="prose max-w-none">
+                  <InfoAccordion title="From HOD's Desk" icon="user-settings-line" defaultOpen={true}>
+                    <div className="bg-primary/5 p-5 rounded-lg border border-primary/10">
+                      <p className="text-gray-700 mb-4">
+                        Welcome to the Department of Electrical and Electronics Engineering, JSS Polytechnic, Nanjangud, Karnataka. As a well-known fact, we cannot imagine the world without electricity, and nowadays, the Electrical and Electronic devices have become an essential and inevitable part of our daily lives. The Department focus is to train our students to get strong academic knowledge in the frontier areas of both Electrical and Electronics Engineering and also to make the students ready to face the industry challenges with confidence.
+                      </p>
+                      <p className="text-gray-700 mb-4">
+                        The Department faculties have sound knowledge in emerging research areas like Adaptive & Robust control schemes for power electronic applications, High voltage pulse power system, Electrical Machines and Drives, Control of Electric vehicle and energy management, Power system optimization and Active distribution networks, Home energy management and Smart grid technologies.
+                      </p>
+                      <p className="text-gray-700 mb-4">
+                        At present, the department offers a 3-year programme in Electrical and Electronics Engineering. The focus of this curriculum is keeping in view with the current and upcoming industry requirements in future (Industry 4.0).
+                      </p>
+                      <p className="text-gray-700">
+                        The Electrical and Electronics Engineering graduate has a wide range of career opportunities in Power industries, Government PSUs, R&D Units, IT industries, Electricity Boards/Utility companies, Telecommunications industries, Manufacturing industries, Private industrial firms and Startup companies.
+                      </p>
+                    </div>
+                  </InfoAccordion>
+
+                  <InfoAccordion title="Department Vision" icon="eye-line">
+                    <div className="bg-blue-50 p-5 rounded-lg border border-blue-200">
+                      <p className="text-gray-700 font-medium">
+                        To Develop highly competitive Electrical Engineers to serve industry and society through knowledge, creativeness and by innovative approach.
+                      </p>
+                    </div>
+                  </InfoAccordion>
+
+                  <InfoAccordion title="Department Mission" icon="target-line">
+                    <div className="space-y-4">
+                      <div className="flex items-start">
+                        <span className="bg-green-100 text-green-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">M1</span>
+                        <p className="text-gray-700">To impact high quality technical education in Electrical and Electronics Engineering through state of art infrastructure, highly qualified and competent faculty with best educational methods.</p>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="bg-green-100 text-green-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">M2</span>
+                        <p className="text-gray-700">Enable students to develop skills to face the challenges of modern technology with confidence and care and also provide a framework for promoting collaboration and multidisciplinary activities.</p>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="bg-green-100 text-green-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">M3</span>
+                        <p className="text-gray-700">To encourage students for higher education, entrepreneurial and ethical future.</p>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="bg-green-100 text-green-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">M4</span>
+                        <p className="text-gray-700">To provide updated facilities and environment to the students, faculty members for continuous improvement and lifelong learning.</p>
+                      </div>
+                    </div>
+                  </InfoAccordion>
+
+                  <InfoAccordion title="Program Educational Objectives" icon="graduation-cap-line">
+                    <div className="space-y-4">
+                      <div className="flex items-start">
+                        <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">PEO1</span>
+                        <p className="text-gray-700">Demonstrate, update and adapt domain knowledge in the area of Electrical and Electronics and the allied fields to propose the solution for the core industry in the ever changing global enterprise with ethical practices.</p>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">PEO2</span>
+                        <p className="text-gray-700">Assume leadership roles and succeed in their chosen career path, in industry or public service through engineering ability, life skills and multidisciplinary skill set acquired.</p>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">PEO3</span>
+                        <p className="text-gray-700">Pursue higher education institutes of national level.</p>
+                      </div>
+                    </div>
+                  </InfoAccordion>
+
+                  <InfoAccordion title="Programme Outcomes" icon="award-line">
+                    <div className="space-y-4">
+                      <div className="flex items-start">
+                        <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">PO1</span>
+                        <div>
+                          <p className="font-medium text-gray-800">Basic and Discipline specific knowledge</p>
+                          <p className="text-gray-700 text-sm mt-1">Apply knowledge of basic mathematics, science and engineering fundamentals and engineering specialization to solve the engineering problems.</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">PO2</span>
+                        <div>
+                          <p className="font-medium text-gray-800">Problem analysis</p>
+                          <p className="text-gray-700 text-sm mt-1">Identify and analyze well-defined engineering problems using codified standard methods.</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">PO3</span>
+                        <div>
+                          <p className="font-medium text-gray-800">Design/development of solutions</p>
+                          <p className="text-gray-700 text-sm mt-1">Design solutions for well-defined technical problems and assist with the design of systems components or processes to meet specified needs.</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">PO4</span>
+                        <div>
+                          <p className="font-medium text-gray-800">Engineering Tools, Experimentation and Testing</p>
+                          <p className="text-gray-700 text-sm mt-1">Apply modern engineering tools and appropriate technique to conduct standard tests and measurements.</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">PO5</span>
+                        <div>
+                          <p className="font-medium text-gray-800">Engineering practices for society, sustainability and environment</p>
+                          <p className="text-gray-700 text-sm mt-1">Apply appropriate technology in context of society, sustainability, environment and ethical practices.</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">PO6</span>
+                        <div>
+                          <p className="font-medium text-gray-800">Project Management</p>
+                          <p className="text-gray-700 text-sm mt-1">Use engineering management principles individually, as a team member or a leader to manage projects and effectively communicate about well-defined engineering activities.</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">PO7</span>
+                        <div>
+                          <p className="font-medium text-gray-800">Life-long learning</p>
+                          <p className="text-gray-700 text-sm mt-1">Ability to analyze individual needs and engage in updating in the context of technological changes.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </InfoAccordion>
+
+                  <InfoAccordion title="Faculty Members" icon="team-line">
+                    <div className="space-y-6">
+                      <p className="text-gray-600 mb-6">Our Electrical & Electronics Engineering department has experienced faculty and support staff dedicated to excellence in technical education.</p>
+                      
+                      <div>
+                        <h4 className="font-medium text-lg text-gray-800 mb-4 flex items-center">
+                          <Icon name="user-line mr-2 text-blue-600" />
+                          Teaching Faculty
+                        </h4>
+                        <div className="overflow-x-auto mb-6">
+                          <table className="min-w-full bg-white border border-gray-200 rounded-lg">
+                            <thead className="bg-blue-50">
+                              <tr>
+                                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Sl.No.</th>
+                                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Faculty Name</th>
+                                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Designation</th>
+                                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Qualification</th>
+                                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Year of Joining</th>
+                                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Contact</th>
+                              </tr>
+                            </thead>
+                            <tbody className="divide-y divide-gray-200">
+                              <tr><td className="px-4 py-3 text-sm text-gray-900">1</td><td className="px-4 py-3 text-sm text-gray-900">Sri. Manu M</td><td className="px-4 py-3 text-sm text-gray-900">HOD</td><td className="px-4 py-3 text-sm text-gray-900">M.Tech</td><td className="px-4 py-3 text-sm text-gray-900">02.08.2010</td><td className="px-4 py-3 text-sm text-green-600">9986253555</td></tr>
+                              <tr><td className="px-4 py-3 text-sm text-gray-900">2</td><td className="px-4 py-3 text-sm text-gray-900">Smt. Jagadhamba M</td><td className="px-4 py-3 text-sm text-gray-900">Lecturer</td><td className="px-4 py-3 text-sm text-gray-900">M.Tech</td><td className="px-4 py-3 text-sm text-gray-900">04.08.2010</td><td className="px-4 py-3 text-sm text-green-600">8497093058</td></tr>
+                              <tr><td className="px-4 py-3 text-sm text-gray-900">3</td><td className="px-4 py-3 text-sm text-gray-900">Smt. Ashwini B</td><td className="px-4 py-3 text-sm text-gray-900">Lecturer</td><td className="px-4 py-3 text-sm text-gray-900">B.E</td><td className="px-4 py-3 text-sm text-gray-900">22.07.2011</td><td className="px-4 py-3 text-sm text-green-600">9449912625</td></tr>
+                              <tr><td className="px-4 py-3 text-sm text-gray-900">4</td><td className="px-4 py-3 text-sm text-gray-900">Smt. Sowmya Kumari K</td><td className="px-4 py-3 text-sm text-gray-900">Lecturer</td><td className="px-4 py-3 text-sm text-gray-900">BE</td><td className="px-4 py-3 text-sm text-gray-900">05.09.2012</td><td className="px-4 py-3 text-sm text-green-600">9945923160</td></tr>
+                              <tr><td className="px-4 py-3 text-sm text-gray-900">5</td><td className="px-4 py-3 text-sm text-gray-900">Smt. Gayathri H R</td><td className="px-4 py-3 text-sm text-gray-900">Lecturer</td><td className="px-4 py-3 text-sm text-gray-900">BE</td><td className="px-4 py-3 text-sm text-gray-900">27.07.2015</td><td className="px-4 py-3 text-sm text-green-600">8496902042</td></tr>
+                              <tr><td className="px-4 py-3 text-sm text-gray-900">6</td><td className="px-4 py-3 text-sm text-gray-900">Sri. Pramodh N</td><td className="px-4 py-3 text-sm text-gray-900">Lecturer</td><td className="px-4 py-3 text-sm text-gray-900">B.E</td><td className="px-4 py-3 text-sm text-gray-900">23.09.2006</td><td className="px-4 py-3 text-sm text-green-600">9591788633</td></tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+
+                      <div>
+                        <h4 className="font-medium text-lg text-gray-800 mb-4 flex items-center">
+                          <Icon name="tools-line mr-2 text-green-600" />
+                          Non-Teaching Faculty
+                        </h4>
+                        <div className="overflow-x-auto">
+                          <table className="min-w-full bg-white border border-gray-200 rounded-lg">
+                            <thead className="bg-green-50">
+                              <tr>
+                                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Sl.No.</th>
+                                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Faculty Name</th>
+                                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Designation</th>
+                                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Qualification</th>
+                                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Contact</th>
+                              </tr>
+                            </thead>
+                            <tbody className="divide-y divide-gray-200">
+                              <tr><td className="px-4 py-3 text-sm text-gray-900">1</td><td className="px-4 py-3 text-sm text-gray-900">Sri. Mahesh N</td><td className="px-4 py-3 text-sm text-gray-900">Instructor</td><td className="px-4 py-3 text-sm text-gray-900">Diploma</td><td className="px-4 py-3 text-sm text-green-600">9590977922</td></tr>
+                              <tr><td className="px-4 py-3 text-sm text-gray-900">2</td><td className="px-4 py-3 text-sm text-gray-900">Sri. Rajendra D P</td><td className="px-4 py-3 text-sm text-gray-900">Mechanic</td><td className="px-4 py-3 text-sm text-gray-900">ITI</td><td className="px-4 py-3 text-sm text-green-600">9901104534</td></tr>
+                              <tr><td className="px-4 py-3 text-sm text-gray-900">3</td><td className="px-4 py-3 text-sm text-gray-900">Sri. Shankarappa</td><td className="px-4 py-3 text-sm text-gray-900">Helper</td><td className="px-4 py-3 text-sm text-gray-900">-</td><td className="px-4 py-3 text-sm text-green-600">9663992748</td></tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </InfoAccordion>
+
+                  <InfoAccordion title="Higher Education Achievements" icon="graduation-cap-line">
+                    <div className="space-y-4">
+                      <p className="text-gray-600 mb-6">Our students continue their academic journey at prestigious engineering institutions across Karnataka.</p>
+                      
+                      <div className="overflow-x-auto">
+                        <table className="min-w-full bg-white border border-gray-200 rounded-lg">
+                          <thead className="bg-gray-50">
+                            <tr>
+                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Sl.No.</th>
+                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Register Number</th>
+                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Name of Students</th>
+                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Year of Joining</th>
+                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Name of College</th>
+                            </tr>
+                          </thead>
+                          <tbody className="divide-y divide-gray-200">
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">1</td><td className="px-4 py-3 text-sm text-gray-900">324EE21005</td><td className="px-4 py-3 text-sm text-gray-900">Deekshith S</td><td className="px-4 py-3 text-sm text-gray-900">2023-24</td><td className="px-4 py-3 text-sm text-gray-900">NIE, Mysore</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">2</td><td className="px-4 py-3 text-sm text-gray-900">324EE21007</td><td className="px-4 py-3 text-sm text-gray-900">K Pooja</td><td className="px-4 py-3 text-sm text-gray-900">2023-24</td><td className="px-4 py-3 text-sm text-gray-900">NIE, Mysore</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">3</td><td className="px-4 py-3 text-sm text-gray-900">324EE21019</td><td className="px-4 py-3 text-sm text-gray-900">Yashwanth S</td><td className="px-4 py-3 text-sm text-gray-900">2023-24</td><td className="px-4 py-3 text-sm text-gray-900">NIE, Mysore</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">4</td><td className="px-4 py-3 text-sm text-gray-900">324EE22301</td><td className="px-4 py-3 text-sm text-gray-900">Abhishek Gowda R</td><td className="px-4 py-3 text-sm text-gray-900">2023-24</td><td className="px-4 py-3 text-sm text-gray-900">PES, Mandya</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">5</td><td className="px-4 py-3 text-sm text-gray-900">324EE22327</td><td className="px-4 py-3 text-sm text-gray-900">Prasanth K P</td><td className="px-4 py-3 text-sm text-gray-900">2023-24</td><td className="px-4 py-3 text-sm text-gray-900">MIT, Mysore</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">6</td><td className="px-4 py-3 text-sm text-gray-900">324EE22701</td><td className="px-4 py-3 text-sm text-gray-900">Minchu M</td><td className="px-4 py-3 text-sm text-gray-900">2023-24</td><td className="px-4 py-3 text-sm text-gray-900">Vidyavardhaka, Mysore</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">7</td><td className="px-4 py-3 text-sm text-gray-900">324EE20012</td><td className="px-4 py-3 text-sm text-gray-900">Prakhyath P B</td><td className="px-4 py-3 text-sm text-gray-900">2022-23</td><td className="px-4 py-3 text-sm text-gray-900">Vidyavardhaka, Mysore</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">8</td><td className="px-4 py-3 text-sm text-gray-900">324EE17029</td><td className="px-4 py-3 text-sm text-gray-900">Naveen K</td><td className="px-4 py-3 text-sm text-gray-900">2019-20</td><td className="px-4 py-3 text-sm text-gray-900">PES, Mandya</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">9</td><td className="px-4 py-3 text-sm text-gray-900">324EE17035</td><td className="px-4 py-3 text-sm text-gray-900">Priya K M</td><td className="px-4 py-3 text-sm text-gray-900">2019-20</td><td className="px-4 py-3 text-sm text-gray-900">NIE, Mysore</td></tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </InfoAccordion>
+
+                  <InfoAccordion title="Placement Details" icon="briefcase-line">
+                    <div className="space-y-4">
+                      <p className="text-gray-600 mb-6">Our graduates have secured excellent positions in leading companies in the electrical and electronics industry.</p>
+                      
+                      <div className="overflow-x-auto">
+                        <table className="min-w-full bg-white border border-gray-200 rounded-lg">
+                          <thead className="bg-blue-50">
+                            <tr>
+                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Sl.No.</th>
+                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Register Number</th>
+                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Name of Students</th>
+                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Company</th>
+                            </tr>
+                          </thead>
+                          <tbody className="divide-y divide-gray-200">
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">1</td><td className="px-4 py-3 text-sm text-gray-900">324EE20002</td><td className="px-4 py-3 text-sm text-gray-900">Akshatha G V</td><td className="px-4 py-3 text-sm text-gray-900">Asian Paints</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">2</td><td className="px-4 py-3 text-sm text-gray-900">324EE20010</td><td className="px-4 py-3 text-sm text-gray-900">Nandan Kumar S</td><td className="px-4 py-3 text-sm text-gray-900">Hitachi India Pvt Ltd</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">3</td><td className="px-4 py-3 text-sm text-gray-900">324EE21005</td><td className="px-4 py-3 text-sm text-gray-900">Deekshith S</td><td className="px-4 py-3 text-sm text-gray-900">Asian Paints</td></tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </InfoAccordion>
+
+                  <InfoAccordion title="Alumni Achievements" icon="star-line">
+                    <div className="space-y-4">
+                      <p className="text-gray-600 mb-6">Our alumni continue to excel in their careers and make significant contributions to the electrical and electronics industry.</p>
+                      
+                      <div className="overflow-x-auto">
+                        <table className="min-w-full bg-white border border-gray-200 rounded-lg">
+                          <thead className="bg-yellow-50">
+                            <tr>
+                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Sl.No.</th>
+                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Register Number</th>
+                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Name of Students</th>
+                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Company</th>
+                            </tr>
+                          </thead>
+                          <tbody className="divide-y divide-gray-200">
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">1</td><td className="px-4 py-3 text-sm text-gray-900">324EE20002</td><td className="px-4 py-3 text-sm text-gray-900">Akshatha G V</td><td className="px-4 py-3 text-sm text-gray-900">Asian Paints</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">2</td><td className="px-4 py-3 text-sm text-gray-900">324EE20010</td><td className="px-4 py-3 text-sm text-gray-900">Nandan Kumar S</td><td className="px-4 py-3 text-sm text-gray-900">Hitachi India Pvt Ltd</td></tr>
+                            <tr><td className="px-4 py-3 text-sm text-gray-900">3</td><td className="px-4 py-3 text-sm text-gray-900">324EE21005</td><td className="px-4 py-3 text-sm text-gray-900">Deekshith S</td><td className="px-4 py-3 text-sm text-gray-900">Asian Paints</td></tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </InfoAccordion>
+                </div>
+              </motion.div>
+              
+              <motion.div 
+                className="md:col-span-1"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+              >
+                <div className="bg-white rounded-lg shadow-sm border border-gray-100 p-6 sticky top-24">
+                  <h3 className="font-poppins font-bold text-lg text-primary mb-6 pb-3 border-b border-gray-100">
+                    Department Highlights
+                  </h3>
+                  
+                  <div className="space-y-4">
+                    <div className="flex items-center border-b border-gray-100 pb-3">
+                      <div className="w-8 h-8 bg-amber-400/20 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                        <Icon name="flashlight-line text-amber-600" />
+                      </div>
+                      <div>
+                        <span className="text-gray-500 text-sm">Department</span>
+                        <p className="font-medium text-gray-800">Electrical & Electronics Engineering</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center border-b border-gray-100 pb-3">
+                      <div className="w-8 h-8 bg-amber-400/20 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                        <Icon name="tools-line text-amber-600" />
+                      </div>
+                      <div>
+                        <span className="text-gray-500 text-sm">Key Areas</span>
+                        <p className="font-medium text-gray-800">Power Systems, Control Systems</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center border-b border-gray-100 pb-3">
+                      <div className="w-8 h-8 bg-amber-400/20 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                        <Icon name="team-line text-amber-600" />
+                      </div>
+                      <div>
+                        <span className="text-gray-500 text-sm">Faculty Strength</span>
+                        <p className="font-medium text-gray-800">9 Experienced Members</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center border-b border-gray-100 pb-3">
+                      <div className="w-8 h-8 bg-amber-400/20 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                        <Icon name="briefcase-line text-amber-600" />
+                      </div>
+                      <div>
+                        <span className="text-gray-500 text-sm">Industry Focus</span>
+                        <p className="font-medium text-gray-800">Power & Manufacturing</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-8">
+                    <h4 className="font-medium text-primary mb-4 pb-2 border-b border-gray-100">
+                      Other Departments
+                    </h4>
+                    <ul className="space-y-2">
+                      <li>
+                        <a href="/programs/science-humanities" className="flex items-center text-gray-600 hover:text-primary transition-colors py-1.5">
+                          <Icon name="arrow-right-s-line mr-2 text-amber-500" />
+                          <span>Science & Humanities</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/programs/civil-engineering" className="flex items-center text-gray-600 hover:text-primary transition-colors py-1.5">
+                          <Icon name="arrow-right-s-line mr-2 text-amber-500" />
+                          <span>Civil Engineering</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/programs/computer-science-engineering" className="flex items-center text-gray-600 hover:text-primary transition-colors py-1.5">
+                          <Icon name="arrow-right-s-line mr-2 text-amber-500" />
+                          <span>Computer Science Engineering</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/programs/electronics-communication" className="flex items-center text-gray-600 hover:text-primary transition-colors py-1.5">
+                          <Icon name="arrow-right-s-line mr-2 text-amber-500" />
+                          <span>Electronics & Communication</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/programs/mechanical" className="flex items-center text-gray-600 hover:text-primary transition-colors py-1.5">
+                          <Icon name="arrow-right-s-line mr-2 text-amber-500" />
+                          <span>Mechanical Engineering</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/programs/mechatronics" className="flex items-center text-gray-600 hover:text-primary transition-colors py-1.5">
+                          <Icon name="arrow-right-s-line mr-2 text-amber-500" />
+                          <span>Mechatronics Engineering</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  
+                  <div className="mt-6">
+                    <a
+                      href="/about/contact"
+                      className="block bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full font-medium transition-all text-center shadow-md"
+                    >
+                      Contact Department
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+      </PageLayout>
+    );
+  }
+
   // Special case for Computer Science Engineering department
   if (slug === "computer-science-engineering") {
     return (
