@@ -24,6 +24,7 @@ import ExaminationPage from "@/pages/ExaminationPage";
 import CircularsPage from "@/pages/CircularsPage";
 import SportsPage from "@/pages/SportsPage";
 import LibraryPage from "@/pages/LibraryPage";
+import ScholarshipPage from "@/pages/ScholarshipPage";
 import TrainingPage from "@/pages/TrainingPage";
 import AdminLogin from "@/pages/admin/login";
 import AdminDashboard from "@/pages/admin/index";
@@ -47,6 +48,7 @@ function Router() {
       <Route path="/academic/circulars" component={CircularsPage} />
       <Route path="/facilities/sports" component={SportsPage} />
       <Route path="/facilities/library" component={LibraryPage} />
+      <Route path="/supports/scholarship" component={ScholarshipPage} />
       <Route path="/placement/training" component={TrainingPage} />
       <Route path="/admin/login" component={AdminLogin} />
       <ProtectedRoute path="/admin" component={AdminDashboard} adminOnly={true} />
