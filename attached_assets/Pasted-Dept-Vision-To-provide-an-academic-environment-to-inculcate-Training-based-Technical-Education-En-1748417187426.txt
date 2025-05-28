@@ -1,0 +1,18 @@
+Dept. Vision
+To provide an academic environment to inculcate Training based Technical Education, Entrepreneurship skill and ethics
+Dept. Mission
+M1	To Facilitate academic environment with outcome based education system for transfer of knowledge and skill
+M2	To encourage students to participate in industry institution interaction program to update with recent technology and to develop leadership qualities in their chosen domain and to maintain a good association with all stake holders
+Program Educational Objectives
+PEO1	Analyze ,design and solve problem related to mechanical Engineering and adapt tochange in technology by self learning
+PEO2	Work effectively as individual and in a team, exhibiting leadership qualities to meet thegoal of project or organization
+PEO3	Work with professionalism and concern for environment to meet the social needs
+PEO4	Engage in higher learning leading to degrees or certification.
+Programme Outcome
+PO1	Basic and Discipline specific knowledge	Apply knowledge of basic mathematics, science and engineering fundamentals and engineering specialization to solve the engineering problems.
+PO2	Problem analysis	Identify and analyze well-defined engineering problems using codified standard methods.
+PO3	Design/ development of solutions	Design solutions for well-defined technical problems and assist with the design of systems components or processes to meet specified needs.
+PO4	Engineering Tools, Experimentation and Testing	Apply modern engineering tools and appropriate technique to conduct standard tests and measurements.
+PO5	Engineering practices for society, sustainability and environment	Apply appropriate technology in context of society, sustainability, environment and ethical practices.
+PO6	Project Management	Use engineering management principles individually, as a team member or a leader to manage projects and effectively communicate about well-defined engineering activities.
+PO7	Life-long learning	Ability to analyze individual needs and engage in updating in the context of technological changes.
