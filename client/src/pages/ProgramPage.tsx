@@ -138,6 +138,324 @@ const ProgramPage = () => {
     window.scrollTo(0, 0);
   }, []);
   
+  // Special case for Civil Engineering department
+  if (slug === "civil-engineering") {
+    return (
+      <PageLayout>
+        <PageBanner
+          title="Civil Engineering Department"
+          subtitle="Building the foundation of infrastructure development"
+          iconName="building-4-line"
+          breadcrumbs={[
+            { name: "Programs", href: "/programs" },
+            { name: "Civil Engineering", href: `/programs/${slug}` }
+          ]}
+        />
+
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <motion.div
+                className="md:col-span-2"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                <h2 className="font-poppins font-bold text-2xl text-primary mb-6 flex items-center pl-4 border-l-4 border-amber-400">
+                  <Icon name="information-line mr-2 text-amber-500" />
+                  <span>About The Department</span>
+                </h2>
+
+                <div className="prose max-w-none">
+                  <InfoAccordion title="About the Course" icon="information-line" defaultOpen={true}>
+                    <div>
+                      <p className="text-gray-700">
+                        Civil engineers plan, design, and supervise the construction and maintenance of building and infrastructure projects. These projects may include facilities, bridges, roads, tunnels, and water and sewage systems. Civil Engineering department laboratories are well equipped with latest computerized instruments like Total Station, GPS, modernized Hydraulics and Material testing lab. This will helps to give hands on training to students. Due to these skill trainings, it will help the students to get into Government and Private sector.
+                      </p>
+                    </div>
+                  </InfoAccordion>
+                  
+                  <InfoAccordion title="From HOD's Desk" icon="user-settings-line">
+                    <div className="bg-primary/5 p-5 rounded-lg border border-primary/10">
+                      <p className="text-gray-700">
+                        The department offers diploma program leading to diploma degrees. The department has well experienced and dedicated faculty, skilled technical staff and well equipped laboratories. These laboratories are recognized by PWD and land army as nodal center for conducting construction material testing. The department has been always in the forefront in taking industrial consultancy assignments. The faculty members take personal care, council the students and motivate them at regular intervals to reach greater heights.
+                      </p>
+                    </div>
+                  </InfoAccordion>
+
+                  <InfoAccordion title="Department Vision" icon="eye-line">
+                    <div className="bg-blue-50 p-5 rounded-lg border border-blue-200">
+                      <p className="text-gray-700 font-medium">
+                        Develop globally competent Civil Engineering professionals in an environment conducive to learn technical knowledge, skills, moral values and ethics, to serve the society and make the world a better place to live in.
+                      </p>
+                    </div>
+                  </InfoAccordion>
+
+                  <InfoAccordion title="Department Mission" icon="target-line">
+                    <div className="space-y-4">
+                      <div className="flex items-start">
+                        <span className="bg-green-100 text-green-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">M1</span>
+                        <p className="text-gray-700">To provide an academic environment, through competitive curriculum in collaboration with industry, conducive for high quality education focusing on transfer of knowledge and skill development for the benefit of the profession and the society.</p>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="bg-green-100 text-green-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">M2</span>
+                        <p className="text-gray-700">To nurture talent in students to enable them to be leaders in their chosen Professions while maintaining the highest level of ethics.</p>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="bg-green-100 text-green-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">M3</span>
+                        <p className="text-gray-700">To promote the spirit of enquiry, innovation, life skills and to encourage entrepreneurship.</p>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="bg-green-100 text-green-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">M4</span>
+                        <p className="text-gray-700">To foster effective interactions and networking with all the stakeholders so as to work towards the growth and sustainability of the society and environment.</p>
+                      </div>
+                    </div>
+                  </InfoAccordion>
+
+                  <InfoAccordion title="Program Educational Objectives" icon="graduation-cap-line">
+                    <div className="space-y-4">
+                      <div className="flex items-start">
+                        <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">PEO1</span>
+                        <p className="text-gray-700">To apply technical knowledge and management principles in analyzing and planning problems in the field of Civil Engineering, while ensuring maximization of economic benefits to society and minimization of damage to ecology and environment.</p>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">PEO2</span>
+                        <p className="text-gray-700">To be life-long learners with spirit of enquiry and zeal to acquire new knowledge and skills so as to remain contemporary and possess required professional skills.</p>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">PEO3</span>
+                        <p className="text-gray-700">To enhance entrepreneurial, communication and other soft skills, which will enable them to work globally as leaders, team members and contribute to nation building for the betterment of the society.</p>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">PEO4</span>
+                        <p className="text-gray-700">To make them strongly committed to the highest levels of professional ethics and focus on ensuring quality, adherence to public policy and law, safety, reliability and environmental sustainability in all their professional activities.</p>
+                      </div>
+                    </div>
+                  </InfoAccordion>
+
+                  <InfoAccordion title="Programme Outcomes" icon="award-line">
+                    <div className="space-y-4">
+                      <div className="flex items-start">
+                        <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">PO1</span>
+                        <div>
+                          <p className="font-medium text-gray-800">Basic and Discipline specific knowledge</p>
+                          <p className="text-gray-700 text-sm mt-1">Apply knowledge of basic mathematics, science and engineering fundamentals and engineering specialization to solve the engineering problems.</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">PO2</span>
+                        <div>
+                          <p className="font-medium text-gray-800">Problem analysis</p>
+                          <p className="text-gray-700 text-sm mt-1">Identify and analyze well-defined engineering problems using codified standard methods.</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">PO3</span>
+                        <div>
+                          <p className="font-medium text-gray-800">Design/development of solutions</p>
+                          <p className="text-gray-700 text-sm mt-1">Design solutions for well-defined technical problems and assist with the design of systems components or processes to meet specified needs.</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">PO4</span>
+                        <div>
+                          <p className="font-medium text-gray-800">Engineering Tools, Experimentation and Testing</p>
+                          <p className="text-gray-700 text-sm mt-1">Apply modern engineering tools and appropriate technique to conduct standard tests and measurements.</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">PO5</span>
+                        <div>
+                          <p className="font-medium text-gray-800">Engineering practices for society, sustainability and environment</p>
+                          <p className="text-gray-700 text-sm mt-1">Apply appropriate technology in context of society, sustainability, environment and ethical practices.</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">PO6</span>
+                        <div>
+                          <p className="font-medium text-gray-800">Project Management</p>
+                          <p className="text-gray-700 text-sm mt-1">Use engineering management principles individually, as a team member or a leader to manage projects and effectively communicate about well-defined engineering activities.</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">PO7</span>
+                        <div>
+                          <p className="font-medium text-gray-800">Life-long learning</p>
+                          <p className="text-gray-700 text-sm mt-1">Ability to analyze individual needs and engage in updating in the context of technological changes.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </InfoAccordion>
+
+                  <InfoAccordion title="Programme Specific Outcomes" icon="lightbulb-line">
+                    <div className="space-y-4">
+                      <div className="flex items-start">
+                        <span className="bg-orange-100 text-orange-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">PSO1</span>
+                        <p className="text-gray-700">The graduates will have the ability to plan, analyses, design, execute and maintain cost effective civil engineering structures without overexploitation of natural resources.</p>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="bg-orange-100 text-orange-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">PSO2</span>
+                        <p className="text-gray-700">The graduates of civil engineering program will have the ability to take up employment, entrepreneurship, research and development for sustainable civil society.</p>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="bg-orange-100 text-orange-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">PSO3</span>
+                        <p className="text-gray-700">The graduates will be able to peruse opportunities for personal and professional growth, higher studies, demonstrate leadership skills and engage in lifelong learning by active participation in the civil engineering profession.</p>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="bg-orange-100 text-orange-800 px-2 py-1 rounded text-sm font-medium mr-3 mt-0.5 flex-shrink-0">PSO4</span>
+                        <p className="text-gray-700">The graduates will be able to demonstrate professional integrity and an appreciation of ethical, environmental, regulatory and issues related to civil engineering projects.</p>
+                      </div>
+                    </div>
+                  </InfoAccordion>
+
+                  <InfoAccordion title="Faculty Members" icon="team-line">
+                    <div className="space-y-4">
+                      <p className="text-gray-600 mb-6">Our Civil Engineering department is strengthened by experienced and qualified faculty members dedicated to providing quality education.</p>
+                      
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                          <div className="flex items-center mb-3">
+                            <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-3">
+                              H
+                            </div>
+                            <div>
+                              <h4 className="font-medium text-gray-800">Head of Department</h4>
+                              <p className="text-sm text-gray-600">Civil Engineering</p>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                          <div className="flex items-center mb-3">
+                            <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-3">
+                              F
+                            </div>
+                            <div>
+                              <h4 className="font-medium text-gray-800">Faculty Members</h4>
+                              <p className="text-sm text-gray-600">Experienced & Dedicated</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </InfoAccordion>
+                </div>
+              </motion.div>
+              
+              <motion.div 
+                className="md:col-span-1"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+              >
+                <div className="bg-white rounded-lg shadow-sm border border-gray-100 p-6 sticky top-24">
+                  <h3 className="font-poppins font-bold text-lg text-primary mb-6 pb-3 border-b border-gray-100">
+                    Department Highlights
+                  </h3>
+                  
+                  <div className="space-y-4">
+                    <div className="flex items-center border-b border-gray-100 pb-3">
+                      <div className="w-8 h-8 bg-amber-400/20 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                        <Icon name="building-4-line text-amber-600" />
+                      </div>
+                      <div>
+                        <span className="text-gray-500 text-sm">Department</span>
+                        <p className="font-medium text-gray-800">Civil Engineering</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center border-b border-gray-100 pb-3">
+                      <div className="w-8 h-8 bg-amber-400/20 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                        <Icon name="tools-line text-amber-600" />
+                      </div>
+                      <div>
+                        <span className="text-gray-500 text-sm">Key Areas</span>
+                        <p className="font-medium text-gray-800">Infrastructure, Construction</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center border-b border-gray-100 pb-3">
+                      <div className="w-8 h-8 bg-amber-400/20 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                        <Icon name="microscope-line text-amber-600" />
+                      </div>
+                      <div>
+                        <span className="text-gray-500 text-sm">Facilities</span>
+                        <p className="font-medium text-gray-800">Total Station, GPS, Hydraulics Lab</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center border-b border-gray-100 pb-3">
+                      <div className="w-8 h-8 bg-amber-400/20 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                        <Icon name="award-line text-amber-600" />
+                      </div>
+                      <div>
+                        <span className="text-gray-500 text-sm">Recognition</span>
+                        <p className="font-medium text-gray-800">PWD & Land Army Approved</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-8">
+                    <h4 className="font-medium text-primary mb-4 pb-2 border-b border-gray-100">
+                      Other Departments
+                    </h4>
+                    <ul className="space-y-2">
+                      <li>
+                        <a href="/programs/science-humanities" className="flex items-center text-gray-600 hover:text-primary transition-colors py-1.5">
+                          <Icon name="arrow-right-s-line mr-2 text-amber-500" />
+                          <span>Science & Humanities</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/programs/computer-science" className="flex items-center text-gray-600 hover:text-primary transition-colors py-1.5">
+                          <Icon name="arrow-right-s-line mr-2 text-amber-500" />
+                          <span>Computer Science</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/programs/electronics-communication" className="flex items-center text-gray-600 hover:text-primary transition-colors py-1.5">
+                          <Icon name="arrow-right-s-line mr-2 text-amber-500" />
+                          <span>Electronics & Communication</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/programs/mechanical" className="flex items-center text-gray-600 hover:text-primary transition-colors py-1.5">
+                          <Icon name="arrow-right-s-line mr-2 text-amber-500" />
+                          <span>Mechanical Engineering</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/programs/mechatronics" className="flex items-center text-gray-600 hover:text-primary transition-colors py-1.5">
+                          <Icon name="arrow-right-s-line mr-2 text-amber-500" />
+                          <span>Mechatronics Engineering</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/programs/electrical-electronics" className="flex items-center text-gray-600 hover:text-primary transition-colors py-1.5">
+                          <Icon name="arrow-right-s-line mr-2 text-amber-500" />
+                          <span>Electrical & Electronics</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  
+                  <div className="mt-6">
+                    <a
+                      href="/about/contact"
+                      className="block bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full font-medium transition-all text-center shadow-md"
+                    >
+                      Contact Department
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+      </PageLayout>
+    );
+  }
+
   // Special case for Science and Humanities department
   if (slug === "science-humanities") {
     return (
