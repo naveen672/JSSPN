@@ -54,7 +54,7 @@ const navigationItems: NavigationItem[] = [
       },
       {
         name: "Mechanical Engineering",
-        href: "/programs/mechanical-engineering",
+        href: "/programs/mechanical",
       },
       {
         name: "Electrical Engineering",
