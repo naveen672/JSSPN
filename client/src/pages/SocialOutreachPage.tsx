@@ -206,7 +206,7 @@ const SocialOutreachPage = () => {
                       </h4>
                       
                       {program.officer.photo && (
-                        <div className="w-20 h-20 rounded-full overflow-hidden mb-4 mx-auto">
+                        <div className="w-24 h-32 rounded-lg overflow-hidden mb-4 mx-auto border-2 border-gray-300 shadow-md">
                           <img 
                             src={program.officer.photo} 
                             alt={program.officer.name}
