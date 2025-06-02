@@ -33,6 +33,7 @@ import WomenGrievancesPage from "@/pages/WomenGrievancesPage";
 import SCSTCommitteePage from "@/pages/SCSTCommitteePage";
 import MandatoryDisclosurePage from "@/pages/MandatoryDisclosurePage";
 import MediaCoveragePage from "@/pages/MediaCoveragePage";
+import SocialOutreachPage from "@/pages/SocialOutreachPage";
 import TrainingPage from "@/pages/TrainingPage";
 import AdminLogin from "@/pages/admin/login";
 import AdminDashboard from "@/pages/admin/index";
@@ -58,6 +59,7 @@ function Router() {
       <Route path="/facilities/library" component={LibraryPage} />
       <Route path="/supports/scholarship" component={ScholarshipPage} />
       <Route path="/supports/mentoring-scheme" component={MentoringPage} />
+      <Route path="/supports/social-outreach-program" component={SocialOutreachPage} />
       <Route path="/supports/student-grievance" component={StudentGrievancePage} />
       <Route path="/more/iqac" component={IQACPage} />
       <Route path="/more/anti-ragging" component={AntiRaggingPage} />
