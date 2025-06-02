@@ -128,7 +128,7 @@ const navigationItems: NavigationItem[] = [
       { name: "Media Coverage", href: "/more/media-coverage" },
       { name: "Anti Ragging", href: "/more/anti-ragging" },
       { name: "Women Grievances", href: "/more/women-grievances" },
-      { name: "SC/ST Committee", href: "/more/sc-ct-committee" },
+      { name: "SC/ST Committee", href: "/more/sc-st-committee" },
     ],
   },
 ];
