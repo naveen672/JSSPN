@@ -32,6 +32,7 @@ import AntiRaggingPage from "@/pages/AntiRaggingPage";
 import WomenGrievancesPage from "@/pages/WomenGrievancesPage";
 import SCSTCommitteePage from "@/pages/SCSTCommitteePage";
 import MandatoryDisclosurePage from "@/pages/MandatoryDisclosurePage";
+import MediaCoveragePage from "@/pages/MediaCoveragePage";
 import TrainingPage from "@/pages/TrainingPage";
 import AdminLogin from "@/pages/admin/login";
 import AdminDashboard from "@/pages/admin/index";
@@ -63,6 +64,7 @@ function Router() {
       <Route path="/more/women-grievances" component={WomenGrievancesPage} />
       <Route path="/more/sc-st-committee" component={SCSTCommitteePage} />
       <Route path="/more/mandatory-disclosure" component={MandatoryDisclosurePage} />
+      <Route path="/more/media-coverage" component={MediaCoveragePage} />
       <Route path="/placement/training" component={TrainingPage} />
       <Route path="/admin/login" component={AdminLogin} />
       <ProtectedRoute path="/admin" component={AdminDashboard} adminOnly={true} />
