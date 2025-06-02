@@ -8,11 +8,11 @@ const nccLogo = "/assets/ncc.png";
 const nssLogo = "/assets/nss.png";
 const rcLogo = "/assets/rc.png";
 const niruPhoto = "/assets/niru.jpg";
+const rudramuniswamiPhoto = "/assets/rudramuniswamy.jpeg";
 const ncc1 = "/assets/ncc1.jpg";
 const ncc2 = "/assets/ncc2.jpg";
 const ncc3 = "/assets/ncc3.jpg";
 const ncc4 = "/assets/ncc4.jpg";
-const rms1 = "/assets/rms1.jpeg";
 const rajeshPhoto = "/assets/rajesh.jpeg";
 const rc1 = "/assets/rc1.jpeg";
 const rc2 = "/assets/rc2.jpeg";
@@ -30,7 +30,8 @@ const SocialOutreachPage = () => {
         designation: "NCC Officer",
         phone: "8088009595",
         email: "jsspn324@gmail.com",
-        address: "JSS Polytechnic, Nanjangud"
+        address: "JSS Polytechnic, Nanjangud",
+        photo: rudramuniswamiPhoto
       },
       vision: "Empower volunteer youth to become potential leaders and responsible citizens of the country.",
       mission: "To develop leadership and character qualities, mould discipline and nurture social integration and cohesion through multi-faceted programs conducted in a military environment",
@@ -81,7 +82,7 @@ const SocialOutreachPage = () => {
         "NSS was launched in 1969 in 37 Universities involving about 40,000 volunteers which has now spread over 657 Universities and 51 +2 Councils/Directorates, covering 20,669 Colleges/ Technical Institutions and 11,988 Senior Secondary School.",
         "Since inception, over 7.4 crore students have benefitted from NSS."
       ],
-      gallery: [rms1],
+      gallery: [],
       color: "purple"
     },
     {
