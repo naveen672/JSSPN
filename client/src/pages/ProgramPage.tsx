@@ -1052,6 +1052,39 @@ const ProgramPage = () => {
                     </div>
                   </InfoAccordion>
 
+                  <InfoAccordion title="About Department" icon="building-line">
+                    <div className="space-y-4">
+                      <div className="bg-gray-50 p-5 rounded-lg border border-gray-200">
+                        <p className="text-gray-700 leading-relaxed">
+                          Electronics & Communication Engineering is a broad field that focuses on the design, development and maintenance of electronics equipment and communication systems.
+                        </p>
+                      </div>
+                      <div className="bg-blue-50 p-5 rounded-lg border border-blue-200">
+                        <p className="text-gray-700 leading-relaxed">
+                          Industry Institution Interaction program (Co-Op scheme) has been implemented in this branch from 1992. This is the only polytechnic in the entire state of Karnataka to offer this course.
+                        </p>
+                      </div>
+                    </div>
+                  </InfoAccordion>
+
+                  <InfoAccordion title="From HOD's Desk" icon="user-star-line">
+                    <div className="space-y-4">
+                      <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-lg border border-blue-200">
+                        <h4 className="font-semibold text-lg text-primary mb-3">Welcome to E&C Department</h4>
+                        <p className="text-gray-700 mb-4">Welcome to JSS Polytechnic, Nanjangud.</p>
+                        <p className="text-gray-700 mb-4">
+                          EEC is a field that blends electronics & communication, offering a wide range of career opportunities in a rapidly evolving technological landscape.
+                        </p>
+                        <p className="text-gray-700 mb-4">
+                          The department focuses on making the student get strong knowledge in the field of E&C. Our department faculties are well experienced in academics.
+                        </p>
+                        <p className="text-gray-700">
+                          After completing diploma, they have an option to select the higher education like B.E. & B.Tech.
+                        </p>
+                      </div>
+                    </div>
+                  </InfoAccordion>
+
                   <InfoAccordion title="Faculty Members" icon="team-line">
                     <div className="space-y-6">
                       <p className="text-gray-600 mb-6">Our Electronics & Communication Engineering department has experienced faculty and support staff dedicated to excellence in technical education.</p>
@@ -1107,10 +1140,10 @@ const ProgramPage = () => {
                               <tr><td className="px-4 py-3 text-sm text-gray-900">1</td><td className="px-4 py-3 text-sm text-gray-900">Sri. Girish T N</td><td className="px-4 py-3 text-sm text-gray-900">Instructor</td><td className="px-4 py-3 text-sm text-gray-900">Diploma</td><td className="px-4 py-3 text-sm text-gray-900">17.09.1992</td><td className="px-4 py-3 text-sm text-green-600">9980614118</td></tr>
                               <tr><td className="px-4 py-3 text-sm text-gray-900">2</td><td className="px-4 py-3 text-sm text-gray-900">Sri. Guruswamy M D</td><td className="px-4 py-3 text-sm text-gray-900">Asst. Instructor</td><td className="px-4 py-3 text-sm text-gray-900">Diploma</td><td className="px-4 py-3 text-sm text-gray-900">01.08.1998</td><td className="px-4 py-3 text-sm text-green-600">9535637005</td></tr>
                               <tr><td className="px-4 py-3 text-sm text-gray-900">3</td><td className="px-4 py-3 text-sm text-gray-900">Sri. Gangadhar M</td><td className="px-4 py-3 text-sm text-gray-900">Mechanic</td><td className="px-4 py-3 text-sm text-gray-900">Diploma</td><td className="px-4 py-3 text-sm text-gray-900">18.10.1995</td><td className="px-4 py-3 text-sm text-green-600">9740399036</td></tr>
-                              <tr><td className="px-4 py-3 text-sm text-gray-900">4</td><td className="px-4 py-3 text-sm text-gray-900">Sri. Parashivamurthy</td><td className="px-4 py-3 text-sm text-gray-900">Mechanic</td><td className="px-4 py-3 text-sm text-gray-900">BA</td><td className="px-4 py-3 text-sm text-gray-900">19.01.1991</td><td className="px-4 py-3 text-sm text-gray-900">-</td></tr>
-                              <tr><td className="px-4 py-3 text-sm text-gray-900">5</td><td className="px-4 py-3 text-sm text-gray-900">Sri. Visweswara Swamy</td><td className="px-4 py-3 text-sm text-gray-900">Helper</td><td className="px-4 py-3 text-sm text-gray-900">PUC</td><td className="px-4 py-3 text-sm text-gray-900">20.10.1989</td><td className="px-4 py-3 text-sm text-gray-900">-</td></tr>
-                              <tr><td className="px-4 py-3 text-sm text-gray-900">6</td><td className="px-4 py-3 text-sm text-gray-900">Smt. Jagadamba</td><td className="px-4 py-3 text-sm text-gray-900">Helper</td><td className="px-4 py-3 text-sm text-gray-900">PUC</td><td className="px-4 py-3 text-sm text-gray-900">10.09.1990</td><td className="px-4 py-3 text-sm text-gray-900">-</td></tr>
-                              <tr><td className="px-4 py-3 text-sm text-gray-900">7</td><td className="px-4 py-3 text-sm text-gray-900">Sri. Mahadevaswamy H S</td><td className="px-4 py-3 text-sm text-gray-900">Helper</td><td className="px-4 py-3 text-sm text-gray-900">BA</td><td className="px-4 py-3 text-sm text-gray-900">31.05.1992</td><td className="px-4 py-3 text-sm text-gray-900">-</td></tr>
+                              <tr><td className="px-4 py-3 text-sm text-gray-900">4</td><td className="px-4 py-3 text-sm text-gray-900">Sri. Parashivamurthy</td><td className="px-4 py-3 text-sm text-gray-900">Mechanic</td><td className="px-4 py-3 text-sm text-gray-900">BA</td><td className="px-4 py-3 text-sm text-gray-900">19.01.1991</td><td className="px-4 py-3 text-sm text-green-600">9481832326</td></tr>
+                              <tr><td className="px-4 py-3 text-sm text-gray-900">5</td><td className="px-4 py-3 text-sm text-gray-900">Sri. Visweswara Swamy</td><td className="px-4 py-3 text-sm text-gray-900">Helper</td><td className="px-4 py-3 text-sm text-gray-900">PUC</td><td className="px-4 py-3 text-sm text-gray-900">20.10.1989</td><td className="px-4 py-3 text-sm text-green-600">9986899917</td></tr>
+                              <tr><td className="px-4 py-3 text-sm text-gray-900">6</td><td className="px-4 py-3 text-sm text-gray-900">Smt. Jagadamba</td><td className="px-4 py-3 text-sm text-gray-900">Helper</td><td className="px-4 py-3 text-sm text-gray-900">PUC</td><td className="px-4 py-3 text-sm text-gray-900">10.09.1990</td><td className="px-4 py-3 text-sm text-green-600">8277115842</td></tr>
+                              <tr><td className="px-4 py-3 text-sm text-gray-900">7</td><td className="px-4 py-3 text-sm text-gray-900">Sri. Mahadevaswamy H S</td><td className="px-4 py-3 text-sm text-gray-900">Helper</td><td className="px-4 py-3 text-sm text-gray-900">BA</td><td className="px-4 py-3 text-sm text-gray-900">31.05.1992</td><td className="px-4 py-3 text-sm text-green-600">9972121873</td></tr>
                             </tbody>
                           </table>
                         </div>

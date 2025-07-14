@@ -1,28 +1,28 @@
 export const stats = [
   {
     id: 1,
-    count: 3500,
+    count: 700,
     text: "Students Enrolled",
     icon: "user-line",
     color: "primary",
   },
   {
     id: 2,
-    count: 12,
+    count: 7,
     text: "Technical Programs",
     icon: "building-line",
     color: "secondary",
   },
   {
     id: 3,
-    count: 30000,
+    count: 15000,
     text: "Successful Graduates",
     icon: "graduation-cap-line",
     color: "accent",
   },
   {
     id: 4,
-    count: 120,
+    count: 60,
     text: "Experienced Faculty",
     icon: "team-line",
     color: "primary",
@@ -48,7 +48,7 @@ export const programs = [
     icon: "settings-5-line",
     color: "secondary",
     duration: "3 Years",
-    seats: "60 Seats",
+    seats: "40 Seats",
   },
   {
     id: 3,
@@ -58,7 +58,7 @@ export const programs = [
     icon: "flashlight-line",
     color: "accent",
     duration: "3 Years",
-    seats: "60 Seats",
+    seats: "40 Seats",
   },
   {
     id: 4,
