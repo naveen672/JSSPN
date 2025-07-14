@@ -44,7 +44,7 @@ const navigationItems: NavigationItem[] = [
   },
   {
     id: "programmes",
-    name: "Programmes",
+    name: "Department",
     href: "#academics",
     icon: "book-open-line",
     dropdown: [
