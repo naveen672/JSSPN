@@ -216,7 +216,7 @@ export const quickLinks = [
   { id: 2, name: "Academic Programs", href: "#academics" },
   { id: 3, name: "Campus Life", href: "#campus" },
   { id: 4, name: "Admissions", href: "#admissions" },
-  { id: 5, name: "Placements", href: "#" },
+  { id: 5, name: "Placements", href: "/placement" },
   { id: 6, name: "Contact Us", href: "/about/contact" },
 ];
 
