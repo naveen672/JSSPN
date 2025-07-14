@@ -509,7 +509,7 @@ const ProgramPage = () => {
     return (
       <PageLayout>
         <PageBanner
-          title="Mechatronics Engineering Department"
+          title="Mechatronics Engineering Department (CO-OP)"
           subtitle="Integrating mechanics, electronics, and computing for advanced automation"
           iconName="robot-line"
           breadcrumbs={[
@@ -534,10 +534,116 @@ const ProgramPage = () => {
 
                 <div className="prose max-w-none">
                   <InfoAccordion title="About the Course" icon="information-line" defaultOpen={true}>
-                    <div>
-                      <p className="text-gray-700 mb-4">
-                        Mechatronics engineering is the design of computer-controlled electromechanical systems. The essence of it is that the design of the mechanical system must be performed together with the design of the electrical/electronic and computer control aspects that together, comprise a complete system. Mechatronics is a multidisciplinary field that refers to the skill sets needed in the contemporary, advanced automated manufacturing industry.
+                    <div className="space-y-4">
+                      <div className="bg-blue-50 p-5 rounded-lg border border-blue-200">
+                        <p className="text-gray-700 leading-relaxed">
+                          Mechatronics engineering courses integrate mechanical, electrical, computer, and control systems engineering principles to design and develop intelligent systems and products. These courses typically cover topics like robotics, automation, sensors, actuators, programming, and control systems. They aim to equip students with a multidisciplinary skill set for tackling complex engineering challenges in various industries.
+                        </p>
+                      </div>
+                    </div>
+                  </InfoAccordion>
+
+                  <InfoAccordion title="Course Details" icon="book-open-line">
+                    <div className="space-y-6">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="bg-gray-50 p-5 rounded-lg border border-gray-200">
+                          <h4 className="font-semibold text-primary mb-3 flex items-center">
+                            <Icon name="star-line mr-2" />
+                            Interdisciplinary Nature
+                          </h4>
+                          <p className="text-gray-700 text-sm">
+                            Mechatronics engineering courses combine knowledge from multiple engineering disciplines, making them suitable for students interested in a broader range of engineering applications.
+                          </p>
+                        </div>
+                        
+                        <div className="bg-gray-50 p-5 rounded-lg border border-gray-200">
+                          <h4 className="font-semibold text-primary mb-3 flex items-center">
+                            <Icon name="book-line mr-2" />
+                            Curriculum
+                          </h4>
+                          <p className="text-gray-700 text-sm">
+                            Typical courses cover topics like robotics, automation, sensors and actuators, programming, control systems, and industrial applications.
+                          </p>
+                        </div>
+                        
+                        <div className="bg-gray-50 p-5 rounded-lg border border-gray-200">
+                          <h4 className="font-semibold text-primary mb-3 flex items-center">
+                            <Icon name="tools-line mr-2" />
+                            Practical Focus
+                          </h4>
+                          <p className="text-gray-700 text-sm">
+                            Many programs emphasize hands-on learning through lab work, projects, and real-world applications, preparing students for industrial roles.
+                          </p>
+                        </div>
+                        
+                        <div className="bg-gray-50 p-5 rounded-lg border border-gray-200">
+                          <h4 className="font-semibold text-primary mb-3 flex items-center">
+                            <Icon name="robot-line mr-2" />
+                            Automation and Robotics
+                          </h4>
+                          <p className="text-gray-700 text-sm">
+                            Courses often focus on automation technology, including the integration of sensors, actuators, and programming skills.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </InfoAccordion>
+
+                  <InfoAccordion title="Career Scope" icon="briefcase-line">
+                    <div className="space-y-4">
+                      <div className="bg-green-50 p-5 rounded-lg border border-green-200">
+                        <h4 className="font-semibold text-primary mb-3 flex items-center">
+                          <Icon name="trending-up-line mr-2 text-green-600" />
+                          Industry Demand
+                        </h4>
+                        <p className="text-gray-700 mb-4">
+                          Mechatronics engineers are in demand in various industries, including manufacturing, automotive, aerospace, and healthcare.
+                        </p>
+                        <h5 className="font-medium text-gray-800 mb-2">Industry-Specific Training:</h5>
+                        <p className="text-gray-700 text-sm">
+                          Some courses offer specializations in areas like Industrial IoT, electric vehicle technology, or robotics and automation.
+                        </p>
+                      </div>
+                    </div>
+                  </InfoAccordion>
+
+                  <InfoAccordion title="Skills Development" icon="graduation-cap-line">
+                    <div className="space-y-4">
+                      <p className="text-gray-600 mb-4">
+                        Mechatronics programs aim to develop skills in the following key areas:
                       </p>
+                      
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                          <h4 className="font-semibold text-primary mb-2 flex items-center">
+                            <Icon name="code-line mr-2" />
+                            Programming & Software
+                          </h4>
+                          <p className="text-gray-700 text-sm">
+                            Students learn to program microcontrollers, develop software for control systems, integrate systems with computer networks and CNC programming and practice.
+                          </p>
+                        </div>
+                        
+                        <div className="bg-purple-50 p-4 rounded-lg border border-purple-200">
+                          <h4 className="font-semibold text-primary mb-2 flex items-center">
+                            <Icon name="settings-line mr-2" />
+                            Control Systems
+                          </h4>
+                          <p className="text-gray-700 text-sm">
+                            Students study control theory, feedback loops, and control algorithms to regulate system behavior.
+                          </p>
+                        </div>
+                        
+                        <div className="bg-orange-50 p-4 rounded-lg border border-orange-200">
+                          <h4 className="font-semibold text-primary mb-2 flex items-center">
+                            <Icon name="cpu-line mr-2" />
+                            Sensor & Actuator Integration
+                          </h4>
+                          <p className="text-gray-700 text-sm">
+                            Students learn to select, integrate, and utilize various sensors and actuators in mechatronic systems.
+                          </p>
+                        </div>
+                      </div>
                     </div>
                   </InfoAccordion>
 
