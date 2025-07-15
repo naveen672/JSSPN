@@ -79,7 +79,7 @@ const PlacementPage = () => {
             >
               <h3 className="font-poppins font-bold text-2xl text-primary mb-4 flex items-center">
                 <Icon name="eye-line mr-3 text-blue-600" />
-                Vision
+                About Vision
               </h3>
               <p className="text-gray-700 leading-relaxed">
                 To understand the student's interest and enhance their skills and orient them to achieve their career goals ethically.
@@ -95,7 +95,7 @@ const PlacementPage = () => {
             >
               <h3 className="font-poppins font-bold text-2xl text-primary mb-4 flex items-center">
                 <Icon name="target-line mr-3 text-green-600" />
-                Mission
+                About Mission
               </h3>
               <div className="space-y-2 text-gray-700">
                 <p>• To provide effective training for the students and make them industry ready.</p>
@@ -133,7 +133,7 @@ const PlacementPage = () => {
             className="mb-16"
           >
             <h3 className="font-poppins font-bold text-2xl text-primary mb-8 text-center">
-              Placement Statistics - Number of Offers
+              Number of Offers Placement Statistics
             </h3>
             
             <div className="overflow-x-auto">

@@ -69,6 +69,7 @@ function Router() {
       <Route path="/more/mandatory-disclosure" component={MandatoryDisclosurePage} />
       <Route path="/more/media-coverage" component={MediaCoveragePage} />
       <Route path="/placement" component={PlacementPage} />
+      <Route path="/placement/placement" component={PlacementPage} />
       <Route path="/placement/training" component={TrainingPage} />
       <Route path="/admin/login" component={AdminLogin} />
       <ProtectedRoute path="/admin" component={AdminDashboard} adminOnly={true} />
