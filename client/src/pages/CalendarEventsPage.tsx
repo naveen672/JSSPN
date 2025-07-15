@@ -16,7 +16,7 @@ const CalendarEventsPage = () => {
           { name: "Calendar of Events", href: "/academic/calendar-of-events" }
         ]}
       />
-      
+
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -31,13 +31,14 @@ const CalendarEventsPage = () => {
                   <Icon name="calendar-2-line mr-2 text-amber-500" />
                   <span>Academic Calendar 2024-25</span>
                 </h2>
-                
+
                 <div className="prose max-w-none">
+                  {/* Odd Semester Table */}
                   <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 mb-8">
                     <h3 className="text-xl font-semibold text-primary mb-4 pb-2 border-b border-gray-100">
                       Odd Semester (Engineering Diploma Programs)
                     </h3>
-                    
+
                     <div className="overflow-x-auto">
                       <table className="min-w-full border-collapse border border-gray-200 rounded-lg">
                         <thead>
@@ -78,11 +79,12 @@ const CalendarEventsPage = () => {
                     </div>
                   </div>
 
+                  {/* Even Semester Table */}
                   <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 mb-8">
                     <h3 className="text-xl font-semibold text-primary mb-4 pb-2 border-b border-gray-100">
                       Even Semester (Engineering Diploma Programs)
                     </h3>
-                    
+
                     <div className="overflow-x-auto">
                       <table className="min-w-full border-collapse border border-gray-200 rounded-lg">
                         <thead>
@@ -122,74 +124,11 @@ const CalendarEventsPage = () => {
                       </table>
                     </div>
                   </div>
-
-                  <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-                    <h3 className="text-xl font-semibold text-primary mb-4 pb-2 border-b border-gray-100">
-                      Commercial Practice Diploma Programs
-                    </h3>
-                    
-                    <div className="overflow-x-auto">
-                      <table className="min-w-full border-collapse border border-gray-200 rounded-lg">
-                        <thead>
-                          <tr className="bg-primary text-white">
-                            <th className="px-4 py-3 text-left font-semibold text-sm border border-gray-300">Sl. No</th>
-                            <th className="px-4 py-3 text-left font-semibold text-sm border border-gray-300">Academic Activity</th>
-                            <th className="px-4 py-3 text-center font-semibold text-sm border border-gray-300">Start Date</th>
-                            <th className="px-4 py-3 text-center font-semibold text-sm border border-gray-300">End Date</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr className="hover:bg-gray-50">
-                            <td className="px-4 py-3 border border-gray-300">01</td>
-                            <td className="px-4 py-3 border border-gray-300">1st & 3rd Semester Classes (CP, MOP, MTA)</td>
-                            <td className="px-4 py-3 text-center border border-gray-300">01/07/2024</td>
-                            <td className="px-4 py-3 text-center border border-gray-300">11/11/2024</td>
-                          </tr>
-                          <tr className="hover:bg-gray-50 bg-gray-50">
-                            <td className="px-4 py-3 border border-gray-300">02</td>
-                            <td className="px-4 py-3 border border-gray-300">Practical Exams</td>
-                            <td className="px-4 py-3 text-center border border-gray-300">12/11/2024</td>
-                            <td className="px-4 py-3 text-center border border-gray-300">18/11/2024</td>
-                          </tr>
-                          <tr className="hover:bg-gray-50">
-                            <td className="px-4 py-3 border border-gray-300">03</td>
-                            <td className="px-4 py-3 border border-gray-300">Theory Exams (1st, 3rd Semester)</td>
-                            <td className="px-4 py-3 text-center border border-gray-300">19/11/2024</td>
-                            <td className="px-4 py-3 text-center border border-gray-300">30/11/2024</td>
-                          </tr>
-                          <tr className="hover:bg-gray-50 bg-gray-50">
-                            <td className="px-4 py-3 border border-gray-300">04</td>
-                            <td className="px-4 py-3 border border-gray-300">2nd & 4th Semester Classes</td>
-                            <td className="px-4 py-3 text-center border border-gray-300">02/12/2024</td>
-                            <td className="px-4 py-3 text-center border border-gray-300">17/03/2025</td>
-                          </tr>
-                          <tr className="hover:bg-gray-50">
-                            <td className="px-4 py-3 border border-gray-300">05</td>
-                            <td className="px-4 py-3 border border-gray-300">Practical Exams</td>
-                            <td className="px-4 py-3 text-center border border-gray-300">18/03/2025</td>
-                            <td className="px-4 py-3 text-center border border-gray-300">24/03/2025</td>
-                          </tr>
-                          <tr className="hover:bg-gray-50 bg-gray-50">
-                            <td className="px-4 py-3 border border-gray-300">06</td>
-                            <td className="px-4 py-3 border border-gray-300">Theory Exams (2nd, 4th Semester)</td>
-                            <td className="px-4 py-3 text-center border border-gray-300">25/03/2025</td>
-                            <td className="px-4 py-3 text-center border border-gray-300">11/04/2025</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                    
-                    <div className="mt-6 bg-amber-50 p-4 rounded-lg border border-amber-100">
-                      <p className="text-gray-700 flex items-start">
-                        <Icon name="information-line text-amber-600 mr-2 flex-shrink-0 mt-1" />
-                        <span>Note: Any changes in the academic calendar will be communicated to students through official circulars and notices.</span>
-                      </p>
-                    </div>
-                  </div>
                 </div>
               </div>
             </motion.div>
-            
+
+            {/* Right Sidebar */}
             <motion.div 
               className="md:col-span-1"
               initial={{ opacity: 0, y: 20 }}
@@ -201,8 +140,9 @@ const CalendarEventsPage = () => {
                   <Icon name="file-list-3-line mr-2 text-amber-500" />
                   <span>Important Information</span>
                 </h3>
-                
+
                 <div className="space-y-4">
+                  {/* Academic Year */}
                   <div className="flex items-start">
                     <div className="w-8 h-8 bg-amber-400/20 rounded-full flex items-center justify-center mr-3 flex-shrink-0 mt-1">
                       <Icon name="calendar-event-line text-amber-600" />
@@ -212,7 +152,8 @@ const CalendarEventsPage = () => {
                       <p className="text-gray-600 text-sm">2024-25</p>
                     </div>
                   </div>
-                  
+
+                  {/* Class Duration */}
                   <div className="flex items-start">
                     <div className="w-8 h-8 bg-amber-400/20 rounded-full flex items-center justify-center mr-3 flex-shrink-0 mt-1">
                       <Icon name="time-line text-amber-600" />
@@ -223,7 +164,8 @@ const CalendarEventsPage = () => {
                       <p className="text-gray-600 text-sm">Weekly workload: 40 hours</p>
                     </div>
                   </div>
-                  
+
+                  {/* Working Days */}
                   <div className="flex items-start">
                     <div className="w-8 h-8 bg-amber-400/20 rounded-full flex items-center justify-center mr-3 flex-shrink-0 mt-1">
                       <Icon name="calendar-check-line text-amber-600" />
@@ -234,7 +176,8 @@ const CalendarEventsPage = () => {
                       <p className="text-gray-600 text-sm">Saturday: 5 hours</p>
                     </div>
                   </div>
-                  
+
+                  {/* Exam Authority */}
                   <div className="flex items-start">
                     <div className="w-8 h-8 bg-amber-400/20 rounded-full flex items-center justify-center mr-3 flex-shrink-0 mt-1">
                       <Icon name="file-paper-2-line text-amber-600" />
@@ -245,7 +188,8 @@ const CalendarEventsPage = () => {
                     </div>
                   </div>
                 </div>
-                
+
+                {/* Downloads */}
                 <div className="mt-8 bg-primary/5 p-5 rounded-lg border border-primary/10">
                   <h4 className="font-medium text-primary mb-3 flex items-center">
                     <Icon name="download-line mr-2 text-amber-500" />
@@ -261,7 +205,6 @@ const CalendarEventsPage = () => {
                         <p className="text-gray-500 text-xs">PDF, 245 KB</p>
                       </div>
                     </a>
-                    
                     <a href="#" className="flex items-center p-3 bg-white rounded-lg border border-gray-200 shadow-sm hover:border-primary transition-colors group">
                       <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3 group-hover:bg-blue-200 transition-colors">
                         <Icon name="file-word-line text-blue-600" />
