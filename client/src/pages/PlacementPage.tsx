@@ -42,15 +42,15 @@ const PlacementPage = () => {
 
   // Activity images
   const activityImages = [
-    "/assets/image_1752518516714.png",
-    "/assets/image_1752518521514.png", 
-    "/assets/image_1752518526164.png",
-    "/assets/image_1752518530752.png",
-    "/assets/image_1752518535013.png",
-    "/assets/image_1752518539333.png",
-    "/assets/image_1752518544253.png",
-    "/assets/image_1752518548938.png",
-    "/assets/image_1752518553434.png"
+    "/assets/image_1752554626597.png",
+    "/assets/image_1752554631638.png", 
+    "/assets/image_1752554636377.png",
+    "/assets/image_1752554641328.png",
+    "/assets/image_1752554645712.png",
+    "/assets/image_1752554649821.png",
+    "/assets/image_1752554654139.png",
+    "/assets/image_1752554658518.png",
+    "/assets/image_1752554662898.png"
   ];
 
   return (
@@ -117,10 +117,11 @@ const PlacementPage = () => {
               About Placement Cell
             </h3>
             <p className="text-gray-700 leading-relaxed">
-              The Placement Cell at JSS Polytechnic, Nanjangud serves as a bridge between our students and the industry. 
-              Our dedicated team works tirelessly to ensure that our graduates are well-prepared for the professional world 
-              and have access to quality employment opportunities. We focus on holistic development, industry readiness, 
-              and career guidance to help our students achieve their professional aspirations.
+              The Placement Cell at JSS Polytechnic, Nanjangud serves as a vital link between our students and the industry, 
+              functioning as the Industrial Liaison Office (ILO). Our comprehensive placement services focus on career development, 
+              industry training, and employment facilitation to ensure our graduates are well-equipped for professional success. 
+              We work closely with reputed industries to provide quality placement opportunities, industrial training programs, 
+              and career guidance that aligns with current industry requirements and future career prospects.
             </p>
           </motion.div>
 
